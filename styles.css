@@ -5,6 +5,164 @@
     box-sizing: border-box;
   }
 
+:root {
+  /* Brand Colors */
+  --primary-color:#FF2773;
+  --primary-light: #FF4D95;
+  --secondary-color: #2B1E70;
+  --secondary-light: #252D9B;
+
+  /* Text Colors */
+  --text-primary: #190134;
+  --text-secondary: #685879;
+  --text-tertiary: #B3ABBC;
+  --text-light: #FFFFFF;
+  --text-link: #252D9B;
+
+  /* UI Colors */
+  --info: #2B1E70;
+  --success: #5CC689;
+  --warning: #EE7D52;
+  --error: #FF2773;
+
+  /* Background Colors*/
+  --primary-background:#FFFFFF;
+  --secondary-background: #EBEFF7;
+  --dark-background:#2B1E70;
+
+  /* Font Family */
+  --font-family: 'Poppins', sans-serif;
+
+  /* Font-Size */
+  --XL : 2rem;
+  --L: 1.5rem;
+  --M: 1.25;
+  --S: 1rem;
+  --XS: 0.75rem;
+
+  /* Font-Weight */
+  --black : 900;
+  --extra-bold : 800;
+  --bold: 700;
+  --semi-bold:600;
+  --regular:400;
+
+  /* border-radius */
+  --radius-L: 2rem;
+  --radius-M:1.5rem;
+  --radius-S:1rem;
+
+  /* Shadows */
+  --level-1 : box-shadow: 0px 2px 10px 0px #1901341F;
+  --level-2 : box-shadow: 0px 4px 10px 0px #19013429;
+}
+
+body {
+  font-family: var(--font-family);
+}
+
+h1 {
+  font-size: var(--XL);
+  font-weight: var(--extra-bold);
+  color:var(--text-primary)
+
+}
+
+h2 {
+  font-size: var(--L);
+  font-weight: var(--extra-bold);
+  color:var(--text-primary)
+
+}
+
+h3 {
+  font-size: var(--M);
+  font-weight: var(--bold);
+  color:var(--text-primary)
+
+}
+
+h4 {
+  font-size: var(--S);
+  font-weight: var(--bold);
+  color:var(--text-primary)
+
+}
+
+h5 {
+  font-size: var(--X);
+  font-weight: var(--bold);
+  color:var(--text-primary)
+
+}
+
+h6 {
+  font-size: var(--XS);
+  font-weight: var(--semi-bold);
+  color:var(--text-primary)
+
+}
+
+p {
+  font-size: var(--S);
+  font-weight: var(--regular);
+  color:var(--text-secondary)
+
+}
+
+a {
+  font-size: var(--S);
+  font-weight: var(--regular);
+  text-decoration: underline;
+  color:var(--text-link)
+}
+
+nav {
+  background-color: var(--primary-color);
+}
+
+button, .primary-button{
+  border-radius: var(--radius-L);
+  background-color: var(--primary-color);
+  font-size: var(--S);
+  font-weight:var(--bold);
+  padding:8px;
+  color:var(--text-light);
+  border:none;
+}
+
+button:hover, .primary-button:hover {
+  border-radius: var(--radius-L);
+  background-color: var(--primary-light);
+  font-size: var(--S);
+  font-weight:var(--bold);
+  padding:8px;
+  color:var(--text-light);
+  border:none;
+}
+.secondary-button{
+  border-radius: var(--radius-L);
+  background-color: var(--secondary-color);
+  font-size: var(--S);
+  font-weight:var(--bold);
+  padding:8px;
+  color:var(--text-light);
+  border:none;
+}
+
+.secondary-button:hover {
+  border-radius: var(--radius-L);
+  background-color: var(--secondary-light);
+  font-size: var(--S);
+  font-weight:var(--bold);
+  padding:8px;
+  color:var(--text-light);
+  border:none;
+}
+
+.cards{
+  box-shadow:var(--level-2)
+}
 .homeFlexContainer,
 .quizFlexContainer,
 .resultsFlexContainer {
@@ -12,5 +170,6 @@
 }
 
 @media screen and (min-width:789px) {
+
 
 }
