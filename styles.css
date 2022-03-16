@@ -173,3 +173,82 @@ button:hover, .primary-button:hover {
 
 
 }
+
+
+
+
+/* Style of SCORE-PAGE */
+
+.resultsPage{
+  background-color: var(--secondary-color);
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.resultsPage>h1{
+  text-align: center;
+
+}
+
+.resultsPage>p{
+  text-align: center;
+  margin: 0.5rem;
+  color: var(--text-secondary)
+}
+
+.resultsFlexContainer{
+  flex-direction: column;
+  
+}
+
+.resultsPage input{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3rem;
+}
+
+.resultsFlexContainer article{
+  background-color: var(--primary-color);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 15vw 1rem 15vw;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.resultsFlexContainer article div{
+  margin: 1rem ;
+}
+
+.resultsFlexContainer article p{
+  color: var(--text-primary);
+  margin: 1rem ;
+}
+
+.avatar {
+  border-radius: 50%;
+}
+
+
+
+
+/* Style of FOOTER */
+
+footer{
+  visibility: hidden;
+  background-color: var(--primary-color);
+}
+
+footer>p{
+  margin: 0rem 0rem 0.5rem 2rem;
+  color: var(--text-primary);
+} 
+
+@media screen and (min-width:789px) {
+footer{
+  visibility: initial;
+}
+
