@@ -1,36 +1,83 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WCS Quiz</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-</head>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<body>
+  <body>
     <div class="mainPage">
-        <div class="homeFlexContainer">
-            <nav>
-            </nav>
-        </div>
+      <div class="homeFlexContainer">
+        <nav></nav>
+      </div>
     </div>
 
     <div class="quizPage">
-        <div class="quizFlexContainer">
-
-        </div>
+      <div class="quizFlexContainer"></div>
     </div>
 
     <div class="resultsPage">
-        <div class="resultsFlexContainer">
-
+      <h1>You finished the Quizz !</h1>
+      <p>Congrats userName, you scored userScore.</p>
+      <p>You ranked userRank.</p>
+      <div class="resultsFlexContainer">
+        <article class="firstUser">
+          <img
+            class="avatar"
+            src="https://picsum.photos/100/100"
+            alt="avatar de firstUser"
+          />
+        <div>
+          <p>firstUserName</p>
+          <p>firstUserScore</p>
         </div>
+        </article>
+
+        <article class="secondUser">
+          <img
+            class="avatar"
+            src="https://picsum.photos/100/100"
+            alt="avatar de secondUser"
+          />
+          <div>
+          <p>secondUserName</p>
+          <p>secondUserScore</p>
+        </div>
+        </article>
+
+        <article class="thirdUser">
+          <img
+            class="avatar"
+            src="https://picsum.photos/100/100"
+            alt="avatar de thirdUser"
+          />
+        <div>
+          <p>thirdtUserName</p>
+          <p>thirdUserScore</p>
+        </div>
+        </article>
+      </div>
+
+      <input
+        class="primary-button"
+        type="button"
+        value="Try another quiz !"
+      />
     </div>
 
-<script src="script.js"></script>
-</body>
+    <footer>
+      <p>© 2022 Team Triangle</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
 </html>
