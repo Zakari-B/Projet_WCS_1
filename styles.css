@@ -210,27 +210,75 @@ button:hover, .primary-button:hover {
 
 .resultsFlexContainer article{
   background-color: var(--primary-color);
+  background: linear-gradient(90deg, var(--primary-color) 40%, var(--primary-light) 76%);
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin: 1rem 15vw 1rem 15vw;
-  border-radius: 20px;
+  margin: 0.5rem 10vw 0.5rem 10vw;
+  border-radius: 2rem ;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+
 }
 
 .resultsFlexContainer article div{
-  margin: 1rem ;
+  margin: 0.5rem ;
 }
 
 .resultsFlexContainer article p{
   color: var(--text-primary);
-  margin: 1rem ;
+  margin: 0.5rem ;
 }
 
 .avatar {
   border-radius: 50%;
+  height: 7vw;
+  width: 7vw;
 }
+
+@media screen and (min-width:789px) {
+  .resultsFlexContainer{
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-around;
+    margin-left: 15vw;
+    margin-right: 15vw;
+  }
+  .resultsFlexContainer article{
+    background: linear-gradient(180deg, var(--primary-color) 40%, var(--primary-light) 76%);
+    margin: 1rem 1rem 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    width: 20vw;
+    
+
+  }
+
+ article.firstUser{
+   order: 2 ;
+   padding-bottom: 12rem;
+   
+ }
+
+ article.secondUser{
+  order: 1 ;
+  padding-bottom: 8rem;
+  
+}
+
+ article.thirdUser{
+  order: 3 ;
+  padding-bottom: 5rem ;
+}
+
+.avatar{
+  margin-top: 2rem;
+}
+
+}
+
+
 
 
 
