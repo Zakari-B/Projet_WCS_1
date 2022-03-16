@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -20,7 +21,21 @@
         <nav></nav>
       </div>
     </div>
-
+    <div class="namePage">
+        <div class="nameFlexContainer">
+            <form action="/script.js" method="post">
+                <label for="username" >Enter your name </label> <br>
+                <input name="name" id="username" placeholder="Username"> <br>
+            </form>
+            <h1>Chose your quizz theme </h1>
+            <div class="selectQuizz">
+                <button class="quizzTheme">Quizz 1</button>
+                <button class="quizzTheme">Quizz 2</button>
+                <button class="quizzTheme">Quizz 3</button>
+            </div>
+            <button id="nameButton" type="submit">Start Quizz</button>
+        </div>
+    </div>
     <div class="quizPage">
       <div class="quizFlexContainer"></div>
     </div>
