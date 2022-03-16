@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WCS Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="mainPage">
+        <div class="homeFlexContainer">
+            <nav>
+            </nav>
+        </div>
+    </div>
+    <div class="namePage">
+        <div class="nameFlexContainer">
+            <form action="/script.js" method="post">
+                <label for="username" >Enter your name </label> <br>
+                <input name="name" id="username" placeholder="Username"> <br>
+            </form>
+            <h1>Chose your quizz theme </h1>
+            <div class="selectQuizz">
+                <button class="quizzTheme">Quizz 1</button>
+                <button class="quizzTheme">Quizz 2</button>
+                <button class="quizzTheme">Quizz 3</button>
+            </div>
+            <button id="nameButton" type="submit">Start Quizz</button>
+        </div>
+    </div>
+    <div class="quizPage">
+        <div class="quizFlexContainer">
+
+        </div>
+    </div>
+
+    <div class="resultsPage">
+        <div class="resultsFlexContainer">
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
