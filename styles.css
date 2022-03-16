@@ -295,8 +295,4 @@ footer>p{
   color: var(--text-primary);
 } 
 
-@media screen and (min-width:789px) {
-footer{
-  visibility: initial;
-}
 
