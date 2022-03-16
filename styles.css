@@ -164,12 +164,85 @@ button:hover, .primary-button:hover {
   box-shadow:var(--level-2)
 }
 .homeFlexContainer,
+.nameFlexContainer,
 .quizFlexContainer,
 .resultsFlexContainer {
   display: flex;
 }
 
 @media screen and (min-width:789px) {
+  .selectQuizz {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 2rem;
+  }
+  button.quizzTheme {
+    height: 15rem;
+    width: 80%;
+    margin: 1rem;
+  }
+}
 
+/* Name + Choose Quizz */
 
+.nameFlexContainer {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--primary-background);
+  justify-content: center;
+  text-align: center;
+  font: var(--extra-bold);
+  color: var(--info);
+  line-height: 5rem;
+  font-family: var(--font-family)
+}
+
+form {
+  width : 80%;
+  font-size: var(--XL);
+  color: var(--text-primary);
+  margin: auto; 
+  font-family: var(--font-family);
+}
+
+label {
+  font-size: var(--XL);
+  font-weight: var(--extra-bold);
+  color:var(--text-primary)
+}
+
+#username {
+  height: 3rem;
+  width: 40%;
+  border-radius: var(--radius-S);
+}
+
+.quizzTheme {
+  width: 80%;
+  text-align: center;
+  height: 8rem;
+  margin-bottom: 2.5rem;
+  border-radius: var(--radius-M);
+  background-size: cover;
+  background-position: center;
+  font-size: var(--L);
+}
+
+#nameButton {
+  width: 70%;
+  height: 3rem; 
+  box-shadow: var(--level-2);
+  margin: 2rem auto;
+
+}
+
+.quizzTheme:nth-child(1) {
+  background-image: url("https://picsum.photos/200");
+}
+.quizzTheme:nth-child(2) {
+  background-image: url("https://picsum.photos/300");
+}
+.quizzTheme:nth-child(3) {
+  background-image: url("https://picsum.photos/400");
 }
