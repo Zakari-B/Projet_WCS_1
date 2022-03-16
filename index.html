@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WCS Quiz</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-</head>
 
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WCS Quiz</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
     <div class="mainPage">
         <div class="homeFlexContainer">
             <nav> 
@@ -30,21 +34,78 @@
                 <p>This game is especially made for developers. We want to test your knowledge and maybe you will compete with Zakari, Kahoot'master. Before starting, you must know that even the most highly trained don't succes. But you can try it. Are you ready to take up the challenge?</p>
                 <a href=".quizPage" class="primary-button">Yes, I am ready</a>
             </div>
+      <div class="namePage">
+        <div class="nameFlexContainer">
+            <form action="/script.js" method="post">
+                <label for="username" >Enter your name </label> <br>
+                <input name="name" id="username" placeholder="Username"> <br>
+            </form>
+            <h1>Chose your quizz theme </h1>
+            <div class="selectQuizz">
+                <button class="quizzTheme">Quizz 1</button>
+                <button class="quizzTheme">Quizz 2</button>
+                <button class="quizzTheme">Quizz 3</button>
+            </div>
+            <button id="nameButton" type="submit">Start Quizz</button>
         </div>
     </div>
-
     <div class="quizPage">
-        <div class="quizFlexContainer">
-
-        </div>
+      <div class="quizFlexContainer"></div>
     </div>
 
     <div class="resultsPage">
-        <div class="resultsFlexContainer">
-
+      <h1>You finished the Quizz !</h1>
+      <p>Congrats userName, you scored userScore.</p>
+      <p>You ranked userRank.</p>
+      <div class="resultsFlexContainer">
+        <article class="firstUser">
+          <img
+            class="avatar"
+            src="https://picsum.photos/100/100"
+            alt="avatar de firstUser"
+          />
+        <div>
+          <p>firstUserName</p>
+          <p>firstUserScore</p>
         </div>
+        </article>
+
+        <article class="secondUser">
+          <img
+            class="avatar"
+            src="https://picsum.photos/100/100"
+            alt="avatar de secondUser"
+          />
+          <div>
+          <p>secondUserName</p>
+          <p>secondUserScore</p>
+        </div>
+        </article>
+
+        <article class="thirdUser">
+          <img
+            class="avatar"
+            src="https://picsum.photos/100/100"
+            alt="avatar de thirdUser"
+          />
+        <div>
+          <p>thirdtUserName</p>
+          <p>thirdUserScore</p>
+        </div>
+        </article>
+      </div>
+
+      <input
+        class="primary-button"
+        type="button"
+        value="Try another quiz !"
+      />
     </div>
 
-<script src="script.js"></script>
-</body>
+    <footer>
+      <p>© 2022 Team Triangle</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
 </html>
