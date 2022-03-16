@@ -117,8 +117,9 @@ a {
   color:var(--text-link)
 }
 
-nav {
-  background-color: var(--primary-color);
+.mainPage {
+  background-color: var(--primary-background);
+  width: auto;
 }
 
 button, .primary-button{
@@ -129,6 +130,8 @@ button, .primary-button{
   padding:8px;
   color:var(--text-light);
   border:none;
+  margin: auto;
+  text-align: center;
 }
 
 button:hover, .primary-button:hover {
@@ -171,7 +174,52 @@ button:hover, .primary-button:hover {
   display: flex;
 }
 
-/* Name + Choose Quizz */
+.homeFlexContainer {
+  flex-direction: column;
+}
+
+/* Header CSS */
+#logo img {
+  width: 24%;
+  margin: 3%;
+  padding: 2%;
+  background-image: transparent;
+}
+
+nav {
+  background-color: var(--dark-background);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+ 
+nav>button {
+  margin-right: 1rem;
+}
+
+#welcome {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 10vw;
+  text-align: center;
+}
+
+#welcome h1 {
+  padding: 5%;
+}
+
+#welcome p {
+ margin: 3% 0 10% 0;
+}
+
+#welcome a {
+  text-decoration: none;
+  width: 60%;
+}
+
+/* Quiz choice CSS */
 
 .nameFlexContainer {
   display: flex;
@@ -233,7 +281,7 @@ label {
   background-image: url("https://picsum.photos/400");
 }
 
-/* Style of SCORE-PAGE */
+/* Score page CSS */
 
 .resultsPage{
   background-color: var(--secondary-color);
@@ -289,7 +337,7 @@ label {
   width: 7vw;
 }
 
-/* Style of FOOTER */
+/* Footer CSS */
 
 footer {
   visibility: hidden;
@@ -301,7 +349,7 @@ footer>p {
   color: var(--text-primary);
 } 
 
-/* DESKTOP VERSION */
+/* --- DESKTOP VERSION --- */
 
 @media screen and (min-width:789px) {
   .resultsFlexContainer{
