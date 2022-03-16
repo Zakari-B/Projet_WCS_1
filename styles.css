@@ -175,7 +175,7 @@ button:hover, .primary-button:hover {
 .quizFlexContainer,
 .resultsFlexContainer {
   display: flex;
-  height:100vh;
+  min-height:100vh;
 }
 
 .quizFlexContainer {
@@ -318,7 +318,7 @@ nav>button {
   font: var(--extra-bold);
   color: var(--info);
   line-height: 5rem;
-  font-family: var(--font-family)
+  font-family: var(--font-family);
 }
 
 form {
@@ -377,11 +377,11 @@ label {
   padding-bottom: 2rem;
 }
 
-.resultsPage>h1{
+.resultsPage h1{
   text-align: center;
 }
 
-.resultsPage>p{
+.resultsPage p{
   text-align: center;
   margin: 0.5rem;
   color: var(--text-secondary)

@@ -32,9 +32,12 @@
             <div id="welcome">
                 <h1>Welcome to the Triangle Game!</h1>
                 <p>This game is especially made for developers. We want to test your knowledge and maybe you will compete with Zakari, Kahoot'master. Before starting, you must know that even the most highly trained don't succes. But you can try it. Are you ready to take up the challenge?</p>
-                <a href=".quizPage" class="primary-button">Yes, I am ready</a>
+                <a href="#namePage" class="primary-button">Yes, I am ready</a>
             </div>
-      <div class="namePage">
+        </div>
+    </div>
+
+      <div class="namePage" id="namePage">
         <div class="nameFlexContainer">
             <form action="/script.js" method="post">
                 <label for="username" >Enter your name </label> <br>
@@ -49,6 +52,7 @@
             <button id="nameButton" type="submit">Start Quizz</button>
         </div>
     </div>
+
     <div class="quizPage">
         <!-- insert with JS H1 title and the question -->
         <div class="quizFlexContainer">
@@ -76,6 +80,7 @@
       <p>Congrats userName, you scored userScore.</p>
       <p>You ranked userRank.</p>
       <div class="resultsFlexContainer">
+        
         <article class="firstUser">
           <img
             class="avatar"
@@ -106,23 +111,22 @@
             src="https://picsum.photos/100/100"
             alt="avatar de thirdUser"
           />
+
         <div>
           <p>thirdtUserName</p>
           <p>thirdUserScore</p>
         </div>
         </article>
       </div>
-
       <input
         class="primary-button"
         type="button"
         value="Try another quiz !"
       />
+      <footer>
+        <p>© 2022 Team Triangle</p>
+      </footer>
     </div>
-
-    <footer>
-      <p>© 2022 Team Triangle</p>
-    </footer>
 
     <script src="script.js"></script>
   </body>
