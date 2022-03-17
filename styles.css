@@ -172,9 +172,12 @@ button:hover, .primary-button:hover {
 
 .homeFlexContainer,
 .nameFlexContainer,
-.quizFlexContainer,
-.resultsFlexContainer {
+.quizFlexContainer {
   display: flex;
+  min-height:100vh;
+}
+
+.resultsPage{
   min-height:100vh;
 }
 
@@ -388,10 +391,11 @@ label {
 }
 
 .resultsFlexContainer{
+  display: flex;
   flex-direction: column; 
 }
 
-.resultsPage input{
+.resultsPage>a{
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -428,7 +432,6 @@ label {
 /* Footer CSS */
 
 footer {
-  visibility: hidden;
   background-color: var(--primary-color);
 }
 
@@ -490,7 +493,7 @@ footer>p {
     display: flex;
     flex-direction: column;
     align-content: flex-start;
-    width: 20vw;
+    width: 12vw;
   }
   
   article.firstUser{
