@@ -113,7 +113,7 @@ p {
 a {
   font-size: var(--S);
   font-weight: var(--regular);
-  text-decoration: underline;
+  text-decoration: initial;
   color:var(--text-link)
 }
 
@@ -375,12 +375,15 @@ label {
 /* Score page CSS */
 
 .resultsPage{
+  display: flex;
+  flex-direction: column;
   background-color: var(--secondary-color);
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
 
 .resultsPage h1{
+  padding-top: 4rem;
   text-align: center;
 }
 
@@ -395,11 +398,8 @@ label {
   flex-direction: column; 
 }
 
-.resultsPage>a{
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 3rem;
+.resultsPage a{
+
 }
 
 .resultsFlexContainer article{
@@ -488,12 +488,12 @@ footer>p {
   }
   
   .resultsFlexContainer article {
-    background: linear-gradient(180deg, var(--primary-color) 40%, var(--primary-light) 76%);
+    
     margin: 1rem 1rem 1rem 1rem;
     display: flex;
     flex-direction: column;
     align-content: flex-start;
-    width: 12vw;
+    width: 20%;
   }
   
   article.firstUser{
