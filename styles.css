@@ -172,7 +172,6 @@ button:hover, .primary-button:hover {
 
 .homeFlexContainer,
 .nameFlexContainer,
-.resultsFlexContainer,
 .quizFlexContainer {
   display: flex;
   min-height:100vh;
@@ -395,6 +394,7 @@ label {
 }
 
 .resultsFlexContainer{
+  display: flex;
   flex-direction: column; 
 }
 
