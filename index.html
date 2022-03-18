@@ -20,24 +20,27 @@
         <div class="homeFlexContainer">
             <nav> 
                 <div id="logo">
-                    <img src="assets/Triangle-Game.png" alt="logo" />
+                    <img src="assets/logo-triangle.png" alt="logo" />
                 </div>
-                <button onclick="themeSwitch()">☾ Dark Mode</button>
-                <!-- ☼ Light Mode -->
-                <!-- <ul>
-                    <li>☾</li>
-                    <li>☼</li>
-                </ul> -->
+                <button class="neonButton" onclick="themeSwitch()">☼ Light Mode</button>
+                  <!-- ☾ Dark Mode -->
+                 <!-- <ul>
+                     <li>☾</li>
+                     <li>☼</li>
+                 </ul> -->
             </nav>
             <div id="welcome">
                 <h1>Welcome to the Triangle Game!</h1>
                 <p>This game is especially made for developers. We want to test your knowledge and maybe you will compete with Zakari, Kahoot'master. Before starting, you must know that even the most highly trained don't succes. But you can try it. Are you ready to take up the challenge?</p>
-                <a href="#namePage" class="primary-button">Yes, I am ready</a>
+                <button class="neonButton" id="btnGlow" onclick="slideUp('.namePage')"> <span class="text">Ready, Player One ?</span>
+                </button>
+                <!-- <a href="#namePage" class="primary-button">Yes, I am ready</a> -->
+                <!-- <button></button> -->
             </div>
         </div>
     </div>
 
-      <div class="namePage" id="namePage">
+      <div class="namePage hid-box" id="namePage">
         <div class="nameFlexContainer">
             <form action="/script.js" method="post">
                 <label for="username" >Enter your name </label> <br>
@@ -49,11 +52,11 @@
                 <button class="quizzTheme">Quizz 2</button>
                 <button class="quizzTheme">Quizz 3</button>
             </div>
-            <button id="nameButton" type="submit">Start Quizz</button>
+            <button class="neonButton" type="submit" onclick="slideUp('.quizPage')">Start Quizz</button>
         </div>
     </div>
 
-    <div class="quizPage">
+    <div class="quizPage hid-box">
         <!-- insert with JS H1 title and the question -->
         <div class="quizFlexContainer">
             <ul class="questionTokens">
@@ -70,12 +73,15 @@
                 <!-- insert the navbar with question :fixed ?-->
                 <!-- in the nav bar we should create the questions: always the same number of questions html/css-->
             </ul>
+            <div class="testContainer">
             <div class="quizz"></div>
+            <button class="neonButton" id="quickFix" type="submit" onclick="slideUp('.resultsPage')">See Results</button>
             <!-- insert all 4 answers in this div with a flex for mobile and grid for desktop? -->
-      </div>
+            </div>
+          </div>
     </div>
 
-    <div class="resultsPage">
+    <div class="resultsPage hid-box">
       <h1>You finished the Quizz !</h1>
       <p>Congrats userName, you scored userScore.</p>
       <p>You ranked userRank.</p>
@@ -119,11 +125,11 @@
         </div>
         </article>
       </div>
-
-      <a href="#namePage" 
+      <button class="neonButton" type="submit" onClick="window.location.reload()">Try another quiz !</button>
+      <!-- <a href="#namePage" 
       type="button"
-      class="primary-button">
-      "Try another quiz !"</a>
+      class="neonButton">
+      "Try another quiz !"</a> -->
       
       
     </div>
