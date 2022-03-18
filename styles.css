@@ -26,9 +26,13 @@
   --error: #FF2773;
 
   /* Background Colors*/
-  --primary-background:#FFFFFF;
-  --secondary-background: #EBEFF7;
-  --dark-background:#2B1E70;
+  --primary-background:#15002c;
+  --secondary-background: #490097;
+  /* --dark-background:#2B1E70; */
+  /* --light-primary-background:;
+  --light-secondary-background:;*/
+  --dark-primary-background:rgb(48, 54, 61);
+  --dark-secondary-background: rgb(13, 17, 23);
 
   /* Font Family */
   --font-family: 'Poppins', sans-serif;
@@ -59,47 +63,48 @@
 
 body {
   font-family: var(--font-family);
+  /* overflow:hidden; */
 }
 
 h1 {
   font-size: var(--XL);
   font-weight: var(--extra-bold);
-  color:var(--text-primary)
+  color:var(--text-light)
 
 }
 
 h2 {
   font-size: var(--L);
   font-weight: var(--extra-bold);
-  color:var(--text-primary)
+  color:var(--text-light)
 
 }
 
 h3 {
   font-size: var(--M);
   font-weight: var(--bold);
-  color:var(--text-primary)
+  color:var(--text-light)
 
 }
 
 h4 {
   font-size: var(--S);
   font-weight: var(--bold);
-  color:var(--text-primary)
+  color:var(--text-light)
 
 }
 
 h5 {
   font-size: var(--X);
   font-weight: var(--bold);
-  color:var(--text-primary)
+  color:var(--text-light)
 
 }
 
 h6 {
   font-size: var(--XS);
   font-weight: var(--semi-bold);
-  color:var(--text-primary)
+  color:var(--text-light)
 
 }
 
@@ -118,7 +123,9 @@ a {
 }
 
 .mainPage {
-  background-color: var(--primary-background);
+  background-color: #5600b5;
+  background-image: linear-gradient(180deg, #490097 18%, #15002c 50%);
+  /* background-image: linear-gradient(180deg, #5600b5 18%, #15002c 50%); */
   width: auto;
 }
 
@@ -134,18 +141,60 @@ button, .primary-button{
   margin: auto;
   text-align: center;
 }
+/* PARTIE MARIE BUTTON START */
 
-button:hover, .primary-button:hover {
-  border-radius: var(--radius-L);
-  background-color: var(--primary-light);
-  font-size: var(--S);
-  font-weight:var(--bold);
-  padding:8px;
-  color:var(--text-light);
-  border:none;
-  cursor:pointer;
+/* From cssbuttons.io by @adamgiebl */
+/* From cssbuttons.io */
+ .neonButton {
+  --glow-color: rgb(217, 176, 255);
+  --glow-spread-color: rgba(191, 123, 255, 0.781);
+  --enhanced-glow-color: rgb(231, 206, 255);
+  --btn-color: rgb(100, 61, 136);
+  border: .25em solid var(--glow-color);
+  padding: 1em 3em;
+  color: var(--glow-color);
+  font-size: 15px;
+  font-weight: bold;
+  background-color: var(--btn-color);
+  border-radius: 1em;
+  outline: none;
+  box-shadow: 0 0 1em .25em var(--glow-color),
+         0 0 4em 1em var(--glow-spread-color),
+         inset 0 0 .75em .25em var(--glow-color);
+  text-shadow: 0 0 .5em var(--glow-color);
+  position: relative;
+  transition: all 0.3s;
+ }
+ 
+#btnGlow::after {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  top: 120%;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--glow-spread-color);
+  filter: blur(2em);
+  opacity: .7;
+  transform: perspective(1.5em) rotateX(35deg) scale(1, .6);
+ }
+ 
+ .neonButton:hover {
+  color: var(--btn-color);
+  background-color: var(--glow-color);
+  box-shadow: 0 0 1em .25em var(--glow-color),
+         0 0 4em 2em var(--glow-spread-color),
+         inset 0 0 .75em .25em var(--glow-color);
+ }
+ 
+ #btnTest:active {
+  box-shadow: 0 0 0.6em .25em var(--glow-color),
+         0 0 2.5em 2em var(--glow-spread-color),
+         inset 0 0 .5em .25em var(--glow-color);
+ }
 
-}
+
 .secondary-button{
   border-radius: var(--radius-L);
   background-color: var(--secondary-color);
@@ -170,125 +219,55 @@ button:hover, .primary-button:hover {
   box-shadow:var(--level-2)
 }
 
+/*/////////////////////
+//SECTION 0 : GLOBAL //
+/////////////////////*/
 .homeFlexContainer,
 .nameFlexContainer,
 .quizFlexContainer {
   display: flex;
   min-height:100vh;
 }
-
-.resultsPage{
-  min-height:100vh;
+.hid-box {
+  top: 100%;
+  position: relative;
+  transition: all .3s ease-out;
+  height: 100vh;
+  width:100%
+}
+.hid-box-hover {
+top: 0;
+position: absolute;
+transition: all .3s ease-out;
+height: 100vh;
+width:100%
 }
 
-.quizFlexContainer {
-  background-color: var(--secondary-color);
-}
-
-.quizFlexContainer h1 {
-  font-size: clamp(1.25rem, 3vw, 2rem);
-  color: var(--text-light);
-  text-align: center;
-}
-
-.questionTokens {
-  display:flex;
-  flex-direction:column;
-  justify-content: space-around;
-  list-style:none;
-  width:10vw;
-  border: 1px solid black;
-  background-color: var(---secondary-light);
-}
-
-.questionTokens li {
-  width: 100%;
-  height: 100%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  margin: auto;
-  color: var(--text-light)
-  /*background-color:lightgray;*/
-}
-
-li.activeToken {
-  background-color: var(--secondary-background);
-  color: var(--text-primary);
-}
-
-li.successToken {
-  background-color: var(--success);
-  color: var(--text-primary);
-}
-
-li.wrongToken {
-  background-color: var(--error);
-  color: var(--text-primary);
-}
-
-/* Quiz CSS */
-
-.quizz {
-  display: flex;
-  width: 90%;
-  flex-direction: column; 
-  align-items: center;
-  justify-content: center;
-  margin-top: 10% 0%;
-}
-
-.card {
-  height: 50vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.answer-container {
-  width: 90%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-button.button-card {
-  height: 10vh;
-  background-color: var(--primary-background);
-  box-shadow: var(--level-2);
-  color:var(--text-primary);
-  border-radius: var(--radius-M);
-  margin: 1vh;
-  background-color: var(--secondary-background);
-
-}
-  
-/* Header CSS */
-  
+/*//////////////////
+//SECTION 1 : HOME//
+//////////////////*/
 .homeFlexContainer {
   flex-direction: column;
 }
-
 #logo img {
-  width: 24%;
-  margin: 3%;
-  padding: 2%;
+  /* height: 10vh; */
+  /* margin: 3%;
+  padding: 2%; */
   background-image: transparent;
+  width: 100%;
 }
-
 nav {
-  background-color: var(--dark-background);
+  /* background-color: var(--dark-background); */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 70px;
+  height: 15vh;
+  /* overflow:hidden; */
+  /* background-color: var(--background_test41); */
 }
- 
 nav>button {
-  margin-right: 1rem;
+  margin-right: 3% ;
 }
-
 #welcome {
   display: flex;
   flex-direction: column;
@@ -296,34 +275,41 @@ nav>button {
   margin: 10vw;
   text-align: center;
 }
-
 #welcome h1 {
   padding: 5%;
 }
-
 #welcome p {
  margin: 3% 0 10% 0;
 }
-
 #welcome a {
   text-decoration: none;
   width: 60%;
 }
 
-/* Quiz choice CSS */
+/*////////////////////////////
+//SECTION 2 : QUIZ SELECTOR //
+////////////////////////////*/
+.namePage {
+  
+}
+.themeSelected {
 
+}
+.themeUnselected {
+
+}
 .nameFlexContainer {
   display: flex;
   flex-direction: column;
-  background-color: var(--primary-background);
+  /* background-color: var(--primary-background); */
   justify-content: center;
   text-align: center;
   font: var(--extra-bold);
   color: var(--info);
-  line-height: 5rem;
+  line-height: 10vh;
   font-family: var(--font-family);
+  background-color:var(--primary-background);
 }
-
 form {
   width : 80%;
   font-size: var(--XL);
@@ -331,37 +317,32 @@ form {
   margin: auto; 
   font-family: var(--font-family);
 }
-
 label {
   font-size: var(--XL);
   font-weight: var(--extra-bold);
-  color:var(--text-primary)
+  color:var(--text-light)
 }
-
 #username {
-  height: 3rem;
+  height: 6vh;
   width: 40%;
   border-radius: var(--radius-S);
 }
-
 .quizzTheme {
   width: 80%;
   text-align: center;
-  height: 8rem;
-  margin-bottom: 2.5rem;
+  height: 16vh;
+  margin-bottom: 5vh;
   border-radius: var(--radius-M);
   background-size: cover;
   background-position: center;
   font-size: var(--L);
 }
-
 #nameButton {
   width: 70%;
-  height: 3rem; 
+  height: 6vh; 
   box-shadow: var(--level-2);
-  margin: 2rem auto;
+  margin: 4vh auto;
 }
-
 .quizzTheme:nth-child(1) {
   background-image: url("https://picsum.photos/200");
 }
@@ -372,39 +353,157 @@ label {
   background-image: url("https://picsum.photos/400");
 }
 
-/* Score page CSS */
+/*///////////////////
+//SECTION 3 : QUIZ //
+///////////////////*/
+.quizFlexContainer {
+  background-color: var(--primary-background);
+}
+.quizFlexContainer h1 {
+  font-size: clamp(1.25rem, 3vw, 2rem);
+  color: var(--text-light);
+  text-align: center;
+}
+.questionTitle {
+  height:10vh;
+  margin:auto 2vh;
+}
+.questionTokens {
+  display:flex;
+  flex-direction:column;
+  justify-content: space-around;
+  list-style:none;
+  width:10vw;
+  border: 1px solid black;
+  background-color: var(---secondary-light);
+}
+.questionTokens li {
+  width: 100%;
+  height: 100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin: auto;
+  color: var(--text-light);
+  background-color:var(--secondary-background);
+}
+li.activeToken {
+  background-color: var(--secondary-background);
+  color: var(--text-primary);
+}
+li.successToken {
+  background-color: var(--success);
+  color: var(--text-primary);
+}
+li.wrongToken {
+  background-color: var(--error);
+  color: var(--text-primary);
+}
+.testContainer {
+  /* height: 75vh; */
+  display:flex;
+  flex-direction: column;
+}
+ #quickFix {
+  height:10vh;
+  margin:auto;
+} 
+.quizz {
+  display: flex;
+  width: 100%;
+  flex-direction: column; 
+  /* align-items: center; */
+  justify-content: center;
+}
+.card {
+  height: 88vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* margin-top:10%; */
+}
+.answer-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin:auto;
+  justify-content: space-between;
+  align-items: center;
+}
+button.cardButton {
+  height: 10vh;
+  /* background-color: var(--primary-background); */
+  box-shadow: var(--level-2);
+  color:var(--cardglow-color);
+  border-radius: var(--radius-M);
+  width: 80%;
+  margin: 1vh auto;
+  /* background-color: var(--text-light); */
+}
+.cardButton {
+  height: 20vh;
+  margin: 1vh;
+  border-radius: var(--radius-M);
+  --cardglow-color: rgb(0, 247, 255);
+  --cardglow-spread-color: var(--primary-background);
+  --cardenhanced-glow-color: rgb(255, 255, 255);
+  --cardbtn-color: var(--primary-background);
+  border: .25em solid var(--cardglow-color);
+  padding: 1em 3em;
+  color: var(--cardglow-color);
+  font-size: 15px;
+  font-weight: bold;
+  background-color: var(--cardbtn-color);
+  border-radius: 1em;
+  outline: none;
+  /* box-shadow: 0 0 1em .25em var(--cardglow-color),
+         0 0 4em 1em var(--cardglow-spread-color), 
+         inset 0 0 .75em .25em var(--cardglow-color); */
+  /* text-shadow: 0 0 .5em var(--cardglow-color); */
+  position: relative;
+  transition: all 0.3s;
+ }
+ .cardButton:hover {
+  color: var(--cardbtn-color);
+  background-color: var(--cardglow-color);
+  box-shadow: 0 0 1em .25em var(--cardglow-color),
+         0 0 4em 2em var(--cardglow-spread-color),
+         inset 0 0 .75em .25em var(--cardglow-color);
+ }
 
+/*///////////////////////
+//SECTION 4 : RESULTS //
+//////////////////////*/
+
+.resultsPage{
+  min-height:100vh;
+}
 .resultsPage{
   display: flex;
   flex-direction: column;
-  background-color: var(--secondary-color);
+  background-color: var(--primary-background);
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
-
 .resultsPage h1{
   padding-top: 4rem;
   text-align: center;
 }
-
 .resultsPage p{
   text-align: center;
   margin: 0.5rem;
   color: var(--text-secondary)
 }
-
 .resultsFlexContainer{
   display: flex;
   flex-direction: column; 
 }
-
 .resultsPage a{
 
 }
-
 .resultsFlexContainer article{
-  background-color: var(--primary-color);
-  background: linear-gradient(90deg, var(--primary-color) 40%, var(--primary-light) 76%);
+  background-color: #673f92;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -413,50 +512,47 @@ label {
   border-radius: 2rem ;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
-
 .resultsFlexContainer article div {
   margin: 0.5rem;
 }
-
 .resultsFlexContainer article p {
   color: var(--text-primary);
   margin: 0.5rem;
 }
-
 .avatar {
   border-radius: 50%;
   height: 7vw;
   width: 7vw;
 }
-
-/* Footer CSS */
-
 footer {
-  background-color: var(--primary-color);
+  background-color: var(--secondary-background);
 }
-
 footer>p {
   margin: 0rem 0rem 0.5rem 2rem;
-  color: var(--text-primary);
+  color: beige;
 } 
 
-/* --- DESKTOP VERSION --- */
-
+/*/////////////////////////////
+//SECTION  : DESKTOP VERSION //
+/////////////////////////////*/
 @media screen and (min-width:769px) {
+  #logo img {
+    height: 15vh;
+    /* width: 80vw; */
+    margin:auto;
+  }
   .questionTokens {
     display:flex;
     flex-direction:row;
     width:100vw;
     height:8vh;
   }  
-
   .quizFlexContainer {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     /* padding-bottom: 20%; */
   }
-
   .answer-container {
     width: 90%;
     height:80%;
@@ -465,20 +561,19 @@ footer>p {
     grid-template-columns: repeat(2,1fr);
     justify-content: space-between;
   }
-
   .quizz {
     margin: auto;
   }
- 
   .card {
     width: 100%;
     height: 75vh;
   }
-
-  button.button-card {
+  /* button.button-card {
+    height: 25vh;
+  } */
+  button.cardButton {
     height: 25vh;
   }
-  
   .resultsFlexContainer {
     flex-direction: row;
     align-items: flex-end;
@@ -486,45 +581,45 @@ footer>p {
     margin-left: 15vw;
     margin-right: 15vw;
   }
-  
   .resultsFlexContainer article {
-    
+    background-color: #673f92;
     margin: 1rem 1rem 1rem 1rem;
     display: flex;
     flex-direction: column;
     align-content: flex-start;
     width: 20%;
   }
-  
   article.firstUser{
     order: 2 ;
-    padding-bottom: 12rem;
+    padding-bottom: 10rem;
   }
-  
   article.secondUser{
     order: 1 ;
-    padding-bottom: 8rem;
+    padding-bottom: 6rem;
   }
-  
   article.thirdUser{
     order: 3 ;
-    padding-bottom: 5rem ;
+    padding-bottom: rem ;
   }
-  
   .avatar {
     margin-top: 2rem;
   }
-  
   .selectQuizz {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     padding: 2rem;
   }
-  
   button.quizzTheme {
     height: 15rem;
     width: 80%;
     margin: 1rem;
+  }
+  #logo img {
+    /* height: 10vh; */
+    /* margin: 3%;
+    padding: 2%; */
+    background-image: transparent;
+    width: initial;
   }
 }

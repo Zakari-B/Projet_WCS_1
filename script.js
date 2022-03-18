@@ -1,4 +1,38 @@
 
+// THEME SELECTOR //
+// themeswitch() = {
+
+// }
+
+
+// QUIZ SELECTOR //
+// firstTheme.addEventListener("click", function() {
+//     if (firstTheme.classList[0] === "themeUnselected") {
+//         firstTheme.classList.replace("themeUnselected", "themeSelected")
+//     } else {
+//         firstTheme.classList.replace("themeSelected", "themeUnselected")
+//     }
+//     console.log(firstTheme.classList)
+// })
+// secondTheme.addEventListener("click", function() {
+//     if (secondTheme.classList[0] === "themeUnselected") {
+//         secondTheme.classList.replace("themeUnselected", "themeSelected")
+//     } else {
+//         secondTheme.classList.replace("themeSelected", "themeUnselected")
+//     }
+//     console.log(secondTheme.classList)
+// })
+
+// thirdTheme.addEventListener("click", function() {
+//     if (thirdTheme.classList[0] === "themeUnselected") {
+//         thirdTheme.classList.replace("themeUnselected", "themeSelected")
+//     } else {
+//         thirdTheme.classList.replace("themeSelected", "themeUnselected")
+//     }
+//     console.log(thirdTheme.classList)
+// })
+
+// QUIZ FUNCTIONS //
 const firstQuizz = [
     {
         question : "In which year was Javascript Created ?",
@@ -60,7 +94,7 @@ const createQuestion = (currentQuestion,questionNumber) => {
         console.log(currentQuestion.answers[letter])
         const answerLetter = document.createElement("label")
         const oneAnswer = document.createElement("button")
-        oneAnswer.classList.add("button-card");
+        oneAnswer.classList.add("cardButton");
         oneAnswer.setAttribute('id',"answer-"+letter);
         //oneAnswer.classList.add("color-2");
         oneAnswer.innerHTML=`${letter}: ${currentQuestion.answers[letter]}`;
@@ -114,3 +148,6 @@ quizzStart(firstQuizz); // Test
 
 
 //button .onclick 
+const slideUp = (div)=>{
+    document.querySelector(div).classList.replace("hid-box","hid-box-hover")
+}
