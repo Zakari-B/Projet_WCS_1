@@ -323,20 +323,21 @@ label {
   color:var(--text-light)
 }
 #username {
-  height: 6vh;
+  height: 5vh;
   width: 40%;
   border-radius: var(--radius-S);
 }
 .quizzTheme {
   width: 80%;
   text-align: center;
-  height: 16vh;
+  height: 10vh;
   margin-bottom: 5vh;
   border-radius: var(--radius-M);
   background-size: cover;
   background-position: center;
   font-size: var(--L);
 }
+
 #nameButton {
   width: 70%;
   height: 6vh; 
@@ -483,21 +484,19 @@ button.cardButton {
   display: flex;
   flex-direction: column;
   background-color: var(--primary-background);
-  padding-top: 2rem;
-  padding-bottom: 2rem;
 }
 .resultsPage h1{
-  padding-top: 4rem;
   text-align: center;
+  margin-top:5vh;
 }
 .resultsPage p{
   text-align: center;
-  margin: 0.5rem;
   color: var(--text-secondary)
 }
 .resultsFlexContainer{
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
+  /* height:90vh; */
 }
 .resultsPage a{
 
@@ -508,8 +507,8 @@ button.cardButton {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin: 0.5rem 10vw 0.5rem 10vw;
-  border-radius: 2rem ;
+  margin: 1vw 10vw;
+  border-radius: 2% ;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 .resultsFlexContainer article div {
@@ -527,8 +526,10 @@ button.cardButton {
 footer {
   background-color: var(--secondary-background);
 }
-footer>p {
-  margin: 0rem 0rem 0.5rem 2rem;
+#footer p {
+  text-align:left;
+  align-items: left;
+  margin: auto auto auto 2%;
   color: beige;
 } 
 
@@ -550,8 +551,6 @@ footer>p {
   .quizFlexContainer {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    /* padding-bottom: 20%; */
   }
   .answer-container {
     width: 90%;
@@ -607,13 +606,13 @@ footer>p {
   .selectQuizz {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     padding: 2rem;
   }
   button.quizzTheme {
-    height: 15rem;
+    height: 25vh;
     width: 80%;
-    margin: 1rem;
+    margin: 1%;
   }
   #logo img {
     /* height: 10vh; */
