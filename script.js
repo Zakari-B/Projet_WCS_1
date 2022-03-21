@@ -103,6 +103,17 @@ const createQuestion = (currentQuestion,questionNumber) => {
     }
 }
 
+// Etape 2 
+// Stocker le resultat de l'input dans un object
+
+//  const userInfo = {
+//     score: 0, 
+//     name: ""
+// }
+
+// const selectTheme
+
+
 
 //une fois que le user clique sur démarrer dans la div d'avant
 //créer 3 tableaux par thème de question
