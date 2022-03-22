@@ -6,31 +6,28 @@
 
 
 // QUIZ SELECTOR //
-// firstTheme.addEventListener("click", function() {
-//     if (firstTheme.classList[0] === "themeUnselected") {
-//         firstTheme.classList.replace("themeUnselected", "themeSelected")
-//     } else {
-//         firstTheme.classList.replace("themeSelected", "themeUnselected")
-//     }
-//     console.log(firstTheme.classList)
-// })
-// secondTheme.addEventListener("click", function() {
-//     if (secondTheme.classList[0] === "themeUnselected") {
-//         secondTheme.classList.replace("themeUnselected", "themeSelected")
-//     } else {
-//         secondTheme.classList.replace("themeSelected", "themeUnselected")
-//     }
-//     console.log(secondTheme.classList)
-// })
 
-// thirdTheme.addEventListener("click", function() {
-//     if (thirdTheme.classList[0] === "themeUnselected") {
-//         thirdTheme.classList.replace("themeUnselected", "themeSelected")
-//     } else {
-//         thirdTheme.classList.replace("themeSelected", "themeUnselected")
-//     }
-//     console.log(thirdTheme.classList)
-// })
+const selectQuizz = document.querySelectorAll(".quizzTheme");
+let numSelected = 0;
+let maxSelected = 1;
+for(let i = 0;i<selectQuizz.length;i++){
+    selectQuizz[i].addEventListener("click", function(){ 
+        if(this.classList.contains("selected")){
+            this.classList.remove("selected");
+            numSelected--;
+        }
+        else if(numSelected<maxSelected){
+            this.classList.add("selected");
+            numSelected++;
+        }
+        else {
+            for(let j = 0;j<selectQuizz.length;j++){
+                selectQuizz[j].classList.remove("selected");
+            }    
+            this.classList.add("selected");
+        }
+    });
+}
 
 // QUIZ FUNCTIONS //
 const firstQuizz = [
