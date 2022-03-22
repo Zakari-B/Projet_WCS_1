@@ -249,12 +249,19 @@ width:100%
 .homeFlexContainer {
   flex-direction: column;
 }
+
+#logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  margin-top: 4%;
+}
 #logo img {
-  /* height: 10vh; */
-  /* margin: 3%;
-  padding: 2%; */
+  height: 18vh;
+  /* padding: 2%; */
   background-image: transparent;
-  width: 100%;
+  width: auto;
 }
 nav {
   /* background-color: var(--dark-background); */
@@ -537,11 +544,6 @@ footer {
 //SECTION  : DESKTOP VERSION //
 /////////////////////////////*/
 @media screen and (min-width:769px) {
-  #logo img {
-    height: 15vh;
-    /* width: 80vw; */
-    margin:auto;
-  }
   .questionTokens {
     display:flex;
     flex-direction:row;
@@ -613,12 +615,5 @@ footer {
     height: 25vh;
     width: 80%;
     margin: 1%;
-  }
-  #logo img {
-    /* height: 10vh; */
-    /* margin: 3%;
-    padding: 2%; */
-    background-image: transparent;
-    width: initial;
   }
 }
