@@ -5,24 +5,28 @@
 
 
 // QUIZ SELECTOR //
-
+const buttonValidator = document.querySelector(".launchQuizz")
+buttonValidator.disabled = true
 const selectQuizz = document.querySelectorAll(".quizzTheme");
 let selectedQuizz = "";
-let buttonClasses = selectedQuizz.classList;
+// let buttonClasses = selectedQuizz.classList;
 let numSelected = 0;
 let maxSelected = 1;
+
 for(let i = 0;i<selectQuizz.length;i++){
     selectQuizz[i].addEventListener("click", function(){ 
         if(this.classList.contains("selected")){
             this.classList.remove("selected");
             numSelected--;
             selectedQuizz = document.querySelector(".selected")
+            buttonValidator.disabled = true
             buttonClasses = selectedQuizz.classList;
         }
         else if(numSelected<maxSelected){
             this.classList.add("selected");
             numSelected++;
             selectedQuizz = document.querySelector(".selected")
+            buttonValidator.disabled = false
             buttonClasses = selectedQuizz.classList;
         }
         else {
@@ -31,6 +35,8 @@ for(let i = 0;i<selectQuizz.length;i++){
             }    
             this.classList.add("selected");
             selectedQuizz = document.querySelector(".selected")
+            buttonValidator.disabled = false
+
             buttonClasses = selectedQuizz.classList;
         }
         function quizzUpdater() {
@@ -46,8 +52,9 @@ for(let i = 0;i<selectQuizz.length;i++){
         quizzUpdater();
     });
 }
-
 let logQuizTheme = "";
+
+
 function quizDoubleAction() {
     slideUp('.quizPage');
     if (logQuizTheme === "firstQuizz"){
@@ -95,12 +102,12 @@ const firstQuizz = [
 
 const secondQuizz = [
     {
-    question : "In which year was Loris born ?", // LOL
+    question : "Which company developed JavaScript", 
     answers : {
-        a : 1982,
-        b : 1918,
-        c : 1929,
-        d: 'the reponse d'
+        a : "Google",
+        b : "Microsoft",
+        c : "Netscape",
+        d: "IBM"
     },
     correctAnswer : "answer-a"
 },
