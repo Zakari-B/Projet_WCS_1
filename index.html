@@ -85,49 +85,53 @@
 
     <div class="resultsPage hid-box">
       <h1>You finished the Quizz !</h1>
-      <p>Congrats userName, you scored userScore.</p>
-      <p>You ranked userRank.</p>
+      <p id="congrats">Congrats userName, you scored userScore.</p>
+      <p id = "rank">You ranked userRank.</p>
       <div class="resultsFlexContainer">
         
         
         <article class="firstUser">
-          <img
+          <!-- <img
             class="avatar"
             src="https://picsum.photos/100/100"
             alt="avatar de firstUser"
-          />
+          /> -->
+          <p>#1</p>
         <div>
-          <p>firstUserName</p>
-          <p>firstUserScore</p>
+          
+          <p id="firstUserName"></p>
+          <p id="firstUserScore"></p>
         </div>
         </article>
 
         <article class="secondUser">
-          <img
-            class="avatar"
+          <!-- <img
+            class="avatar1"
             src="https://picsum.photos/100/100"
             alt="avatar de secondUser"
-          />
+          /> -->
+          <p>#2</p>
           <div>
-          <p>secondUserName</p>
-          <p>secondUserScore</p>
+          <p id="secondUserName"></p>
+          <p id="secondUserScore"></p>
         </div>
         </article>
 
         <article class="thirdUser">
-          <img
-            class="avatar"
+          <!-- <img
+            class="avatar2"
             src="https://picsum.photos/100/100"
             alt="avatar de thirdUser"
-          />
-
+          /> -->
+          <p>#3</p>
         <div>
-          <p>thirdUserName</p>
-          <p>thirdUserScore</p>
+          
+          <p id="thirdUserName"></p>
+          <p id="thirdUserScore"></p>
         </div>
         </article>
       </div>
-      <button class="neonButton" type="submit" onClick="window.location.reload()">Try another quiz !</button>
+      <button class="neonButton" id="quizzReturn" type="submit" onClick="window.location.reload()">Try another quiz !</button>
       <!-- <a href="#namePage" 
       type="button"
       class="neonButton">
