@@ -41,8 +41,9 @@
     </div>
     
       <div class="namePage hid-box" id="namePage">
-        <div class="nameFlexContainer">
-            <form action="/script.js" method="post">
+
+          <div class="nameFlexContainer">
+            <form name="myForm" action="/script.js" method="post">
                 <label for="username" >Enter your name </label> <br>
                 <input name="name" id="username" placeholder="Username"> <br>
             </form>
@@ -54,17 +55,16 @@
                   <button class="quizzTheme thirdQuizz">WTF</button>
               </div>
             </div>
-            <button class="neonButton" type="submit" onclick="quizDoubleAction()">Start Quizz</button>
+            <button class="neonButton launchQuizz" type="submit" onclick="generateQuizzAndSlide(0)">Start Quizz</button>
         </div>
     </div>
 
     <div class="quizPage hid-box">
-        <!-- insert with JS H1 title and the question -->
         <div class="quizFlexContainer">
             <ul class="questionTokens">
-                <li id="firstQuestion" class="activeToken">1</li>
-                <li id="secondQuestion" class="successToken">2</li>
-                <li id="thirdQuestion" class="wrongToken">3</li>
+                <li id="firstQuestion">1</li>
+                <li id="secondQuestion">2</li>
+                <li id="thirdQuestion">3</li>
                 <li id="fourthQuestion">4</li>
                 <li id="fifthQuestion">5</li>
                 <li id="sixthQuestion">6</li>
@@ -72,13 +72,11 @@
                 <li id="eighthQuestion">8</li>
                 <li id="ninthQuestion">9</li>
                 <li id="tenthQuestion">10</li>
-                <!-- insert the navbar with question :fixed ?-->
-                <!-- in the nav bar we should create the questions: always the same number of questions html/css-->
             </ul>
             <div class="testContainer">
               <div class="quizz"></div>
-              <button class="neonButton" id="nextQuestion" type="submit" onclick="">Next question</button>
-              <button class="neonButton" id="displayResults" type="submit" onclick="slideUp('.resultsPage')">See Results</button>
+              <!-- <button class="neonButton" id="nextQuestion" type="submit" onclick="generateQuizzAndSlide(1)">Next question</button> -->
+              <!-- <button class="neonButton" id="displayResults" type="submit" onclick="slideUp('.resultsPage')">See Results</button> -->
             <!-- insert all 4 answers in this div with a flex for mobile and grid for desktop? -->
             </div>
           </div>

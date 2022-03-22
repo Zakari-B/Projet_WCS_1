@@ -2,27 +2,32 @@
 // THEME SELECTOR //
 // themeswitch() = {
 
-
-
+ 
 // QUIZ SELECTOR //
-
+const buttonValidator = document.querySelector(".launchQuizz")
+buttonValidator.disabled = true
 const selectQuizz = document.querySelectorAll(".quizzTheme");
 let selectedQuizz = "";
-let buttonClasses = selectedQuizz.classList;
 let numSelected = 0;
 let maxSelected = 1;
+
+
 for(let i = 0;i<selectQuizz.length;i++){
     selectQuizz[i].addEventListener("click", function(){ 
         if(this.classList.contains("selected")){
             this.classList.remove("selected");
             numSelected--;
             selectedQuizz = document.querySelector(".selected")
+            buttonValidator.disabled = true
             buttonClasses = selectedQuizz.classList;
         }
         else if(numSelected<maxSelected){
             this.classList.add("selected");
             numSelected++;
             selectedQuizz = document.querySelector(".selected")
+            buttonValidator.disabled = false 
+
+
             buttonClasses = selectedQuizz.classList;
         }
         else {
@@ -31,6 +36,7 @@ for(let i = 0;i<selectQuizz.length;i++){
             }    
             this.classList.add("selected");
             selectedQuizz = document.querySelector(".selected")
+            buttonValidator.disabled = false 
             buttonClasses = selectedQuizz.classList;
         }
         function quizzUpdater() {
@@ -46,17 +52,34 @@ for(let i = 0;i<selectQuizz.length;i++){
         quizzUpdater();
     });
 }
-
 let logQuizTheme = "";
-function quizDoubleAction() {
+
+
+const generateQuizzAndSlide = i => {
     slideUp('.quizPage');
     if (logQuizTheme === "firstQuizz"){
-        createQuestion(firstQuizz[0],0);
+        createQuestion(firstQuizz[i],i);
+        toggleNavColor(i)
+        removeQuestion(i-1)
     } else if (logQuizTheme ==="secondQuizz") {
-        createQuestion(secondQuizz[0],0);
+        createQuestion(secondQuizz[i],i);
+        toggleNavColor(i)
+        removeQuestion(i-1)
     } else {
-        createQuestion(thirdQuizz[0],0);
+        createQuestion(thirdQuizz[i],i);
+        toggleNavColor(i)
+        removeQuestion(i-1)
     }
+}
+
+const removeQuestion = (i) => {
+    document.getElementById(`card-${i}`)?.remove()
+}
+
+const toggleNavColor = (questionNumber) => {
+    const menuItems = document.querySelectorAll("li");
+    menuItems.forEach(item => item.classList.remove("activeToken"));
+    menuItems[questionNumber].classList.add("activeToken");
 }
 
 // QUIZ FUNCTIONS //
@@ -90,17 +113,87 @@ const firstQuizz = [
             d: 'the reponse d'
         },
         correctAnswer : "answer-c"
+    },
+    {
+        question : "Who invented Javascript?",
+        answers : {
+            a : "lalalal",
+            b : "DJ Snakakaajaje",
+            c : "Brendan Eich",
+            d: 'the reponse d'
+        },
+        correctAnswer : "answer-c"
+    },
+    {
+        question : "Who invented Javascript?",
+        answers : {
+            a : "lalalal",
+            b : "DJ Snakakaajaje",
+            c : "Brendan Eich",
+            d: 'the reponse d'
+        },
+        correctAnswer : "answer-c"
+    },
+    {
+        question : "Who invented Javascript?",
+        answers : {
+            a : "lalalal",
+            b : "DJ Snakakaajaje",
+            c : "Brendan Eich",
+            d: 'the reponse d'
+        },
+        correctAnswer : "answer-c"
+    },
+    {
+        question : "Who invented Javascript?",
+        answers : {
+            a : "lalalal",
+            b : "DJ Snakakaajaje",
+            c : "Brendan Eich",
+            d: 'the reponse d'
+        },
+        correctAnswer : "answer-c"
+    },
+    {
+        question : "Who invented Javascript?",
+        answers : {
+            a : "lalalal",
+            b : "DJ Snakakaajaje",
+            c : "Brendan Eich",
+            d: 'the reponse d'
+        },
+        correctAnswer : "answer-c"
+    },
+    {
+        question : "Who invented Javascript?",
+        answers : {
+            a : "lalalal",
+            b : "DJ Snakakaajaje",
+            c : "Brendan Eich",
+            d: 'the reponse d'
+        },
+        correctAnswer : "answer-c"
+    },
+    {
+        question : "Who invented Javascript?",
+        answers : {
+            a : "lalalal",
+            b : "DJ Snakakaajaje",
+            c : "Brendan Eich",
+            d: 'the reponse d'
+        },
+        correctAnswer : "answer-c"
     }
 ]
 
 const secondQuizz = [
     {
-    question : "In which year was Loris born ?", // LOL
+    question : "Which company developed JavaScript", 
     answers : {
-        a : 1982,
-        b : 1918,
-        c : 1929,
-        d: 'the reponse d'
+        a : "Google",
+        b : "Microsoft",
+        c : "Netscape",
+        d: "IBM"
     },
     correctAnswer : "answer-a"
 },
@@ -109,6 +202,86 @@ const secondQuizz = [
     answers : {
         a : "Magloire",
         b : "DJ Snake",
+        c : "Brendan Eich",
+        d: 'the reponse d'
+    },
+    correctAnswer : "answer-c"
+},
+{
+    question : "Who invented Javascript?",
+    answers : {
+        a : "lalalal",
+        b : "DJ Snakakaajaje",
+        c : "Brendan Eich",
+        d: 'the reponse d'
+    },
+    correctAnswer : "answer-c"
+},
+{
+    question : "Who invented Javascript?",
+    answers : {
+        a : "lalalal",
+        b : "DJ Snakakaajaje",
+        c : "Brendan Eich",
+        d: 'the reponse d'
+    },
+    correctAnswer : "answer-c"
+},
+{
+    question : "Who invented Javascript?",
+    answers : {
+        a : "lalalal",
+        b : "DJ Snakakaajaje",
+        c : "Brendan Eich",
+        d: 'the reponse d'
+    },
+    correctAnswer : "answer-c"
+},
+{
+    question : "Who invented Javascript?",
+    answers : {
+        a : "lalalal",
+        b : "DJ Snakakaajaje",
+        c : "Brendan Eich",
+        d: 'the reponse d'
+    },
+    correctAnswer : "answer-c"
+},
+{
+    question : "Who invented Javascript?",
+    answers : {
+        a : "lalalal",
+        b : "DJ Snakakaajaje",
+        c : "Brendan Eich",
+        d: 'the reponse d'
+    },
+    correctAnswer : "answer-c"
+},
+{
+    question : "Who invented Javascript?",
+    answers : {
+        a : "lalalal",
+        b : "DJ Snakakaajaje",
+        c : "Brendan Eich",
+        d: 'the reponse d'
+    },
+    correctAnswer : "answer-c"
+},
+{
+    question : "Who invented Javascript?",
+    answers : {
+        a : "lalalal",
+        b : "DJ Snakakaajaje",
+        c : "Brendan Eich",
+        d: 'the reponse d'
+    },
+    correctAnswer : "answer-c"
+},
+{
+    question : "Who invented Javascript?",
+    answers : {
+        a : "lalalal",
+        b : "DJ Snakakaajaje",
         c : "Brendan Eich",
         d: 'the reponse d'
     },
@@ -141,16 +314,18 @@ const thirdQuizz = [
 
 const createQuestion = (currentQuestion,questionNumber) => {
     //create the card that will contain question title and answers
+    let index=questionNumber
     const quizz = document.querySelector(".quizz");
     const questionCard = document.createElement("div");
     questionCard.classList.add("card");
+    questionCard.setAttribute('id',`card-${index}`);
     quizz.appendChild(questionCard);
 
     //create the card title that will hold the title
     const card=document.querySelector(".card")
     const questionTitle = document.createElement("h1");
     questionTitle.classList.add("questionTitle");
-    questionTitle.innerHTML=`Question #${questionNumber} - ${currentQuestion.question}`;
+    questionTitle.innerHTML=`Question #${questionNumber+1} - ${currentQuestion.question}`;
     questionCard.appendChild(questionTitle);
 
     //create the div that will hold the answers
@@ -170,6 +345,17 @@ const createQuestion = (currentQuestion,questionNumber) => {
         answerContainer.appendChild(oneAnswer);
        
     }
+
+    //create the button
+    const buttonNext = document.createElement("button")
+    buttonNext.classList.add("neonButton")
+    buttonNext.setAttribute('id',"nextQuestion");
+    buttonNext.innerHTML="Next Question";
+    buttonNext.onclick=() => generateQuizzAndSlide(questionNumber+1);
+    questionCard.appendChild(buttonNext);
+
+    // <button class="neonButton" id="nextQuestion" type="submit" onclick="generateQuizzAndSlide(1)">Next question</button>
+
 }
 
 
