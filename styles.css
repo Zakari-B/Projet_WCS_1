@@ -14,7 +14,7 @@
 
   /* Text Colors */
   --text-primary: #190134;
-  --text-secondary: #685879;
+  --text-secondary: #fff5ee;
   --text-tertiary: #B3ABBC;
   --text-light: #FFFFFF;
   --text-link: #252D9B;
@@ -274,6 +274,8 @@ nav {
 }
 nav>button {
   margin-right: 3% ;
+  /* width: 15vw;
+  height: 5vh; */
 }
 #welcome {
   display: flex;
@@ -284,6 +286,7 @@ nav>button {
 }
 #welcome h1 {
   padding: 5%;
+  font-size: 2.5rem;
 }
 #welcome p {
  margin: 3% 0 10% 0;
