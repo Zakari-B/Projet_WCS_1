@@ -7,6 +7,8 @@
 // QUIZ SELECTOR //
 
 const selectQuizz = document.querySelectorAll(".quizzTheme");
+let selectedQuizz = "";
+let buttonClasses = selectedQuizz.classList;
 let numSelected = 0;
 let maxSelected = 1;
 for(let i = 0;i<selectQuizz.length;i++){
@@ -14,18 +16,47 @@ for(let i = 0;i<selectQuizz.length;i++){
         if(this.classList.contains("selected")){
             this.classList.remove("selected");
             numSelected--;
+            selectedQuizz = document.querySelector(".selected")
+            buttonClasses = selectedQuizz.classList;
         }
         else if(numSelected<maxSelected){
             this.classList.add("selected");
             numSelected++;
+            selectedQuizz = document.querySelector(".selected")
+            buttonClasses = selectedQuizz.classList;
         }
         else {
             for(let j = 0;j<selectQuizz.length;j++){
                 selectQuizz[j].classList.remove("selected");
             }    
             this.classList.add("selected");
+            selectedQuizz = document.querySelector(".selected")
+            buttonClasses = selectedQuizz.classList;
         }
+        function quizzUpdater() {
+            console.log(selectedQuizz.classlist)
+            if (buttonClasses.contains("firstQuizz")) {
+                logQuizTheme = "firstQuizz";
+            } else if (buttonClasses.contains("secondQuizz")) {
+                logQuizTheme = "secondQuizz";
+            } else  if (buttonClasses.contains("thirdQuizz")) {
+                logQuizTheme = "thirdQuizz";
+            }
+        }
+        quizzUpdater();
     });
+}
+
+let logQuizTheme = "";
+function quizDoubleAction() {
+    slideUp('.quizPage');
+    if (logQuizTheme === "firstQuizz"){
+        createQuestion(firstQuizz[0],0);
+    } else if (logQuizTheme ==="secondQuizz") {
+        createQuestion(secondQuizz[0],0);
+    } else {
+        createQuestion(thirdQuizz[0],0);
+    }
 }
 
 // QUIZ FUNCTIONS //
@@ -157,26 +188,8 @@ const createQuestion = (currentQuestion,questionNumber) => {
 //créer 3 tableaux par thème de question
 //récupérer le thème du questionnaire dans une variable: mettre des boutons s
 
-let logQuizTheme = "";
-function selectFirst() {
-    logQuizTheme = "firstQuizz";
-}
-function selectSecond() {
-    logQuizTheme = "secondQuizz";
-}
-function selectThird() {
-    logQuizTheme = "thirdQuizz";
-}
-function quizDoubleAction() {
-    slideUp('.quizPage');
-    if (logQuizTheme === "firstQuizz"){
-        createQuestion(firstQuizz[0],0);
-    } else if (logQuizTheme ==="secondQuizz") {
-        createQuestion(secondQuizz[0],0);
-    } else {
-        createQuestion(thirdQuizz[0],0);
-    }
-}
+
+
 
 // inititalement quand on clique sur le bouton start
 //lancer quizzFunc(return)
