@@ -245,6 +245,7 @@ button, .primary-button{
 /////////////////////*/
 .homeFlexContainer,
 .nameFlexContainer,
+.themeFlexContainer,
 .quizFlexContainer {
   display: flex;
   min-height:100vh;
@@ -331,6 +332,19 @@ nav>button {
   font-family: var(--font-family);
   background-color:var(--primary-background);
 }
+.themeFlexContainer {
+  display: flex;
+  flex-direction: column;
+  /* background-color: var(--primary-background); */
+  justify-content: center;
+  text-align: center;
+  font: var(--extra-bold);
+  color: var(--info);
+  line-height: 10vh;
+  font-family: var(--font-family);
+  background-color:var(--primary-background);
+}
+
 form {
   width : 80%;
   font-size: var(--XL);
@@ -343,11 +357,15 @@ label {
   font-weight: var(--extra-bold);
   color:var(--text-light)
 }
+
 #username {
-  height: 5vh;
-  width: 40%;
-  border-radius: var(--radius-S);
+    height: 5vh;
+    width: 100%;
+    border-radius: var(--radius-S);
+    height: 4rem;
+    padding: 20px;
 }
+
 .quizzTheme {
   width: 80%;
   text-align: center;
@@ -415,7 +433,7 @@ label {
   background-color:var(--secondary-background);
 }
 li.activeToken {
-  background-color: var(--secondary-background);
+  background-color: var(--text-light);
   color: var(--text-primary);
 }
 li.successToken {
@@ -430,6 +448,8 @@ li.wrongToken {
   /* height: 75vh; */
   display:flex;
   flex-direction: column;
+  width: -webkit-fill-available;
+  margin:5%;
 }
 .quizFlexContainer .neonButton {
   height:10vh;
@@ -441,6 +461,7 @@ li.wrongToken {
   flex-direction: column; 
   /* align-items: center; */
   justify-content: center;
+  margin: 30px auto;
 }
 .card {
   height: 88vh;
@@ -652,4 +673,5 @@ footer {
     width: initial;
   }
 }
+
 
