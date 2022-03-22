@@ -337,6 +337,9 @@ label {
   background-position: center;
   font-size: var(--L);
 }
+.selected {
+  border: rgb(0, 247, 255) 10px solid;  /*REMPLACER PAR VAR*/
+}
 
 #nameButton {
   width: 70%;
