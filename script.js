@@ -4,6 +4,30 @@
 
 
 
+// QUIZ SELECTOR //
+
+const selectQuizz = document.querySelectorAll(".quizzTheme");
+let numSelected = 0;
+let maxSelected = 1;
+for(let i = 0;i<selectQuizz.length;i++){
+    selectQuizz[i].addEventListener("click", function(){ 
+        if(this.classList.contains("selected")){
+            this.classList.remove("selected");
+            numSelected--;
+        }
+        else if(numSelected<maxSelected){
+            this.classList.add("selected");
+            numSelected++;
+        }
+        else {
+            for(let j = 0;j<selectQuizz.length;j++){
+                selectQuizz[j].classList.remove("selected");
+            }    
+            this.classList.add("selected");
+        }
+    });
+}
+
 // QUIZ FUNCTIONS //
 const firstQuizz = [
     {
@@ -117,6 +141,18 @@ const createQuestion = (currentQuestion,questionNumber) => {
     }
 }
 
+
+// Etape 2 
+// Stocker le resultat de l'input dans un object
+
+//  const userInfo = {
+//     score: 0, 
+//     name: ""
+// }
+
+// const selectTheme
+
+
 //une fois que le user clique sur démarrer dans la div d'avant
 //créer 3 tableaux par thème de question
 //récupérer le thème du questionnaire dans une variable: mettre des boutons s
@@ -144,7 +180,6 @@ function quizDoubleAction() {
 
 // inititalement quand on clique sur le bouton start
 //lancer quizzFunc(return)
-
 // quizzStart(firstQuizz);
 // Test
 // let score = 0
