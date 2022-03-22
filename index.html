@@ -39,7 +39,7 @@
             </div>
         </div>
     </div>
-
+    
       <div class="namePage hid-box" id="namePage">
         <div class="nameFlexContainer">
             <form action="/script.js" method="post">
@@ -48,11 +48,11 @@
             </form>
             <h1>Chose your quizz theme </h1>
             <div class="selectQuizz">
-                <button class="quizzTheme">Quizz 1</button>
-                <button class="quizzTheme">Quizz 2</button>
-                <button class="quizzTheme">Quizz 3</button>
+                <button class="quizzTheme firstQuizz" onclick="selectFirst()">Quizz 1</button>
+                <button class="quizzTheme secondQuizz" onclick="selectSecond()">Quizz 2</button>
+                <button class="quizzTheme thirdQuizz" onclick="selectThird()">Quizz 3</button>
             </div>
-            <button class="neonButton" type="submit" onclick="slideUp('.quizPage')">Start Quizz</button>
+            <button class="neonButton" type="submit" onclick="quizDoubleAction()">Start Quizz</button>
         </div>
     </div>
 
@@ -75,7 +75,8 @@
             </ul>
             <div class="testContainer">
               <div class="quizz"></div>
-              <button class="neonButton" id="quickFix" type="submit" onclick="slideUp('.resultsPage')">See Results</button>
+              <button class="neonButton" id="nextQuestion" type="submit" onclick="">Next question</button>
+              <button class="neonButton" id="displayResults" type="submit" onclick="slideUp('.resultsPage')">See Results</button>
             <!-- insert all 4 answers in this div with a flex for mobile and grid for desktop? -->
             </div>
           </div>
@@ -135,6 +136,7 @@
       </footer> 
     </div>
 
+    
 
     <script src="script.js"></script>
   </body>

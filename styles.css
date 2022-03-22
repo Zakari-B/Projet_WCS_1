@@ -338,6 +338,8 @@ label {
   font-size: var(--L);
 }
 
+
+
 #nameButton {
   width: 70%;
   height: 6vh; 
@@ -405,7 +407,7 @@ li.wrongToken {
   display:flex;
   flex-direction: column;
 }
- #quickFix {
+.quizFlexContainer .neonButton {
   height:10vh;
   margin:auto;
 } 
@@ -471,6 +473,10 @@ button.cardButton {
   box-shadow: 0 0 1em .25em var(--cardglow-color),
          0 0 4em 2em var(--cardglow-spread-color),
          inset 0 0 .75em .25em var(--cardglow-color);
+ }
+
+ #displayResults {
+   display:none;
  }
 
 /*///////////////////////
@@ -622,3 +628,4 @@ footer {
     width: initial;
   }
 }
+

@@ -2,35 +2,7 @@
 // THEME SELECTOR //
 // themeswitch() = {
 
-// }
 
-
-// QUIZ SELECTOR //
-// firstTheme.addEventListener("click", function() {
-//     if (firstTheme.classList[0] === "themeUnselected") {
-//         firstTheme.classList.replace("themeUnselected", "themeSelected")
-//     } else {
-//         firstTheme.classList.replace("themeSelected", "themeUnselected")
-//     }
-//     console.log(firstTheme.classList)
-// })
-// secondTheme.addEventListener("click", function() {
-//     if (secondTheme.classList[0] === "themeUnselected") {
-//         secondTheme.classList.replace("themeUnselected", "themeSelected")
-//     } else {
-//         secondTheme.classList.replace("themeSelected", "themeUnselected")
-//     }
-//     console.log(secondTheme.classList)
-// })
-
-// thirdTheme.addEventListener("click", function() {
-//     if (thirdTheme.classList[0] === "themeUnselected") {
-//         thirdTheme.classList.replace("themeUnselected", "themeSelected")
-//     } else {
-//         thirdTheme.classList.replace("themeSelected", "themeUnselected")
-//     }
-//     console.log(thirdTheme.classList)
-// })
 
 // QUIZ FUNCTIONS //
 const firstQuizz = [
@@ -66,9 +38,51 @@ const firstQuizz = [
     }
 ]
 
-const secondQuizz = []
+const secondQuizz = [
+    {
+    question : "In which year was Loris born ?", // LOL
+    answers : {
+        a : 1982,
+        b : 1918,
+        c : 1929,
+        d: 'the reponse d'
+    },
+    correctAnswer : "answer-a"
+},
+{
+    question : "Who invented Javascript?",
+    answers : {
+        a : "Magloire",
+        b : "DJ Snake",
+        c : "Brendan Eich",
+        d: 'the reponse d'
+    },
+    correctAnswer : "answer-c"
+}
+]
 
-const thirdQuizz = []
+const thirdQuizz = [
+    {
+    question : "In which year was Zakari born ?", // MAIS LOL
+    answers : {
+        a : 1982,
+        b : 1918,
+        c : "666 A.D.",
+        d: 'the reponse d'
+    },
+    correctAnswer : "answer-a"
+},
+{
+    question : "Who invented Javascript?",
+    answers : {
+        a : "Magloire",
+        b : "DJ Snake",
+        c : "Brendan Eich",
+        d: 'the reponse d'
+    },
+    correctAnswer : "answer-c"
+}
+]
 
 const createQuestion = (currentQuestion,questionNumber) => {
     //create the card that will contain question title and answers
@@ -103,19 +117,36 @@ const createQuestion = (currentQuestion,questionNumber) => {
     }
 }
 
-
 //une fois que le user clique sur démarrer dans la div d'avant
 //créer 3 tableaux par thème de question
-//récupérer le thème du questionnaire dans une variable
-// sylvain va return la constante nécessaire (first quizz, second etc)...
+//récupérer le thème du questionnaire dans une variable: mettre des boutons s
+
+let logQuizTheme = "";
+function selectFirst() {
+    logQuizTheme = "firstQuizz";
+}
+function selectSecond() {
+    logQuizTheme = "secondQuizz";
+}
+function selectThird() {
+    logQuizTheme = "thirdQuizz";
+}
+function quizDoubleAction() {
+    slideUp('.quizPage');
+    if (logQuizTheme === "firstQuizz"){
+        createQuestion(firstQuizz[0],0);
+    } else if (logQuizTheme ==="secondQuizz") {
+        createQuestion(secondQuizz[0],0);
+    } else {
+        createQuestion(thirdQuizz[0],0);
+    }
+}
 
 // inititalement quand on clique sur le bouton start
 //lancer quizzFunc(return)
-const quizzStart = (RETURN) => {
-    createQuestion(RETURN[0],0);
-}
 
-quizzStart(firstQuizz); // Test
+// quizzStart(firstQuizz);
+// Test
 // let score = 0
 // //Card .onclick ==>
 // const checkAnswers = (labelCard,goodAnswer) => {
@@ -151,3 +182,27 @@ quizzStart(firstQuizz); // Test
 const slideUp = (div)=>{
     document.querySelector(div).classList.replace("hid-box","hid-box-hover")
 }
+
+//objet user {name:"",score,rank}
+//a chaque question 
+//on check si c'est la bonne reponse dans l'objet
+//si oui j'increment le score
+// a la fin des 10 questions
+//see my results
+
+//en global on a un tableau des scores
+
+// on edit l'objet user pour mettre son score
+// onclick on crée une nouvelle fonction qui check si le score de l'utiliateur est dans le tableau
+
+//stocker de la donnée au niveau du navigateur
+//si j'utilise l'app quelque part 
+//local storage
+
+
+
+
+
+
+
+
