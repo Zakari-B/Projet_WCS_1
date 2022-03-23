@@ -370,7 +370,10 @@ label {
     border-radius: var(--radius-S);
     height: 4rem;
     padding: 20px;
+    font-size:var(--L);
+    font-weight: var(--extra-bold);
 }
+
 
 .quizzTheme {
   width: 80%;
@@ -527,9 +530,7 @@ button.cardButton {
          inset 0 0 .75em .25em var(--cardglow-color);
  }
 
- #displayResults {
-   display:none;
- }
+
 
 /*///////////////////////
 //SECTION 4 : RESULTS //
