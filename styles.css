@@ -524,9 +524,7 @@ button.cardButton {
          inset 0 0 .75em .25em var(--cardglow-color);
  }
 
- #displayResults {
-   display:none;
- }
+
 
 /*///////////////////////
 //SECTION 4 : RESULTS //

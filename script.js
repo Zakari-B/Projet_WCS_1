@@ -347,14 +347,21 @@ const createQuestion = (currentQuestion,questionNumber) => {
     }
 
     //create the button
+    console.log(questionNumber===9)
     const buttonNext = document.createElement("button");
     buttonNext.classList.add("neonButton");
-    buttonNext.setAttribute('id',"nextQuestion");
-    buttonNext.innerHTML="Next Question";
-    buttonNext.onclick=() => generateQuizzAndSlide(questionNumber+1);
+    if (questionNumber == 9){
+        buttonNext.innerHTML="See Results";
+        buttonNext.setAttribute('id',"displayResults");
+        buttonNext.onclick=() => slideUp('.resultsPage');
+    } else {
+        buttonNext.setAttribute('id',"nextQuestion");
+        buttonNext.innerHTML="Next Question";
+        buttonNext.onclick=() => generateQuizzAndSlide(questionNumber+1);
+    }
     questionCard.appendChild(buttonNext);
+    // <button class="neonButton" id="displayResults" type="submit" onclick="slideUp('.resultsPage')">See Results</button>
 
-    // <button class="neonButton" id="nextQuestion" type="submit" onclick="generateQuizzAndSlide(1)">Next question</button>
 
 }
 
