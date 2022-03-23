@@ -347,8 +347,8 @@ const createQuestion = (currentQuestion,questionNumber) => {
     }
 
     //create the button
-    const buttonNext = document.createElement("button")
-    buttonNext.classList.add("neonButton")
+    const buttonNext = document.createElement("button");
+    buttonNext.classList.add("neonButton");
     buttonNext.setAttribute('id',"nextQuestion");
     buttonNext.innerHTML="Next Question";
     buttonNext.onclick=() => generateQuizzAndSlide(questionNumber+1);

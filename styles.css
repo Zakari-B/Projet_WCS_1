@@ -364,7 +364,10 @@ label {
     border-radius: var(--radius-S);
     height: 4rem;
     padding: 20px;
+    font-size:var(--L);
+    font-weight: var(--extra-bold);
 }
+
 
 .quizzTheme {
   width: 80%;
