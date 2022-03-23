@@ -268,6 +268,12 @@ width:100%
 /*//////////////////
 //SECTION 1 : HOME//
 //////////////////*/
+#logoSmall {
+  display:inline;
+}
+#logoBig {
+  display:none;
+}
 .homeFlexContainer {
   flex-direction: column;
 }
@@ -672,6 +678,12 @@ footer {
     padding: 2%; */
     background-image: transparent;
     width: initial;
+  }
+  #logoSmall {
+    display:none;
+  }
+  #logoBig {
+    display:inline;
   }
 }
 
