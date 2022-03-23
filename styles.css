@@ -13,10 +13,10 @@
   --secondary-light: #252D9B;
 
   /* Text Colors */
-  --text-primary: #190134;
-  --text-secondary: #685879;
+  --text-primary: #e5ddee;
+  --text-secondary: #fff5ee;
   --text-tertiary: #B3ABBC;
-  --text-light: #FFFFFF;
+  --text-light: #b28fc9;
   --text-link: #252D9B;
 
   /* UI Colors */
@@ -258,11 +258,17 @@ button, .primary-button{
   width:100%
 }
 .hid-box-hover {
-top: 0;
-position: absolute;
-transition: all .3s ease-out;
-height: 100vh;
-width:100%
+  top: 0;
+  position: absolute;
+  transition: all .3s ease-out;
+  height: 100vh;
+  width:100%
+}
+.lightMode {
+  background-image: linear-gradient(180deg, #967ab3 18%, #720edd 50%);
+}
+.textLightMode {
+  color: var(--text-primary);
 }
 
 /*//////////////////
@@ -277,24 +283,27 @@ width:100%
 .homeFlexContainer {
   flex-direction: column;
 }
+#logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 #logo img {
-  /* height: 10vh; */
-  /* margin: 3%;
-  padding: 2%; */
+  max-height: 15vh;
   background-image: transparent;
-  width: 100%;
+  width: auto;
+  margin: 4px;
 }
 nav {
-  /* background-color: var(--dark-background); */
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 15vh;
   /* overflow:hidden; */
-  /* background-color: var(--background_test41); */
 }
-nav>button {
+nav>.neonButton {
   margin-right: 3% ;
+  padding: 1em;
 }
 #welcome {
   display: flex;
@@ -304,14 +313,10 @@ nav>button {
   text-align: center;
 }
 #welcome h1 {
-  padding: 5%;
+  padding-bottom: 2%;
 }
 #welcome p {
- margin: 3% 0 10% 0;
-}
-#welcome a {
-  text-decoration: none;
-  width: 60%;
+  margin: 3% 0 10% 0;
 }
 
 /*////////////////////////////
@@ -613,10 +618,15 @@ footer {
 //SECTION  : DESKTOP VERSION //
 /////////////////////////////*/
 @media screen and (min-width:769px) {
-  #logo img {
-    height: 15vh;
-    /* width: 80vw; */
-    margin:auto;
+  nav>.neonButton {
+    padding: 1em 3em;
+  }
+  #welcome h1 {
+    font-size: 4rem;
+  }
+  #welcome p {
+    font-size: 1.5rem;
+    font-weight: var(--bold);
   }
   .questionTokens {
     display:flex;
@@ -706,5 +716,3 @@ footer {
     display:inline;
   }
 }
-
-

@@ -1,7 +1,18 @@
 // THEME SELECTOR //
-// themeswitch() = {
-
+let globalTheme = "dark";
  
+function themeSwitch() {
+    if (globalTheme == "dark") {
+        globalTheme = "light"
+        document.querySelector(".switch").textContent = "☾ Dark Mode";
+    } else {
+        globalTheme = "dark"
+        document.querySelector(".switch").textContent = "☼ Light Mode";
+    }
+    document.querySelector(".mainPage").classList.toggle("lightMode");
+    document.querySelectorAll(".text").forEach(el=>el.classList.toggle('textLightMode')); 
+}
+
 // QUIZ SELECTOR //
 /*import firstQuiz from "./quiz.js";
 import secondQuiz from "./quiz.js";
@@ -17,6 +28,7 @@ const selectQuizz = document.querySelectorAll(".quizzTheme");
 let selectedQuizz = "";
 let numSelected = 0;
 let maxSelected = 1;
+
 
 let logQuizTheme = "";
 
