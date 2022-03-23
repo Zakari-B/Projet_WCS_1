@@ -317,15 +317,6 @@ nav>button {
 /*////////////////////////////
 //SECTION 2 : QUIZ SELECTOR //
 ////////////////////////////*/
-.namePage {
-  
-}
-.themeSelected {
-
-}
-.themeUnselected {
-
-}
 .nameFlexContainer {
   display: flex;
   flex-direction: column;
