@@ -1,9 +1,16 @@
-
 // THEME SELECTOR //
 // themeswitch() = {
 
  
 // QUIZ SELECTOR //
+/*import firstQuiz from "./quiz.js";
+import secondQuiz from "./quiz.js";
+import thirdQuiz from "./quiz.js";*/
+
+const slideUp = (div)=>{
+    document.querySelector(div).classList.replace("hid-box","hid-box-hover")
+}
+
 const buttonValidator = document.querySelector(".launchQuizz")
 buttonValidator.disabled = true
 const selectQuizz = document.querySelectorAll(".quizzTheme");
@@ -396,7 +403,6 @@ const thirdQuizz = [
         correctAnswer : "answer-c"
     }
 ]
-
 const createQuestion = (currentQuestion,questionNumber) => {
     //create the card that will contain question title and answers
     let index=questionNumber
@@ -413,10 +419,10 @@ const createQuestion = (currentQuestion,questionNumber) => {
     questionTitle.innerHTML=`Question #${questionNumber+1} - ${currentQuestion.question}`;
     questionCard.appendChild(questionTitle);
 
-    //create the div that will hold the answers
-    const answerContainer=document.createElement("div");
-    answerContainer.classList.add("answer-container");
-    questionCard.appendChild(answerContainer);
+  //create the div that will hold the answers
+  const answerContainer = document.createElement("div");
+  answerContainer.classList.add("answer-container");
+  questionCard.appendChild(answerContainer);
 
     //add a button for each answer
     for(letter in currentQuestion.answers){
@@ -447,15 +453,6 @@ const createQuestion = (currentQuestion,questionNumber) => {
 
     }
         questionCard.appendChild(buttonNext);
-}
-
-    /* 
-    (créer les 4 cartes) et le choix d'une carte crée le bouton next question
-    le bouton lance une fonction comparaison entre réponse et bonne réponse et change la vignette
-    et le score puis question suivante
-    */
-function testA() {
-    slideUp('.resultsPage');scoreCalculator()
 }
 
 let goodAnswers = []
@@ -504,7 +501,6 @@ function listenToAnswer(){
     })
     }
 }
-
 
 const slideUp = (div)=>{
     document.querySelector(div).classList.replace("hid-box","hid-box-hover")
