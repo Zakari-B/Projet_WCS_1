@@ -236,11 +236,17 @@ button, .primary-button{
   width:100%
 }
 .hid-box-hover {
-top: 0;
-position: absolute;
-transition: all .3s ease-out;
-height: 100vh;
-width:100%
+  top: 0;
+  position: absolute;
+  transition: all .3s ease-out;
+  height: 100vh;
+  width:100%
+}
+.lightMode {
+  background-image: linear-gradient(180deg, #967ab3 18%, #720edd 50%);
+}
+.textLightMode {
+  color: var(--text-primary);
 }
 
 /*//////////////////
@@ -249,7 +255,6 @@ width:100%
 .homeFlexContainer {
   flex-direction: column;
 }
-
 #logo {
   display: flex;
   align-items: center;
@@ -268,10 +273,9 @@ nav {
   height: 15vh;
   /* overflow:hidden; */
 }
-nav>button {
+nav>.neonButton {
   margin-right: 3% ;
-  /* width: 15vw;
-  height: 5vh; */
+  padding: 1em;
 }
 #welcome {
   display: flex;
@@ -281,14 +285,10 @@ nav>button {
   text-align: center;
 }
 #welcome h1 {
-  /* padding-bottom: 2%; */
+  padding-bottom: 2%;
 }
 #welcome p {
  margin: 3% 0 10% 0;
-}
-#welcome a {
-  text-decoration: none;
-  width: 60%;
 }
 
 /*////////////////////////////
@@ -542,8 +542,14 @@ footer {
 //SECTION  : DESKTOP VERSION //
 /////////////////////////////*/
 @media screen and (min-width:769px) {
+  nav>.neonButton {
+    padding: 1em 3em;
+  }
   #welcome h1 {
-    font-size: 5rem;
+    font-size: 4rem;
+  }
+  #welcome p {
+    font-size: 1.5rem;
   }
   .questionTokens {
     display:flex;

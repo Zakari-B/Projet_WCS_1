@@ -1,8 +1,18 @@
 
 // THEME SELECTOR //
-// themeswitch() = {
-
-// }
+let globalTheme = "dark";
+ 
+function themeSwitch() {
+    if (globalTheme == "dark") {
+        globalTheme = "light"
+        document.querySelector(".switch").textContent = "☾ Dark Mode";
+    } else {
+        globalTheme = "dark"
+        document.querySelector(".switch").textContent = "☼ Light Mode";
+    }
+    document.querySelector(".mainPage").classList.toggle("lightMode");
+    document.querySelectorAll(".text").forEach(el=>el.classList.toggle('textLightMode')); 
+}
 
 
 // QUIZ SELECTOR //
