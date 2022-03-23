@@ -1,7 +1,9 @@
 
 // THEME SELECTOR //
 // themeswitch() = {
-
+    const slideUp = (div)=>{
+        document.querySelector(div).classList.replace("hid-box","hid-box-hover")
+    }
  
 // QUIZ SELECTOR //
 const buttonValidator = document.querySelector(".launchQuizz")
@@ -54,6 +56,10 @@ for(let i = 0;i<selectQuizz.length;i++){
 }
 let logQuizTheme = "";
 
+function startGame() {
+    createAnswersTable();
+    generateQuizzAndSlide(0);
+}
 
 const generateQuizzAndSlide = i => {
     slideUp('.quizPage');
@@ -335,7 +341,7 @@ const createQuestion = (currentQuestion,questionNumber) => {
 
     //add a button for each answer
     for(letter in currentQuestion.answers){
-        console.log(currentQuestion.answers[letter])
+        // console.log(currentQuestion.answers[letter])
         const answerLetter = document.createElement("label")
         const oneAnswer = document.createElement("button")
         oneAnswer.classList.add("cardButton");
@@ -343,29 +349,109 @@ const createQuestion = (currentQuestion,questionNumber) => {
         //oneAnswer.classList.add("color-2");
         oneAnswer.innerHTML=`${letter}: ${currentQuestion.answers[letter]}`;
         answerContainer.appendChild(oneAnswer);
-       
     }
 
     //create the button
-    console.log(questionNumber===9)
     const buttonNext = document.createElement("button");
     buttonNext.classList.add("neonButton");
     if (questionNumber == 9){
         buttonNext.innerHTML="See Results";
         buttonNext.setAttribute('id',"displayResults");
-        buttonNext.onclick=() => slideUp('.resultsPage');
+        buttonNext.onclick=() => slideUp('.resultsPage'); //rajouter ici la fonction pour les résultats de paul
+        listenToAnswer()
     } else {
         buttonNext.setAttribute('id',"nextQuestion");
         buttonNext.innerHTML="Next Question";
         buttonNext.onclick=() => generateQuizzAndSlide(questionNumber+1);
+        buttonNext.disabled = true;
+        listenToAnswer()
+
     }
-    questionCard.appendChild(buttonNext);
-    // <button class="neonButton" id="displayResults" type="submit" onclick="slideUp('.resultsPage')">See Results</button>
-
-
+        questionCard.appendChild(buttonNext);
 }
 
+    /* 
+    (créer les 4 cartes) et le choix d'une carte crée le bouton next question
+    le bouton lance une fonction comparaison entre réponse et bonne réponse et change la vignette
+    et le score puis question suivante
+    */
 
+
+let goodAnswers = []
+const createAnswersTable = () => {
+    if (logQuizTheme = "firstQuizz"){
+        firstQuizz.forEach(question => {
+            goodAnswers.push(question.correctAnswer)});
+    } else if (logQuizTheme = "secondQuizz"){
+        secondQuizz.forEach(question => {
+            goodAnswers.push(question.correctAnswer)});
+    } else {
+        thirdQuizz.forEach(question => {
+            goodAnswers.push(question.correctAnswer)});
+    }
+    console.log(goodAnswers);
+}
+
+ // = good answers du quiz selectionné
+    
+let userAnswer = " "
+let goodAnswer = " "
+let allUserAnswers = []
+let userScore = 0
+function listenToAnswer(){
+    const answerList = document.querySelectorAll(".cardButton");
+    for(let j = 0;j<answerList.length;j++){
+        answerList[j].addEventListener("click", function(){
+            userAnswer = answerList[j].id
+            allUserAnswers.push(userAnswer)
+            const activeQuestion = document.querySelector(".activeToken");
+            console.log(activeQuestion)
+            console.log(allUserAnswers)
+            if (userAnswer == goodAnswers[j]) {
+                userScore++
+                activeQuestion.classList.add("successToken")
+                console.log(userScore)
+
+
+            } else {
+                activeQuestion.classList.add("wrongToken")
+                console.log(userScore)
+
+            }
+            console.log(userAnswer)
+            const buttonNext = document.getElementById("nextQuestion");
+            buttonNext.disabled = false; 
+            /*if (userAnswer = tableau[QUESTION])
+                GREEN
+            else
+                rouge*/
+                
+    })
+    }
+}
+
+// let score = 0
+// const checkAnswer(userAnswer,goodAnswer){
+//     if (userAnswer === goodAnswer){
+
+//     }    
+// }
+
+// let score = 0
+// //Card .onclick ==>
+// const checkAnswers = (labelCard,goodAnswer) => {
+//     if (labelCard === goodAnswer){
+//         score++
+//         ajouter bordure verte
+//     } else {
+//         ajouter bordure rouge
+//     }
+//         colorier background des cartes
+//         buttonNextApparait
+
+// }
+
+    
 // Etape 2 
 // Stocker le resultat de l'input dans un object
 
@@ -420,9 +506,7 @@ const createQuestion = (currentQuestion,questionNumber) => {
 
 
 //button .onclick 
-const slideUp = (div)=>{
-    document.querySelector(div).classList.replace("hid-box","hid-box-hover")
-}
+
 
 //objet user {name:"",score,rank}
 //a chaque question 
