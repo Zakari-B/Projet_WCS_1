@@ -1,13 +1,15 @@
 // THEME SELECTOR //
 // themeswitch() = {
-    const slideUp = (div)=>{
-        document.querySelector(div).classList.replace("hid-box","hid-box-hover")
-    }
+
  
 // QUIZ SELECTOR //
-import firstQuiz from "./quiz.js";
+/*import firstQuiz from "./quiz.js";
 import secondQuiz from "./quiz.js";
-import thirdQuiz from "./quiz.js";
+import thirdQuiz from "./quiz.js";*/
+
+const slideUp = (div)=>{
+    document.querySelector(div).classList.replace("hid-box","hid-box-hover")
+}
 
 const buttonValidator = document.querySelector(".launchQuizz")
 buttonValidator.disabled = true
@@ -15,7 +17,6 @@ const selectQuizz = document.querySelectorAll(".quizzTheme");
 let selectedQuizz = "";
 let numSelected = 0;
 let maxSelected = 1;
-
 
 for(let i = 0;i<selectQuizz.length;i++){
     selectQuizz[i].addEventListener("click", function(){ 
@@ -330,7 +331,6 @@ const thirdQuizz = [
     correctAnswer : "answer-a"
 }
 ]
-
 const createQuestion = (currentQuestion,questionNumber) => {
     //create the card that will contain question title and answers
     let index=questionNumber
@@ -382,13 +382,6 @@ const createQuestion = (currentQuestion,questionNumber) => {
     }
         questionCard.appendChild(buttonNext);
 }
-
-    /* 
-    (créer les 4 cartes) et le choix d'une carte crée le bouton next question
-    le bouton lance une fonction comparaison entre réponse et bonne réponse et change la vignette
-    et le score puis question suivante
-    */
-
 
 let goodAnswers = []
 const createAnswersTable = () => {
@@ -443,85 +436,7 @@ function listenToAnswer(){
     }
 }
 
-// let score = 0
-// const checkAnswer(userAnswer,goodAnswer){
-//     if (userAnswer === goodAnswer){
-
-//     }    
-// }
-
-// let score = 0
-// //Card .onclick ==>
-// const checkAnswers = (labelCard,goodAnswer) => {
-//     if (labelCard === goodAnswer){
-//         score++
-//         ajouter bordure verte
-//     } else {
-//         ajouter bordure rouge
-//     }
-//         colorier background des cartes
-//         buttonNextApparait
-
-// }
-
-    
-// Etape 2 
-// Stocker le resultat de l'input dans un object
-
-//  const userInfo = {
-//     score: 0,
-//     name: ""
-// }
-
-// const selectTheme
-
-//une fois que le user clique sur démarrer dans la div d'avant
-//créer 3 tableaux par thème de question
-//récupérer le thème du questionnaire dans une variable: mettre des boutons s
-
-
-
-
-// inititalement quand on clique sur le bouton start
-//lancer quizzFunc(return)
-const quizzStart = (RETURN) => {
-  createQuestion(RETURN[0], 0);
-};
-
-quizzStart(firstQuizz); // Test
-// quizzStart(firstQuizz);
-// Test
-// let score = 0
-// //Card .onclick ==>
-// const checkAnswers = (labelCard,goodAnswer) => {
-//     if (labelCard === goodAnswer){
-//         score++
-//         ajouter bordure verte
-//     } else {
-//         ajouter bordure rouge
-//     }
-//         colorier background des cartes
-//         buttonNextApparait
-
-// }
-//modifier les dom (vert, rouge, +score)
-//bouton next question qui apparait
-
-// let question = 0
-
-// func buttonNext = {
-//     removeQuestion 0 0
-//     question = question+1;
-//     createQuestion
-// }
-
-//button .onclick
-const slideUp = (div) => {
-  document.querySelector(div).classList.replace("hid-box", "hid-box-hover");
-};
-
-
-// // PAGE RESULTAT
+//// PAGE RESULTAT
 
 const user = {
   userName: "Toto",
@@ -529,53 +444,50 @@ const user = {
 };
 
 const userList = [
-  {userName: "Loris",
-  userScore: 7,
-},
-
-  {userName: "Nicolas",
-  userScore: 2,
-},
-
-  {userName: "Julien",
-  userScore: 6,
-},
-
-  {userName: "Paul",
-  userScore: 6,
-},
-  
-  {userName: "Zakari",
-  userScore: 1,
-},
+    {
+    userName: "Loris",
+    userScore: 7,
+    },
+    {
+    userName: "Nicolas",
+    userScore: 2,
+    },
+    {
+    userName: "Julien",
+    userScore: 6,
+    },
+    {
+    userName: "Paul",
+    userScore: 6,
+    },
+    {
+    userName: "Zakari",
+    userScore: 1,
+    },
 ];
-
-
 
 //function scoreCalculator(){
 
-  //affiche paragraphe "congrat" avec nom et score de l'user
-  const pCongrats = document.querySelector("#congrats");
-  pCongrats.textContent = `Congrats ${user.userName}, you scored is ${user.userScore}/10.`;
+//affiche paragraphe "congrat" avec nom et score de l'user
+const pCongrats = document.querySelector("#congrats");
+pCongrats.textContent = `Congrats ${user.userName}, you scored is ${user.userScore}/10.`;
 
-  //récupère les résultat de l'user dans la liste de resultat
-  userList.push(user);
-  //trier la liste en fonction de userScore
-  userList.sort(function (a, b) {
+//récupère les résultat de l'user dans la liste de resultat
+userList.push(user);
+//trier la liste en fonction de userScore
+userList.sort(function (a, b) {
     return b.userScore - a.userScore;
-  });
-  let userRank = 0;
-  for (const element of userList){
+    });
+let userRank = 0;
+for (const element of userList){
     if(element.userName === user.userName){
-      console.log(element.userName);
-      userRank = userList.indexOf(element)+1;
+        console.log(element.userName);
+        userRank = userList.indexOf(element)+1;
     }
-  }
+}
 
-  const pRank = document.querySelector("#rank");
-  pRank.textContent = `You ranked #${userRank}.`;
-
-
+const pRank = document.querySelector("#rank");
+pRank.textContent = `You ranked #${userRank}.`;
 
 const firstUser = document.querySelector("#firstUserName");
 firstUser.textContent = `${userList[0].userName}`;
@@ -594,7 +506,6 @@ thirdUser.textContent = `${userList[2].userName}`;
 
 const thirdScore= document.querySelector("#thirdUserScore");
 thirdScore.textContent = `${userList[2].userScore}/10`;
-
 
 //}
 // // FIN PAGE RESULTAT
