@@ -165,6 +165,27 @@ button, .primary-button{
   position: relative;
   transition: all 0.3s;
  }
+
+ .neonButton:disabled {
+  --glow-color: rgba(217, 176, 255, 0.26);
+  --glow-spread-color: rgba(191, 123, 255, 0.226);
+  --enhanced-glow-color: rgba(231, 206, 255, 0.082);
+  --btn-color: rgba(100, 61, 136, 0.253);
+  /* border: .25em solid var(--glow-color); */
+  padding: 1em 3em;
+  color: var(--glow-color);
+  font-size: 15px;
+  font-weight: bold;
+  /* background-color: var(--btn-color); */
+  border-radius: 1em;
+  outline: none;
+  box-shadow: 0 0 1em .25em var(--glow-color),
+         0 0 4em 1em var(--glow-spread-color),
+         inset 0 0 .75em .25em var(--glow-color);
+  text-shadow: 0 0 .5em var(--glow-color);
+  position: relative;
+  transition: all 0.3s;
+ }
  
 #btnGlow::after {
   pointer-events: none;
@@ -224,6 +245,7 @@ button, .primary-button{
 /////////////////////*/
 .homeFlexContainer,
 .nameFlexContainer,
+.themeFlexContainer,
 .quizFlexContainer {
   display: flex;
   min-height:100vh;
@@ -252,6 +274,12 @@ button, .primary-button{
 /*//////////////////
 //SECTION 1 : HOME//
 //////////////////*/
+#logoSmall {
+  display:inline;
+}
+#logoBig {
+  display:none;
+}
 .homeFlexContainer {
   flex-direction: column;
 }
@@ -294,15 +322,6 @@ nav>.neonButton {
 /*////////////////////////////
 //SECTION 2 : QUIZ SELECTOR //
 ////////////////////////////*/
-.namePage {
-  
-}
-.themeSelected {
-
-}
-.themeUnselected {
-
-}
 .nameFlexContainer {
   display: flex;
   flex-direction: column;
@@ -315,6 +334,19 @@ nav>.neonButton {
   font-family: var(--font-family);
   background-color:var(--primary-background);
 }
+.themeFlexContainer {
+  display: flex;
+  flex-direction: column;
+  /* background-color: var(--primary-background); */
+  justify-content: center;
+  text-align: center;
+  font: var(--extra-bold);
+  color: var(--info);
+  line-height: 10vh;
+  font-family: var(--font-family);
+  background-color:var(--primary-background);
+}
+
 form {
   width : 80%;
   font-size: var(--XL);
@@ -327,11 +359,18 @@ label {
   font-weight: var(--extra-bold);
   color:var(--text-light)
 }
+
 #username {
-  height: 5vh;
-  width: 40%;
-  border-radius: var(--radius-S);
+    height: 5vh;
+    width: 100%;
+    border-radius: var(--radius-S);
+    height: 4rem;
+    padding: 20px;
+    font-size:var(--L);
+    font-weight: var(--extra-bold);
 }
+
+
 .quizzTheme {
   width: 80%;
   text-align: center;
@@ -341,7 +380,13 @@ label {
   background-size: cover;
   background-position: center;
   font-size: var(--L);
+  color: var(--text-primary);
 }
+.selected {
+  border: rgb(0, 247, 255) 10px solid;  /*REMPLACER PAR VAR*/
+}
+
+
 
 #nameButton {
   width: 70%;
@@ -350,13 +395,13 @@ label {
   margin: 4vh auto;
 }
 .quizzTheme:nth-child(1) {
-  background-image: url("https://picsum.photos/200");
+  background-image: url("/assets/logoquizz1.png");
 }
 .quizzTheme:nth-child(2) {
-  background-image: url("https://picsum.photos/300");
+  background-image: url("/assets/logoquizz2.png");
 }
 .quizzTheme:nth-child(3) {
-  background-image: url("https://picsum.photos/400");
+  background-image: url("/assets/logoquizz3.png");
 }
 
 /*///////////////////
@@ -394,7 +439,7 @@ label {
   background-color:var(--secondary-background);
 }
 li.activeToken {
-  background-color: var(--secondary-background);
+  background-color: var(--text-light);
   color: var(--text-primary);
 }
 li.successToken {
@@ -409,8 +454,10 @@ li.wrongToken {
   /* height: 75vh; */
   display:flex;
   flex-direction: column;
+  width: -webkit-fill-available;
+  margin:5%;
 }
- #quickFix {
+.quizFlexContainer .neonButton {
   height:10vh;
   margin:auto;
 } 
@@ -420,6 +467,7 @@ li.wrongToken {
   flex-direction: column; 
   /* align-items: center; */
   justify-content: center;
+  margin: 30px auto;
 }
 .card {
   height: 88vh;
@@ -478,6 +526,8 @@ button.cardButton {
          inset 0 0 .75em .25em var(--cardglow-color);
  }
 
+
+
 /*///////////////////////
 //SECTION 4 : RESULTS //
 //////////////////////*/
@@ -501,33 +551,59 @@ button.cardButton {
 .resultsFlexContainer{
   display: flex;
   flex-direction: column;
-  /* height:90vh; */
+  margin-top: 6vh;
 }
-.resultsPage a{
+#congrats{
+  color: rgba(166,142,235,1);
+  padding-top: 2vh;
+  font-weight: 600;
+  font-size: 2vh;
+}
+#rank{
+  color: rgba(166,142,235,1);
+  font-weight: 800;
+  font-size: 2vh;
+}
 
+#congrats{
+  color: rgba(166,142,235,1);
+  padding-top: 1.5rem;
+  font-weight: 600;
+  font-size: 1.5rem;
 }
+
+#rank{
+  color: rgba(166,142,235,1);
+  font-weight: 800;
+  font-size: 1.5rem;
+}
+
 .resultsFlexContainer article{
-  background-color: #673f92;
+  background: rgb(255,39,115);
+  background: linear-gradient(90deg, rgba(255,39,115,1) 24%, rgba(166,142,235,1) 73%);
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   margin: 1vw 10vw;
-  border-radius: 2% ;
+  border-radius: 15px;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 .resultsFlexContainer article div {
-  margin: 0.5rem;
+  margin: 1vh;
 }
 .resultsFlexContainer article p {
   color: var(--text-primary);
-  margin: 0.5rem;
+  font-weight: 900;
+  font-size: 3vh;
+  margin: 1vh;
 }
+
 .avatar {
-  border-radius: 50%;
-  height: 7vw;
-  width: 7vw;
+  width: 10%;
+  padding-top: 0;
 }
+
 footer {
   background-color: var(--secondary-background);
 }
@@ -536,7 +612,7 @@ footer {
   align-items: left;
   margin: auto auto auto 2%;
   color: beige;
-} 
+}
 
 /*/////////////////////////////
 //SECTION  : DESKTOP VERSION //
@@ -586,12 +662,12 @@ footer {
   .resultsFlexContainer {
     flex-direction: row;
     align-items: flex-end;
-    justify-content: space-around;
+    justify-content: center;
     margin-left: 15vw;
     margin-right: 15vw;
   }
   .resultsFlexContainer article {
-    background-color: #673f92;
+    background-color: #a68eeb;
     margin: 1rem 1rem 1rem 1rem;
     display: flex;
     flex-direction: column;
@@ -600,28 +676,43 @@ footer {
   }
   article.firstUser{
     order: 2 ;
-    padding-bottom: 10rem;
+    padding-bottom: 11vh;
   }
   article.secondUser{
     order: 1 ;
-    padding-bottom: 6rem;
+    padding-bottom: 7.5vh;
   }
   article.thirdUser{
     order: 3 ;
-    padding-bottom: rem ;
+    padding-bottom: 5vh ;
   }
   .avatar {
-    margin-top: 2rem;
+    width: 35%;
+    margin-top: 2.5vh;
   }
+
   .selectQuizz {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 2rem;
+    padding: 2.5vh;
   }
   button.quizzTheme {
     height: 25vh;
     width: 80%;
     margin: 1%;
+  }
+  #logo img {
+    /* height: 10vh; */
+    /* margin: 3%;
+    padding: 2%; */
+    background-image: transparent;
+    width: initial;
+  }
+  #logoSmall {
+    display:none;
+  }
+  #logoBig {
+    display:inline;
   }
 }

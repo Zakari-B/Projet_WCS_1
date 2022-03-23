@@ -20,7 +20,8 @@
         <div class="homeFlexContainer">
             <nav> 
                 <div id="logo">
-                    <img src="assets/logo-triangle-mini.png" alt="logo"/>
+                    <img src="assets/logo-triangle-mini.png" id="logoSmall" alt="logo"/>
+                    <img src="assets/logo-triangle.png" id="logoBig" alt="logo"/>
                 </div>
                 <button class="neonButton switch" onclick="themeSwitch()">☼ Light Mode</button>
             </nav>
@@ -32,104 +33,84 @@
             </div>
         </div>
     </div>
+      <div class="namePage hid-box" id="namePage">
 
-    <div class="namePage hid-box lightMode" id="namePage">
-        <div class="nameFlexContainer">
-            <form action="/script.js" method="post">
-                <label for="username">Enter your name </label> <br>
+          <div class="nameFlexContainer">
+            <form name="myForm" id="testABC" action="/script.js" method="post">
+                <label for="username" >Enter your name </label> <br>
                 <input name="name" id="username" placeholder="Username"> <br>
             </form>
             <div>
-              <h1>Chose your quizz theme </h1>
+              <h1>Chose your quizz theme</h1>
               <div class="selectQuizz">
-                  <button class="quizzTheme">Quizz 1</button>
-                  <button class="quizzTheme">Quizz 2</button>
-                  <button class="quizzTheme">Quizz 3</button>
+                  <button class="quizzTheme firstQuizz">WildCodeSchool</button>
+                  <button class="quizzTheme secondQuizz">Javascript</button>
+                  <button class="quizzTheme thirdQuizz">WTF</button>
               </div>
             </div>
-            <button class="neonButton" type="submit" onclick="slideUp('.quizPage')">Start Quizz</button>
+            <button class="neonButton launchQuizz" type="submit" onclick="startGame()">Start Quizz</button>
         </div>
     </div>
 
-    <div class="quizPage hid-box lightMode">
-        <!-- insert with JS H1 title and the question -->
+    <div class="quizPage hid-box">
         <div class="quizFlexContainer">
             <ul class="questionTokens">
-                <li id="firstQuestion" class="activeToken">1</li>
-                <li id="secondQuestion" class="successToken">2</li>
-                <li id="thirdQuestion" class="wrongToken">3</li>
-                <li id="fourthQuestion">4</li>
-                <li id="fifthQuestion">5</li>
-                <li id="sixthQuestion">6</li>
-                <li id="seventhQuestion">7</li>
-                <li id="eighthQuestion">8</li>
-                <li id="ninthQuestion">9</li>
-                <li id="tenthQuestion">10</li>
-                <!-- insert the navbar with question :fixed ?-->
-                <!-- in the nav bar we should create the questions: always the same number of questions html/css-->
+                <li id="question1">1</li>
+                <li id="question2">2</li>
+                <li id="question3">3</li>
+                <li id="question4">4</li>
+                <li id="question5">5</li>
+                <li id="question6">6</li>
+                <li id="question7">7</li>
+                <li id="question8">8</li>
+                <li id="question9">9</li>
+                <li id="question10">10</li>
             </ul>
             <div class="testContainer">
               <div class="quizz"></div>
-              <button class="neonButton" id="quickFix" type="submit" onclick="slideUp('.resultsPage')">See Results</button>
-            <!-- insert all 4 answers in this div with a flex for mobile and grid for desktop? -->
+              <!-- <button class="neonButton" id="displayResults" type="submit" onclick="slideUp('.resultsPage')">See Results</button> -->
             </div>
           </div>
     </div>
 
     <div class="resultsPage hid-box">
       <h1>You finished the Quizz !</h1>
-      <p>Congrats userName, you scored userScore.</p>
-      <p>You ranked userRank.</p>
+      <p id="congrats">Congrats userName, you scored userScore.</p>
+      <p id = "rank">You ranked userRank.</p>
       <div class="resultsFlexContainer">
         
-        
         <article class="firstUser">
-          <img
-            class="avatar"
-            src="https://picsum.photos/100/100"
-            alt="avatar de firstUser"
-          />
+          <img class="avatar" src="./assets/goldenMedal.png" alt="Golden Medal">
         <div>
-          <p>firstUserName</p>
-          <p>firstUserScore</p>
+          <p id="firstUserName"></p>
+          <p id="firstUserScore"></p>
         </div>
         </article>
 
         <article class="secondUser">
-          <img
-            class="avatar"
-            src="https://picsum.photos/100/100"
-            alt="avatar de secondUser"
-          />
+          <img class="avatar" src="./assets/silverMedal.png" alt="Silver Medal">
           <div>
-          <p>secondUserName</p>
-          <p>secondUserScore</p>
+          <p id="secondUserName"></p>
+          <p id="secondUserScore"></p>
         </div>
         </article>
 
         <article class="thirdUser">
-          <img
-            class="avatar"
-            src="https://picsum.photos/100/100"
-            alt="avatar de thirdUser"
-          />
-
+          <img class="avatar" src="./assets/bronzeMedal.png" alt="Bronze Medal">
         <div>
-          <p>thirdUserName</p>
-          <p>thirdUserScore</p>
+          <p id="thirdUserName"></p>
+          <p id="thirdUserScore"></p>
         </div>
         </article>
       </div>
-      <button class="neonButton" type="submit" onClick="window.location.reload()">Try another quiz !</button>
-      <!-- <a href="#namePage" 
-      type="button"
-      class="neonButton">
-      "Try another quiz !"</a> -->
+      <button class="neonButton" id="quizzReturn" type="submit" onClick="window.location.reload()">Try another quiz !</button>
+      <!-- <a href="#namePage" type="button" class="neonButton"> "Try another quiz !"</a> -->
       <footer id="footer">
         <p>© 2022 Team Triangle</p>
       </footer> 
     </div>
 
+    
 
     <script src="script.js"></script>
   </body>
