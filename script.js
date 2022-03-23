@@ -156,56 +156,93 @@ const slideUp = (div) => {
 
 const user = {
   userName: "Toto",
-  userScore: 8,
+  firstScore: 8,
+  secondScore:6,
+  thridScore: 4,
 };
 
 const userList = [
   {userName: "Loris",
-  userScore: 7},
+  firstScore: 7,
+  secondScore:6,
+  thridScore: 2,
+},
 
   {userName: "Nicolas",
-  userScore: 2},
+  firstScore: 2,
+  secondScore:1,
+  thridScore: 3,
+},
 
   {userName: "Julien",
-  userScore: 9},
+  firstScore: 6,
+  secondScore:1,
+  thridScore: 2,
+},
 
   {userName: "Paul",
-  userScore: 6},
+  firstScore: 6,
+  secondScore:2,
+  thridScore: 3,
+},
   
   {userName: "Zakari",
-  userScore: 1},
+  firstScore: 1,
+  secondScore:4,
+  thridScore: 2,
+},
 ];
 
-userList.push(user);
 
-userList.sort(function (a, b) {
-  return b.userScore - a.userScore;
-});
 
-const pCongrats = document.querySelector("#congrats");
-pCongrats.textContent = `Congrats ${user.userName}, you scored is ${user.userScore}/10.`;
+//function scoreCalculator(numero du quizz / ){
 
-// const pRank = document.querySelector("#rank");
-// pRank.textContent = `You ranked #${userList.indexOf(userList[])}.`;
+  //affiche paragraphe "congrat" avec nom et score de l'user
+  const pCongrats = document.querySelector("#congrats");
+  pCongrats.textContent = `Congrats ${user.userName}, you scored is ${user.userScore}/10.`;
 
-const firstUser = document.querySelector("#firstUserName");
-firstUser.textContent = `${userList[0].userName}`;
-
-const firstScore= document.querySelector("#firstUserScore");
-firstScore.textContent = `${userList[0].userScore}/10`;
-
-const secondUser = document.querySelector("#secondUserName");
-secondUser.textContent = `${userList[1].userName}`;
-
-const secondScore= document.querySelector("#secondUserScore");
-secondScore.textContent = `${userList[1].userScore}/10`;
-
-const thirdUser = document.querySelector("#thirdUserName");
-thirdUser.textContent = `${userList[2].userName}`;
-
-const thirdScore= document.querySelector("#thirdUserScore");
-thirdScore.textContent = `${userList[2].userScore}/10`;
+  //récupère les résultat de l'user dans la liste de resultat
+  userList.push(user);
+  //trier la liste en fonction de userScore
+  // attention trier en fonction du bon quizz : key = first/second/third Score
+  // userList.sort(function (a, b) {
+  //   return b.[key] - a.[key]];
+  // });
+  
+  for (const element of userList){
+    if(userList.userName === user.userName){
+      console.log(userList.userName);
+      const userRank = userList.indexOf(element);
+    }
+  }
+  // const pRank = document.querySelector("#rank");
+  // pRank.textContent = `You ranked #${userList.indexOf(userList[])}.`;
 
 
 
+
+
+
+
+//afficher les scores et les noms des 3 premiers dans le podium
+//   const firstUser = document.querySelector("#firstUserName");
+// firstUser.textContent = `${userList[0].userName}`;
+
+// const firstScore= document.querySelector("#firstUserScore");
+// firstScore.textContent = `${userList[0].[key]}/10`;
+
+// const secondUser = document.querySelector("#secondUserName");
+// secondUser.textContent = `${userList[1].userName}`;
+
+// const secondScore= document.querySelector("#secondUserScore");
+// secondScore.textContent = `${userList[1].[key]}/10`;
+
+// const thirdUser = document.querySelector("#thirdUserName");
+// thirdUser.textContent = `${userList[2].userName}`;
+
+// const thirdScore= document.querySelector("#thirdUserScore");
+// thirdScore.textContent = `${userList[2].[key]}/10`;
+
+
+//}
 // // FIN PAGE RESULTAT
