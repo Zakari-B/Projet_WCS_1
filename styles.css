@@ -378,6 +378,7 @@ label {
   background-size: cover;
   background-position: center;
   font-size: var(--L);
+  color: var(--text-primary);
 }
 .selected {
   border: rgb(0, 247, 255) 10px solid;  /*REMPLACER PAR VAR*/
@@ -392,13 +393,13 @@ label {
   margin: 4vh auto;
 }
 .quizzTheme:nth-child(1) {
-  background-image: url("https://picsum.photos/200");
+  background-image: url("/assets/logoquizz1.png");
 }
 .quizzTheme:nth-child(2) {
-  background-image: url("https://picsum.photos/300");
+  background-image: url("/assets/logoquizz2.png");
 }
 .quizzTheme:nth-child(3) {
-  background-image: url("https://picsum.photos/400");
+  background-image: url("/assets/logoquizz3.png");
 }
 
 /*///////////////////
