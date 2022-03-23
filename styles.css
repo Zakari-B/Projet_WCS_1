@@ -254,23 +254,19 @@ width:100%
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: black;
-  margin-top: 4%;
 }
 #logo img {
-  height: 18vh;
-  /* padding: 2%; */
+  max-height: 15vh;
   background-image: transparent;
   width: auto;
+  margin: 4px;
 }
 nav {
-  /* background-color: var(--dark-background); */
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 15vh;
   /* overflow:hidden; */
-  /* background-color: var(--background_test41); */
 }
 nav>button {
   margin-right: 3% ;
@@ -285,8 +281,7 @@ nav>button {
   text-align: center;
 }
 #welcome h1 {
-  padding: 5%;
-  font-size: 2.5rem;
+  /* padding-bottom: 2%; */
 }
 #welcome p {
  margin: 3% 0 10% 0;
@@ -547,6 +542,9 @@ footer {
 //SECTION  : DESKTOP VERSION //
 /////////////////////////////*/
 @media screen and (min-width:769px) {
+  #welcome h1 {
+    font-size: 5rem;
+  }
   .questionTokens {
     display:flex;
     flex-direction:row;
