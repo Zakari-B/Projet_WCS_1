@@ -14,10 +14,6 @@ function themeSwitch() {
 }
 
 // QUIZ SELECTOR //
-/*import firstQuiz from "./quiz.js";
-import secondQuiz from "./quiz.js";
-import thirdQuiz from "./quiz.js";*/
-
 const slideUp = (div)=>{
     document.querySelector(div).classList.replace("hid-box","hid-box-hover")
 }
@@ -28,7 +24,6 @@ const selectQuizz = document.querySelectorAll(".quizzTheme");
 let selectedQuizz = "";
 let numSelected = 0;
 let maxSelected = 1;
-
 
 let logQuizTheme = "";
 
@@ -113,9 +108,9 @@ const toggleNavColor = (questionNumber) => {
 // QUIZ FUNCTIONS //
 const firstQuizz = [
     {
-        question : "Who create Wild Code School ?",
+        question : "Who is the founder of the Wild Code School ?",
         answers : {
-            a : "Jean-François MORIN",
+            a : "Jean-François Morin",
             b : "Anna Stépanoff",
             c : "Rasmus Lerdorf",
             d : "Martin Goodman"
@@ -123,7 +118,7 @@ const firstQuizz = [
         correctAnswer : "answer-b"
     },
     {
-        question : "How many campus are they in France ?",
+        question : "How many campus are there in France ?",
         answers : {
             a : 3,
             b : 32,
@@ -133,7 +128,7 @@ const firstQuizz = [
         correctAnswer : "answer-c"
     },
     {
-        question : "How many Project should we do ?",
+        question : "How many projects do the WCS students have to do ?",
         answers : {
             a : 1,
             b : 3,
@@ -143,7 +138,7 @@ const firstQuizz = [
         correctAnswer : "answer-b"
     },
     {
-        question : "What shouldn't you wear?",
+        question : "What should the students of WCS not wear?",
         answers : {
             a : "Sweat",
             b : "Jean",
@@ -153,7 +148,7 @@ const firstQuizz = [
         correctAnswer : "answer-d"
     },
     {
-        question : "Who is our S.E.M ?",
+        question : "Who is the S.E.M for the 2022 Remote Webdev session ?",
         answers : {
             a : "Cloé",
             b : "Vicky",
@@ -163,7 +158,7 @@ const firstQuizz = [
         correctAnswer : "answer-a"
     },
     {
-        question : "What adress should we must have ?",
+        question : "What mail address should the students use ?",
         answers : {
             a : "Yahoo",
             b : "Lycos",
@@ -173,7 +168,7 @@ const firstQuizz = [
         correctAnswer : "answer-d"
     },
     {
-        question : "How many times should we sign out in a day ?",
+        question : "How many checkouts are there usually everyday ?",
         answers : {
             a : 0,
             b : 1,
@@ -183,7 +178,7 @@ const firstQuizz = [
         correctAnswer : "answer-c"
     },
     {
-        question : "What App should we use for talk with our S.E.M ?",
+        question : "What is the platform used to talk with the S.E.M ?",
         answers : {
             a : "Slack",
             b : "Discord",
@@ -203,7 +198,7 @@ const firstQuizz = [
         correctAnswer : "answer-d"
     },
     {
-        question : "What is campus pass rate ?",
+        question : "What is the exam success rate ?",
         answers : {
             a : "75%",
             b : "82%",
@@ -226,12 +221,12 @@ const secondQuizz = [
     correctAnswer : "answer-c"
 },
 {
-    question : "In which year was Javascript Created ?",
+    question : "In which year was Javascript created ?",
     answers : {
         a : 1982,
         b : 1988,
         c : 1995,
-        d: 'the reponse d'
+        d : 1789
     },
     correctAnswer : "answer-c"
 },
@@ -246,7 +241,7 @@ const secondQuizz = [
     correctAnswer : "answer-c"
 },
 {
-    question : "Inside which HTML TAG do we put the JavaScript?",
+    question : "Inside which HTML tags should JavaScript be put?",
     answers : {
         a : "javascript",
         b : "js",
@@ -256,7 +251,7 @@ const secondQuizz = [
     correctAnswer : "answer-c"
 },
 {
-    question : "What is the correct syntax for referring to an external script ?",
+    question : "What is the correct syntax to include external scripts ?",
     answers : {
         a : "script src=...",
         b : "script href=...",
@@ -266,7 +261,7 @@ const secondQuizz = [
     correctAnswer : "answer-a"
 },
 {
-    question : "How do you write 'Hello World' in an alert box?",
+    question : "How would you write 'Hello World' in an alert box?",
     answers : {
         a : "alertBox('Hello World')",
         b : "msg('Hello Wolrd')",
@@ -276,17 +271,17 @@ const secondQuizz = [
     correctAnswer : "answer-d"
 },
 {
-    question : "How do you create a function in JavaScript?",
+    question : "How would you create a function in JavaScript?",
     answers : {
         a : "function myFunction()",
         b : "function:myFunction()",
         c : "function = myFunction()",
-        d : "The reponse D"
+        d : "void main()"
     },
     correctAnswer : "answer-a"
 },
 {
-    question : "How can you add a comment in a JavaScript?",
+    question : "How would you add a comment in a JavaScript file?",
     answers : {
         a : "!--This is a comment--",
         b : "//This is a comment",
@@ -306,12 +301,12 @@ const secondQuizz = [
     correctAnswer : "answer-b"
 },
 {
-    question : "How do you call a function named 'myFunction'?",
+    question : "How would you call a function named 'myFunction'?",
     answers : {
-        a : "myFuntion()",
+        a : "myFunction()",
         b : "call myFunction()",
         c : "call function myFunction()",
-        d : "Hello myFunction come here !"
+        d : "Hello myFunction, come here !"
     },
     correctAnswer : "answer-a"
 }
@@ -319,7 +314,7 @@ const secondQuizz = [
 
 const thirdQuizz = [
     {
-        question : "How many children does Sylvain has ?", // MAIS LOL
+        question : "How many children does Sylvain have ?",
         answers : {
             a : 1,
             b : 2,
@@ -339,7 +334,7 @@ const thirdQuizz = [
         correctAnswer : "answer-b"
     },
     {
-        question : "What is Lou's cat name?",
+        question : "What is Lou's cat's name?",
         answers : {
             a : "Malfoy",
             b : "Ron",
@@ -349,7 +344,7 @@ const thirdQuizz = [
         correctAnswer : "answer-d"
     },
     {
-        question : "Which sport did Marie played for a long time?",
+        question : "Which sport has Marie played for a long time?",
         answers : {
             a : "Basket-Ball",
             b : "Ping-Pong",
@@ -361,10 +356,10 @@ const thirdQuizz = [
     {
         question : "What is the screen resolution of Zakari",
         answers : {
-            a : "13 pouces",
-            b : "15 pouces",
-            c : "27 pouces",
-            d : "32 pouces"
+            a : "1280 x 1024",
+            b : "1920 x 1200",
+            c : "2560 x 1440",
+            d : "3840 x 2160"
         },
         correctAnswer : "answer-c"
     },
@@ -485,8 +480,6 @@ const createAnswersTable = () => {
     }
     console.log(goodAnswers);
 }
-
- // = good answers du quiz selectionné
     
 let userAnswer = " "
 let goodAnswer = " "
@@ -518,26 +511,13 @@ function listenToAnswer(){
     }
 }
 
-//// PAGE RESULTAT
-//function 
-// user.puserName = 
-// user.userScore = userScored;
-// scoreCalculator();
 const usernameInput = document.querySelector("#username")
 
-document.querySelector("#testABC").addEventListener("keydown", function (f) {
+document.querySelector("#userForm").addEventListener("keydown", function (f) {
     if (f.keyCode == 13){
         f.preventDefault()
     }
 }); 
-
-document.querySelector('#username').addEventListener('keyup', function (e) {
-    console.log(e.cancelable);
-    e.preventDefault();
-    // if (e.key === 'Enter') {
-    //   user.puserName = userTestName.value
-    // }
-});
 
 const user = {
     puserName: "Username",
@@ -563,7 +543,7 @@ const user = {
       },
       {
       puserName: "Zakari",
-      userScore: 5,
+      userScore: 8,
       },
   ];
   
@@ -586,7 +566,6 @@ const user = {
           userRank = userList.indexOf(element)+1;
       }
   }
-  
   const pRank = document.querySelector("#rank");
   pRank.textContent = `You ranked #${userRank}.`;
   
@@ -607,6 +586,5 @@ const user = {
   
   const thirdScore= document.querySelector("#thirdUserScore");
   thirdScore.textContent = `${userList[2].userScore}/10`;
-  
 }
   // // FIN PAGE RESULTAT
