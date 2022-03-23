@@ -437,7 +437,6 @@ const createQuestion = (currentQuestion,questionNumber) => {
 
     //add a button for each answer
     for(letter in currentQuestion.answers){
-        // console.log(currentQuestion.answers[letter])
         const answerLetter = document.createElement("label")
         const oneAnswer = document.createElement("button")
         oneAnswer.classList.add("cardButton");
@@ -478,7 +477,6 @@ const createAnswersTable = () => {
         thirdQuizz.forEach(question => {
             goodAnswers.push(question.correctAnswer)});
     }
-    console.log(goodAnswers);
 }
     
 let userAnswer = " "
@@ -492,19 +490,18 @@ function listenToAnswer(){
             userAnswer = answerList[j].id
             allUserAnswers.push(userAnswer)
             const activeCard = document.querySelector(".activeToken");
-            console.log(activeCard)
-            console.log(userAnswer)
-            console.log(goodAnswers[currentQuestion])
             if (userAnswer == goodAnswers[currentQuestion]) {
-                userScored++
-                activeCard.classList.add("successToken")
-
-
+                userScored++;
+                activeCard.classList.add("successToken");
+                for (let j = 0; j<answerList.length; j++){
+                    answerList[j].disabled = "True";
+                }
             } else {
                 activeCard.classList.add("wrongToken")
-
+                for (let j = 0; j<answerList.length; j++){
+                    answerList[j].disabled = "True";
+                }
             }
-            console.log(userAnswer)
             const buttonNext = document.getElementById("nextQuestion");
             buttonNext.disabled = false;                 
     })
