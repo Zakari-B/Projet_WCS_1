@@ -1,9 +1,7 @@
 
 // THEME SELECTOR //
 // themeswitch() = {
-    const slideUp = (div)=>{
-        document.querySelector(div).classList.replace("hid-box","hid-box-hover")
-    }
+
  
 // QUIZ SELECTOR //
 const buttonValidator = document.querySelector(".launchQuizz")
@@ -13,6 +11,7 @@ let selectedQuizz = "";
 let numSelected = 0;
 let maxSelected = 1;
 
+let logQuizTheme = "";
 
 for(let i = 0;i<selectQuizz.length;i++){
     selectQuizz[i].addEventListener("click", function(){ 
@@ -28,8 +27,6 @@ for(let i = 0;i<selectQuizz.length;i++){
             numSelected++;
             selectedQuizz = document.querySelector(".selected")
             buttonValidator.disabled = false 
-
-
             buttonClasses = selectedQuizz.classList;
         }
         else {
@@ -42,7 +39,6 @@ for(let i = 0;i<selectQuizz.length;i++){
             buttonClasses = selectedQuizz.classList;
         }
         function quizzUpdater() {
-            console.log(selectedQuizz.classlist)
             if (buttonClasses.contains("firstQuizz")) {
                 logQuizTheme = "firstQuizz";
             } else if (buttonClasses.contains("secondQuizz")) {
@@ -54,27 +50,30 @@ for(let i = 0;i<selectQuizz.length;i++){
         quizzUpdater();
     });
 }
-let logQuizTheme = "";
 
-function startGame() {
-    createAnswersTable();
+const startGame = () => {
     generateQuizzAndSlide(0);
+    createAnswersTable();
+    user.puserName = usernameInput.value;
 }
-
+let currentQuestion = 0 
 const generateQuizzAndSlide = i => {
     slideUp('.quizPage');
-    if (logQuizTheme === "firstQuizz"){
+    if (logQuizTheme == "firstQuizz"){
         createQuestion(firstQuizz[i],i);
-        toggleNavColor(i)
-        removeQuestion(i-1)
-    } else if (logQuizTheme ==="secondQuizz") {
+        toggleNavColor(i);
+        removeQuestion(i-1);
+        currentQuestion = i;
+    } else if (logQuizTheme == "secondQuizz") {
         createQuestion(secondQuizz[i],i);
-        toggleNavColor(i)
-        removeQuestion(i-1)
+        toggleNavColor(i);
+        removeQuestion(i-1);
+        currentQuestion = i;
     } else {
         createQuestion(thirdQuizz[i],i);
-        toggleNavColor(i)
-        removeQuestion(i-1)
+        toggleNavColor(i);
+        removeQuestion(i-1);
+        currentQuestion = i;
     }
 }
 
@@ -91,102 +90,102 @@ const toggleNavColor = (questionNumber) => {
 // QUIZ FUNCTIONS //
 const firstQuizz = [
     {
-        question : "In which year was Javascript Created ?",
+        question : "Who create Wild Code School ?",
         answers : {
-            a : 1982,
-            b : 1918,
-            c : 1929,
-            d: 'the reponse d'
+            a : "Jean-François MORIN",
+            b : "Anna Stépanoff",
+            c : "Rasmus Lerdorf",
+            d : "Martin Goodman"
+        },
+        correctAnswer : "answer-b"
+    },
+    {
+        question : "How many campus are they in France ?",
+        answers : {
+            a : 3,
+            b : 32,
+            c : 13,
+            d : 23
+        },
+        correctAnswer : "answer-c"
+    },
+    {
+        question : "How many Project should we do ?",
+        answers : {
+            a : 1,
+            b : 3,
+            c : 5,
+            d : 6
+        },
+        correctAnswer : "answer-b"
+    },
+    {
+        question : "What shouldn't you wear?",
+        answers : {
+            a : "Sweat",
+            b : "Jean",
+            c : "Cap",
+            d : "Shoes"
+        },
+        correctAnswer : "answer-d"
+    },
+    {
+        question : "Who is our S.E.M ?",
+        answers : {
+            a : "Cloé",
+            b : "Vicky",
+            c : "Margot",
+            d : "Anthony"
         },
         correctAnswer : "answer-a"
     },
     {
-        question : "Who invented Javascript?",
+        question : "What adress should we must have ?",
         answers : {
-            a : "Magloire",
-            b : "DJ Snake",
-            c : "Brendan Eich",
-            d: 'the reponse d'
+            a : "Yahoo",
+            b : "Lycos",
+            c : "Orange",
+            d : "Gmail"
+        },
+        correctAnswer : "answer-d"
+    },
+    {
+        question : "How many times should we sign out in a day ?",
+        answers : {
+            a : 0,
+            b : 1,
+            c : 2,
+            d : 3
         },
         correctAnswer : "answer-c"
     },
     {
-        question : "Who invented Javascript?",
+        question : "What App should we use for talk with our S.E.M ?",
         answers : {
-            a : "lalalal",
-            b : "DJ Snakakaajaje",
-            c : "Brendan Eich",
-            d: 'the reponse d'
+            a : "Slack",
+            b : "Discord",
+            c : "Facebook",
+            d : "Meet"
         },
-        correctAnswer : "answer-c"
+        correctAnswer : "answer-a"
     },
     {
-        question : "Who invented Javascript?",
+        question : "What is the Wild Flash ?",
         answers : {
-            a : "lalalal",
-            b : "DJ Snakakaajaje",
-            c : "Brendan Eich",
-            d: 'the reponse d'
+            a : "Space for snack",
+            b : "A Wild Meet",
+            c : "FAQ",
+            d : "Wild Newsletter"
         },
-        correctAnswer : "answer-c"
+        correctAnswer : "answer-d"
     },
     {
-        question : "Who invented Javascript?",
+        question : "What is campus pass rate ?",
         answers : {
-            a : "lalalal",
-            b : "DJ Snakakaajaje",
-            c : "Brendan Eich",
-            d: 'the reponse d'
-        },
-        correctAnswer : "answer-c"
-    },
-    {
-        question : "Who invented Javascript?",
-        answers : {
-            a : "lalalal",
-            b : "DJ Snakakaajaje",
-            c : "Brendan Eich",
-            d: 'the reponse d'
-        },
-        correctAnswer : "answer-c"
-    },
-    {
-        question : "Who invented Javascript?",
-        answers : {
-            a : "lalalal",
-            b : "DJ Snakakaajaje",
-            c : "Brendan Eich",
-            d: 'the reponse d'
-        },
-        correctAnswer : "answer-c"
-    },
-    {
-        question : "Who invented Javascript?",
-        answers : {
-            a : "lalalal",
-            b : "DJ Snakakaajaje",
-            c : "Brendan Eich",
-            d: 'the reponse d'
-        },
-        correctAnswer : "answer-c"
-    },
-    {
-        question : "Who invented Javascript?",
-        answers : {
-            a : "lalalal",
-            b : "DJ Snakakaajaje",
-            c : "Brendan Eich",
-            d: 'the reponse d'
-        },
-        correctAnswer : "answer-c"
-    },
-    {
-        question : "Who invented Javascript?",
-        answers : {
-            a : "lalalal",
-            b : "DJ Snakakaajaje",
-            c : "Brendan Eich",
-            d: 'the reponse d'
+            a : "75%",
+            b : "82%",
+            c : "94%",
+            d : "98%"
         },
         correctAnswer : "answer-c"
     }
@@ -199,123 +198,203 @@ const secondQuizz = [
         a : "Google",
         b : "Microsoft",
         c : "Netscape",
-        d: "IBM"
+        d : "IBM"
+    },
+    correctAnswer : "answer-c"
+},
+{
+    question : "In which year was Javascript Created ?",
+    answers : {
+        a : 1982,
+        b : 1988,
+        c : 1995,
+        d: 'the reponse d'
+    },
+    correctAnswer : "answer-c"
+},
+{
+    question : "Who invented Javascript?",
+    answers : {
+        a : "Guido van Rossum",
+        b : "Elton John",
+        c : "Brendan Eich",
+        d : 'Bill Gates'
+    },
+    correctAnswer : "answer-c"
+},
+{
+    question : "Inside which HTML TAG do we put the JavaScript?",
+    answers : {
+        a : "javascript",
+        b : "js",
+        c : "script",
+        d : "gogo-gadgeto-JS"
+    },
+    correctAnswer : "answer-c"
+},
+{
+    question : "What is the correct syntax for referring to an external script ?",
+    answers : {
+        a : "script src=...",
+        b : "script href=...",
+        c : "js src=...",
+        d : "link href=..."
     },
     correctAnswer : "answer-a"
 },
 {
-    question : "Who invented Javascript?",
+    question : "How do you write 'Hello World' in an alert box?",
     answers : {
-        a : "Magloire",
-        b : "DJ Snake",
-        c : "Brendan Eich",
-        d: 'the reponse d'
+        a : "alertBox('Hello World')",
+        b : "msg('Hello Wolrd')",
+        c : "msgBox('Hello World')",
+        d : "alert('Hello World')"
     },
-    correctAnswer : "answer-c"
+    correctAnswer : "answer-d"
 },
 {
-    question : "Who invented Javascript?",
+    question : "How do you create a function in JavaScript?",
     answers : {
-        a : "lalalal",
-        b : "DJ Snakakaajaje",
-        c : "Brendan Eich",
-        d: 'the reponse d'
+        a : "function myFunction()",
+        b : "function:myFunction()",
+        c : "function = myFunction()",
+        d : "The reponse D"
     },
-    correctAnswer : "answer-c"
+    correctAnswer : "answer-a"
 },
 {
-    question : "Who invented Javascript?",
+    question : "How can you add a comment in a JavaScript?",
     answers : {
-        a : "lalalal",
-        b : "DJ Snakakaajaje",
-        c : "Brendan Eich",
-        d: 'the reponse d'
+        a : "!--This is a comment--",
+        b : "//This is a comment",
+        c : "'This is a comment'",
+        d : "(This is a comment)"
     },
-    correctAnswer : "answer-c"
+    correctAnswer : "answer-b"
 },
 {
-    question : "Who invented Javascript?",
+    question : "What is the correct way to write a JavaScript array?",
     answers : {
-        a : "lalalal",
-        b : "DJ Snakakaajaje",
-        c : "Brendan Eich",
-        d: 'the reponse d'
+        a : "const colors = 1 = ('red'), 2 = ('green'), 3 =('blue')",
+        b : "const colors = ['red','green','blue']",
+        c : "const colors = 'red,'green,'blue'",
+        d : "const colors = (1:'red',2:'green',3:'blue')"
     },
-    correctAnswer : "answer-c"
+    correctAnswer : "answer-b"
 },
 {
-    question : "Who invented Javascript?",
+    question : "How do you call a function named 'myFunction'?",
     answers : {
-        a : "lalalal",
-        b : "DJ Snakakaajaje",
-        c : "Brendan Eich",
-        d: 'the reponse d'
+        a : "myFuntion()",
+        b : "call myFunction()",
+        c : "call function myFunction()",
+        d : "Hello myFunction come here !"
     },
-    correctAnswer : "answer-c"
-},
-{
-    question : "Who invented Javascript?",
-    answers : {
-        a : "lalalal",
-        b : "DJ Snakakaajaje",
-        c : "Brendan Eich",
-        d: 'the reponse d'
-    },
-    correctAnswer : "answer-c"
-},
-{
-    question : "Who invented Javascript?",
-    answers : {
-        a : "lalalal",
-        b : "DJ Snakakaajaje",
-        c : "Brendan Eich",
-        d: 'the reponse d'
-    },
-    correctAnswer : "answer-c"
-},
-{
-    question : "Who invented Javascript?",
-    answers : {
-        a : "lalalal",
-        b : "DJ Snakakaajaje",
-        c : "Brendan Eich",
-        d: 'the reponse d'
-    },
-    correctAnswer : "answer-c"
-},
-{
-    question : "Who invented Javascript?",
-    answers : {
-        a : "lalalal",
-        b : "DJ Snakakaajaje",
-        c : "Brendan Eich",
-        d: 'the reponse d'
-    },
-    correctAnswer : "answer-c"
+    correctAnswer : "answer-a"
 }
 ]
 
 const thirdQuizz = [
     {
-    question : "In which year was Zakari born ?", // MAIS LOL
-    answers : {
-        a : 1982,
-        b : 1918,
-        c : "666 A.D.",
-        d: 'the reponse d'
+        question : "How many children does Sylvain has ?", // MAIS LOL
+        answers : {
+            a : 1,
+            b : 2,
+            c : 3,
+            d: "Officiellement ou officieusement ?"
+        },
+        correctAnswer : "answer-c"
     },
-    correctAnswer : "answer-a"
-},
-{
-    question : "Who invented Javascript?",
-    answers : {
-        a : "Magloire",
-        b : "DJ Snake",
-        c : "Brendan Eich",
-        d: 'the reponse d'
+    {
+        question : "What was Paul's former Job ?", 
+        answers : {
+            a : "Mechanical Engineer",
+            b : "Rubber Splecialist",
+            c : "Logistician",
+            d : "CEO of Amazon"
+        },
+        correctAnswer : "answer-b"
     },
-    correctAnswer : "answer-c"
-}
+    {
+        question : "What is Lou's cat name?",
+        answers : {
+            a : "Malfoy",
+            b : "Ron",
+            c : "Hermione",
+            d : "Potter"
+        },
+        correctAnswer : "answer-d"
+    },
+    {
+        question : "Which sport did Marie played for a long time?",
+        answers : {
+            a : "Basket-Ball",
+            b : "Ping-Pong",
+            c : "Football",
+            d : "K-pop"
+        },
+        correctAnswer : "answer-a"
+    },
+    {
+        question : "What is the screen resolution of Zakari",
+        answers : {
+            a : "13 pouces",
+            b : "15 pouces",
+            c : "27 pouces",
+            d : "32 pouces"
+        },
+        correctAnswer : "answer-c"
+    },
+    {
+        question : "Quand la série 'Derrick' s'est arrêtée, son scénariste avait :",
+        answers : {
+            a : "74 ans",
+            b : "84 ans",
+            c : "94 ans",
+            d : "Honte"
+        },
+        correctAnswer : "answer-a"
+    },
+    {
+        question : "A quel âge est mort ce bon vieux Mathusalem ?",
+        answers : {
+            a : "123 ans",
+            b : "578 ans",
+            c : "969 ans",
+            d : "Il est toujours vivant et aurait été aperçu au VIP ROOM de St Tropez l’été dernier."
+        },
+        correctAnswer : "answer-c"
+    },
+    {
+        question : "En 1951 Disney a sorti une BD dans laquelle...",
+        answers : {
+            a : "Mickey était soviétique.",
+            b : "Dingo était marchand d’armes",
+            c : "Mickey et Dingo étaient des dealers d’amphétamines",
+            d : "Minnie rencontre des gens qu’elle ne connaissait pas et sympathise avec eux : 'Thank you Jackie and Mickey'"
+        },
+        correctAnswer : "answer-c"
+    },
+    {
+        question : "Comment l'hippopotame fait-il popo ?",
+        answers : {
+            a : "Il disperse ses crottes avec sa queue pour marquer son territoire.",
+            b : " Il doit arrêter toute activité pour ne faire que ça, tellement c’est long et pénible.",
+            c : "Il expulse un gros rondin d’un coup et c’est assez spectaculaire.",
+            d : "Il ne fait jamais caca, d’où sa taille."
+        },
+        correctAnswer : "answer-a"
+    },
+    {
+        question : "Parmi ces 4 voitures, laquelle a vraiment existé ?",
+        answers : {
+            a : "La Skoda 'Tapina'",
+            b : "La Nissan 'Gigolo'",
+            c : "La Mazda 'Laputa'",
+            d : "La Fiat  '500 l’amour et 200 la pipe '"
+        },
+        correctAnswer : "answer-c"
+    }
 ]
 
 const createQuestion = (currentQuestion,questionNumber) => {
@@ -357,7 +436,7 @@ const createQuestion = (currentQuestion,questionNumber) => {
     if (questionNumber == 9){
         buttonNext.innerHTML="See Results";
         buttonNext.setAttribute('id',"displayResults");
-        buttonNext.onclick=() => slideUp('.resultsPage'); //rajouter ici la fonction pour les résultats de paul
+        buttonNext.onclick=() => {slideUp('.resultsPage');scoreCalculator()}; //rajouter ici la fonction pour les résultats de paul
         listenToAnswer()
     } else {
         buttonNext.setAttribute('id',"nextQuestion");
@@ -375,14 +454,16 @@ const createQuestion = (currentQuestion,questionNumber) => {
     le bouton lance une fonction comparaison entre réponse et bonne réponse et change la vignette
     et le score puis question suivante
     */
-
+function testA() {
+    slideUp('.resultsPage');scoreCalculator()
+}
 
 let goodAnswers = []
 const createAnswersTable = () => {
-    if (logQuizTheme = "firstQuizz"){
+    if (logQuizTheme === "firstQuizz"){
         firstQuizz.forEach(question => {
             goodAnswers.push(question.correctAnswer)});
-    } else if (logQuizTheme = "secondQuizz"){
+    } else if (logQuizTheme === "secondQuizz"){
         secondQuizz.forEach(question => {
             goodAnswers.push(question.correctAnswer)});
     } else {
@@ -397,137 +478,129 @@ const createAnswersTable = () => {
 let userAnswer = " "
 let goodAnswer = " "
 let allUserAnswers = []
-let userScore = 0
+let userScored = 0
 function listenToAnswer(){
     const answerList = document.querySelectorAll(".cardButton");
     for(let j = 0;j<answerList.length;j++){
         answerList[j].addEventListener("click", function(){
             userAnswer = answerList[j].id
             allUserAnswers.push(userAnswer)
-            const activeQuestion = document.querySelector(".activeToken");
-            console.log(activeQuestion)
-            console.log(allUserAnswers)
-            if (userAnswer == goodAnswers[j]) {
-                userScore++
-                activeQuestion.classList.add("successToken")
-                console.log(userScore)
+            const activeCard = document.querySelector(".activeToken");
+            console.log(activeCard)
+            console.log(userAnswer)
+            console.log(goodAnswers[currentQuestion])
+            if (userAnswer == goodAnswers[currentQuestion]) {
+                userScored++
+                activeCard.classList.add("successToken")
 
 
             } else {
-                activeQuestion.classList.add("wrongToken")
-                console.log(userScore)
+                activeCard.classList.add("wrongToken")
 
             }
             console.log(userAnswer)
             const buttonNext = document.getElementById("nextQuestion");
-            buttonNext.disabled = false; 
-            /*if (userAnswer = tableau[QUESTION])
-                GREEN
-            else
-                rouge*/
-                
+            buttonNext.disabled = false;                 
     })
     }
 }
 
-// let score = 0
-// const checkAnswer(userAnswer,goodAnswer){
-//     if (userAnswer === goodAnswer){
 
-//     }    
-// }
-
-// let score = 0
-// //Card .onclick ==>
-// const checkAnswers = (labelCard,goodAnswer) => {
-//     if (labelCard === goodAnswer){
-//         score++
-//         ajouter bordure verte
-//     } else {
-//         ajouter bordure rouge
-//     }
-//         colorier background des cartes
-//         buttonNextApparait
-
-// }
-
-    
-// Etape 2 
-// Stocker le resultat de l'input dans un object
-
-//  const userInfo = {
-//     score: 0, 
-//     name: ""
-// }
-
-// const selectTheme
-
-
-//une fois que le user clique sur démarrer dans la div d'avant
-//créer 3 tableaux par thème de question
-//récupérer le thème du questionnaire dans une variable: mettre des boutons s
+const slideUp = (div)=>{
+    document.querySelector(div).classList.replace("hid-box","hid-box-hover")
+}
 
 
 
+//// PAGE RESULTAT
+//function 
+// user.puserName = 
+// user.userScore = userScored;
+// scoreCalculator();
+const usernameInput = document.querySelector("#username")
 
-// inititalement quand on clique sur le bouton start
-//lancer quizzFunc(return)
-// quizzStart(firstQuizz);
-// Test
-// let score = 0
-// //Card .onclick ==>
-// const checkAnswers = (labelCard,goodAnswer) => {
-//     if (labelCard === goodAnswer){
-//         score++
-//         ajouter bordure verte
-//     } else {
-//         ajouter bordure rouge
-//     }
-//         colorier background des cartes
-//         buttonNextApparait
+document.querySelector("#testABC").addEventListener("keydown", function (f) {
+    if (f.keyCode == 13){
+        f.preventDefault()
+    }
+}); 
 
-// }
-//modifier les dom (vert, rouge, +score)
-//bouton next question qui apparait
+document.querySelector('#username').addEventListener('keyup', function (e) {
+    console.log(e.cancelable);
+    e.preventDefault();
+    // if (e.key === 'Enter') {
+    //   user.puserName = userTestName.value
+    // }
+});
 
-
-
-
-// let question = 0
-
-// func buttonNext = {
-//     removeQuestion 0 0
-//     question = question+1;
-//     createQuestion
-// }
-
-
-
-
-
-//button .onclick 
-
-
-//objet user {name:"",score,rank}
-//a chaque question 
-//on check si c'est la bonne reponse dans l'objet
-//si oui j'increment le score
-// a la fin des 10 questions
-//see my results
-
-//en global on a un tableau des scores
-
-// on edit l'objet user pour mettre son score
-// onclick on crée une nouvelle fonction qui check si le score de l'utiliateur est dans le tableau
-
-//stocker de la donnée au niveau du navigateur
-//si j'utilise l'app quelque part 
-//local storage
-
-
-
-
-
-
-
-
+const user = {
+    puserName: "Username",
+    userScore: 0,
+  };
+  
+  const userList = [
+      {
+      puserName: "Loris",
+      userScore: 9,
+      },
+      {
+      puserName: "Nicolas",
+      userScore: 1,
+      },
+      {
+      puserName: "Julien",
+      userScore: 4,
+      },
+      {
+      puserName: "Paul",
+      userScore: 3,
+      },
+      {
+      puserName: "Zakari",
+      userScore: 5,
+      },
+  ];
+  
+ function scoreCalculator(){
+    user.userScore = userScored;
+  
+  //affiche paragraphe "congrat" avec nom et score de l'user
+  const pCongrats = document.querySelector("#congrats");
+  pCongrats.textContent = `Congrats ${user.puserName}, you scored is ${user.userScore}/10.`;
+  
+  //récupère les résultat de l'user dans la liste de resultat
+  userList.push(user);
+  //trier la liste en fonction de userScore
+  userList.sort(function (a, b) {
+      return b.userScore - a.userScore;
+      });
+  let userRank = 0;
+  for (const element of userList){
+      if(element.puserName === user.puserName){
+          userRank = userList.indexOf(element)+1;
+      }
+  }
+  
+  const pRank = document.querySelector("#rank");
+  pRank.textContent = `You ranked #${userRank}.`;
+  
+  const firstUser = document.querySelector("#firstUserName");
+  firstUser.textContent = `${userList[0].puserName}`;
+  
+  const firstScore= document.querySelector("#firstUserScore");
+  firstScore.textContent = `${userList[0].userScore}/10`;
+  
+  const secondUser = document.querySelector("#secondUserName");
+  secondUser.textContent = `${userList[1].puserName}`;
+  
+  const secondScore= document.querySelector("#secondUserScore");
+  secondScore.textContent = `${userList[1].userScore}/10`;
+  
+  const thirdUser = document.querySelector("#thirdUserName");
+  thirdUser.textContent = `${userList[2].puserName}`;
+  
+  const thirdScore= document.querySelector("#thirdUserScore");
+  thirdScore.textContent = `${userList[2].userScore}/10`;
+  
+}
+  // // FIN PAGE RESULTAT
