@@ -518,12 +518,6 @@ function listenToAnswer(){
     }
 }
 
-const slideUp = (div)=>{
-    document.querySelector(div).classList.replace("hid-box","hid-box-hover")
-}
-
-
-
 //// PAGE RESULTAT
 //function 
 // user.puserName = 
