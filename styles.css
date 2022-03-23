@@ -13,10 +13,10 @@
   --secondary-light: #252D9B;
 
   /* Text Colors */
-  --text-primary: #190134;
+  --text-primary: #e5ddee;
   --text-secondary: #fff5ee;
   --text-tertiary: #B3ABBC;
-  --text-light: #FFFFFF;
+  --text-light: #b28fc9;
   --text-link: #252D9B;
 
   /* UI Colors */
@@ -288,7 +288,7 @@ nav>.neonButton {
   padding-bottom: 2%;
 }
 #welcome p {
- margin: 3% 0 10% 0;
+  margin: 3% 0 10% 0;
 }
 
 /*////////////////////////////
@@ -550,6 +550,7 @@ footer {
   }
   #welcome p {
     font-size: 1.5rem;
+    font-weight: var(--bold);
   }
   .questionTokens {
     display:flex;
