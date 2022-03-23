@@ -4,6 +4,10 @@
 
  
 // QUIZ SELECTOR //
+import firstQuiz from "./quiz.js";
+import secondQuiz from "./quiz.js";
+import thirdQuiz from "./quiz.js";
+
 const buttonValidator = document.querySelector(".launchQuizz")
 buttonValidator.disabled = true
 const selectQuizz = document.querySelectorAll(".quizzTheme");
