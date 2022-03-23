@@ -546,16 +546,31 @@ button.cardButton {
 .resultsFlexContainer{
   display: flex;
   flex-direction: column;
-  /* height:90vh; */
+  margin-top: 5rem;
 }
+
+#congrats{
+  color: rgba(166,142,235,1);
+  padding-top: 1.5rem;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+#rank{
+  color: rgba(166,142,235,1);
+  font-weight: 800;
+  font-size: 1.5rem;
+}
+
 .resultsFlexContainer article{
-  background-color: #673f92;
+  background: rgb(255,39,115);
+  background: linear-gradient(90deg, rgba(255,39,115,1) 24%, rgba(166,142,235,1) 73%);
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   margin: 1vw 10vw;
-  border-radius: 2% ;
+  border-radius: 15px;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 .resultsFlexContainer article div {
@@ -563,13 +578,16 @@ button.cardButton {
 }
 .resultsFlexContainer article p {
   color: var(--text-primary);
+  font-weight: 900;
+  font-size: 2rem;
   margin: 0.5rem;
 }
+
 .avatar {
-  border-radius: 50%;
-  height: 7vw;
-  width: 7vw;
+  width: 10%;
+  padding-top: 0;
 }
+
 footer {
   background-color: var(--secondary-background);
 }
@@ -623,12 +641,12 @@ footer {
   .resultsFlexContainer {
     flex-direction: row;
     align-items: flex-end;
-    justify-content: space-around;
+    justify-content: center;
     margin-left: 15vw;
     margin-right: 15vw;
   }
   .resultsFlexContainer article {
-    background-color: #673f92;
+    background-color: #a68eeb;
     margin: 1rem 1rem 1rem 1rem;
     display: flex;
     flex-direction: column;
@@ -636,20 +654,26 @@ footer {
     width: 20%;
   }
   article.firstUser{
+    
     order: 2 ;
-    padding-bottom: 10rem;
+    padding-bottom: 14rem;
   }
   article.secondUser{
+    
     order: 1 ;
-    padding-bottom: 6rem;
+    padding-bottom: 10rem;
   }
   article.thirdUser{
+    
     order: 3 ;
-    padding-bottom: rem ;
+    padding-bottom: 6rem ;
   }
+
   .avatar {
-    margin-top: 2rem;
+    width: 30%;
+    padding-top: 2rem;
   }
+
   .selectQuizz {
     display: flex;
     flex-direction: row;

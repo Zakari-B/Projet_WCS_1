@@ -1,4 +1,3 @@
-
 // THEME SELECTOR //
 // themeswitch() = {
     const slideUp = (div)=>{
@@ -348,10 +347,10 @@ const createQuestion = (currentQuestion,questionNumber) => {
     questionTitle.innerHTML=`Question #${questionNumber+1} - ${currentQuestion.question}`;
     questionCard.appendChild(questionTitle);
 
-    //create the div that will hold the answers
-    const answerContainer=document.createElement("div");
-    answerContainer.classList.add("answer-container");
-    questionCard.appendChild(answerContainer);
+  //create the div that will hold the answers
+  const answerContainer = document.createElement("div");
+  answerContainer.classList.add("answer-container");
+  questionCard.appendChild(answerContainer);
 
     //add a button for each answer
     for(letter in currentQuestion.answers){
@@ -470,12 +469,11 @@ function listenToAnswer(){
 // Stocker le resultat de l'input dans un object
 
 //  const userInfo = {
-//     score: 0, 
+//     score: 0,
 //     name: ""
 // }
 
 // const selectTheme
-
 
 //une fois que le user clique sur démarrer dans la div d'avant
 //créer 3 tableaux par thème de question
@@ -486,6 +484,11 @@ function listenToAnswer(){
 
 // inititalement quand on clique sur le bouton start
 //lancer quizzFunc(return)
+const quizzStart = (RETURN) => {
+  createQuestion(RETURN[0], 0);
+};
+
+quizzStart(firstQuizz); // Test
 // quizzStart(firstQuizz);
 // Test
 // let score = 0
@@ -504,9 +507,6 @@ function listenToAnswer(){
 //modifier les dom (vert, rouge, +score)
 //bouton next question qui apparait
 
-
-
-
 // let question = 0
 
 // func buttonNext = {
@@ -515,28 +515,89 @@ function listenToAnswer(){
 //     createQuestion
 // }
 
+//button .onclick
+const slideUp = (div) => {
+  document.querySelector(div).classList.replace("hid-box", "hid-box-hover");
+};
+
+
+// // PAGE RESULTAT
+
+const user = {
+  userName: "Toto",
+  userScore: 5,
+};
+
+const userList = [
+  {userName: "Loris",
+  userScore: 7,
+},
+
+  {userName: "Nicolas",
+  userScore: 2,
+},
+
+  {userName: "Julien",
+  userScore: 6,
+},
+
+  {userName: "Paul",
+  userScore: 6,
+},
+  
+  {userName: "Zakari",
+  userScore: 1,
+},
+];
 
 
 
+//function scoreCalculator(){
 
-//button .onclick 
+  //affiche paragraphe "congrat" avec nom et score de l'user
+  const pCongrats = document.querySelector("#congrats");
+  pCongrats.textContent = `Congrats ${user.userName}, you scored is ${user.userScore}/10.`;
+
+  //récupère les résultat de l'user dans la liste de resultat
+  userList.push(user);
+  //trier la liste en fonction de userScore
+  userList.sort(function (a, b) {
+    return b.userScore - a.userScore;
+  });
+  let userRank = 0;
+  for (const element of userList){
+    if(element.userName === user.userName){
+      console.log(element.userName);
+      userRank = userList.indexOf(element)+1;
+    }
+  }
+
+  const pRank = document.querySelector("#rank");
+  pRank.textContent = `You ranked #${userRank}.`;
 
 
-//objet user {name:"",score,rank}
-//a chaque question 
-//on check si c'est la bonne reponse dans l'objet
-//si oui j'increment le score
-// a la fin des 10 questions
-//see my results
 
-//en global on a un tableau des scores
+const firstUser = document.querySelector("#firstUserName");
+firstUser.textContent = `${userList[0].userName}`;
 
-// on edit l'objet user pour mettre son score
-// onclick on crée une nouvelle fonction qui check si le score de l'utiliateur est dans le tableau
+const firstScore= document.querySelector("#firstUserScore");
+firstScore.textContent = `${userList[0].userScore}/10`;
 
-//stocker de la donnée au niveau du navigateur
-//si j'utilise l'app quelque part 
-//local storage
+const secondUser = document.querySelector("#secondUserName");
+secondUser.textContent = `${userList[1].userName}`;
+
+const secondScore= document.querySelector("#secondUserScore");
+secondScore.textContent = `${userList[1].userScore}/10`;
+
+const thirdUser = document.querySelector("#thirdUserName");
+thirdUser.textContent = `${userList[2].userName}`;
+
+const thirdScore= document.querySelector("#thirdUserScore");
+thirdScore.textContent = `${userList[2].userScore}/10`;
+
+
+//}
+// // FIN PAGE RESULTAT
 
 
 
