@@ -154,10 +154,9 @@ const slideUp = (div) => {
 
 // // PAGE RESULTAT
 
-const usertoto = {
-  userName: "Chouchou",
-  userScore: 7,
-  userRank: 666,
+const user = {
+  userName: "Toto",
+  userScore: 8,
 };
 
 const userList = [
@@ -168,7 +167,7 @@ const userList = [
   userScore: 2},
 
   {userName: "Julien",
-  userScore: 10},
+  userScore: 9},
 
   {userName: "Paul",
   userScore: 6},
@@ -177,19 +176,17 @@ const userList = [
   userScore: 1},
 ];
 
-//pour afficher les score et rank
-
-const pCongrats = document.querySelector("#congrats");
-pCongrats.textContent = `Congrats ${usertoto.userName}, you scored is ${usertoto.userScore}/10.`;
-
-const pRank = document.querySelector("#rank");
-pRank.textContent = `You ranked #${usertoto.userRank}.`;
-
-//fonction pour trier le tableau userlist en fonction du résultat
+userList.push(user);
 
 userList.sort(function (a, b) {
   return b.userScore - a.userScore;
 });
+
+const pCongrats = document.querySelector("#congrats");
+pCongrats.textContent = `Congrats ${user.userName}, you scored is ${user.userScore}/10.`;
+
+// const pRank = document.querySelector("#rank");
+// pRank.textContent = `You ranked #${userList.indexOf(userList[])}.`;
 
 const firstUser = document.querySelector("#firstUserName");
 firstUser.textContent = `${userList[0].userName}`;
