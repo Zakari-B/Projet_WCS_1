@@ -54,7 +54,11 @@ for(let i = 0;i<selectQuizz.length;i++){
 const startGame = () => {
     generateQuizzAndSlide(0);
     createAnswersTable();
-    user.puserName = usernameInput.value;
+    if (usernameInput.value != "") {
+        user.puserName = usernameInput.value;
+    } else {
+        user.puserName = "Player One";
+    }
 }
 let currentQuestion = 0 
 const generateQuizzAndSlide = i => {
