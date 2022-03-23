@@ -546,20 +546,20 @@ button.cardButton {
 .resultsFlexContainer{
   display: flex;
   flex-direction: column;
-  margin-top: 5rem;
+  margin-top: 10vh;
 }
 
 #congrats{
   color: rgba(166,142,235,1);
   padding-top: 1.5rem;
   font-weight: 600;
-  font-size: 1.5rem;
+  font-size: 1.5vh;
 }
 
 #rank{
   color: rgba(166,142,235,1);
   font-weight: 800;
-  font-size: 1.5rem;
+  font-size: 1.5vh;
 }
 
 .resultsFlexContainer article{
@@ -574,13 +574,13 @@ button.cardButton {
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 .resultsFlexContainer article div {
-  margin: 0.5rem;
+  margin: 0.5vh;
 }
 .resultsFlexContainer article p {
   color: var(--text-primary);
   font-weight: 900;
-  font-size: 2rem;
-  margin: 0.5rem;
+  font-size: 2vh;
+  margin: 0.5vh;
 }
 
 .avatar {
@@ -647,7 +647,7 @@ footer {
   }
   .resultsFlexContainer article {
     background-color: #a68eeb;
-    margin: 1rem 1rem 1rem 1rem;
+    margin: 1vh 1vh 1vh 1vh;
     display: flex;
     flex-direction: column;
     align-content: flex-start;
@@ -656,29 +656,29 @@ footer {
   article.firstUser{
     
     order: 2 ;
-    padding-bottom: 14rem;
+    padding-bottom: 14vh;
   }
   article.secondUser{
     
     order: 1 ;
-    padding-bottom: 10rem;
+    padding-bottom: 10vh;
   }
   article.thirdUser{
     
     order: 3 ;
-    padding-bottom: 6rem ;
+    padding-bottom: 6vh ;
   }
 
   .avatar {
     width: 30%;
-    padding-top: 2rem;
+    padding-top: 2vh;
   }
 
   .selectQuizz {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 2rem;
+    padding: 2vh;
   }
   button.quizzTheme {
     height: 25vh;

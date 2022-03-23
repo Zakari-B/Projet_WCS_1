@@ -481,7 +481,6 @@ userList.sort(function (a, b) {
 let userRank = 0;
 for (const element of userList){
     if(element.userName === user.userName){
-        console.log(element.userName);
         userRank = userList.indexOf(element)+1;
     }
 }
