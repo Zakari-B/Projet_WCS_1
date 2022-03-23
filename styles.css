@@ -65,56 +65,41 @@ body {
   font-family: var(--font-family);
   /* overflow:hidden; */
 }
-
 h1 {
   font-size: var(--XL);
   font-weight: var(--extra-bold);
   color:var(--text-light)
-
 }
-
 h2 {
   font-size: var(--L);
   font-weight: var(--extra-bold);
   color:var(--text-light)
-
 }
-
 h3 {
   font-size: var(--M);
   font-weight: var(--bold);
   color:var(--text-light)
-
 }
-
 h4 {
   font-size: var(--S);
   font-weight: var(--bold);
   color:var(--text-light)
-
 }
-
 h5 {
   font-size: var(--X);
   font-weight: var(--bold);
   color:var(--text-light)
-
 }
-
 h6 {
   font-size: var(--XS);
   font-weight: var(--semi-bold);
   color:var(--text-light)
-
 }
-
 p {
   font-size: var(--S);
   font-weight: var(--regular);
   color:var(--text-secondary)
-
 }
-
 a {
   font-size: var(--S);
   font-weight: var(--regular);
@@ -346,7 +331,6 @@ nav>.neonButton {
   font-family: var(--font-family);
   background-color:var(--primary-background);
 }
-
 form {
   width : 80%;
   font-size: var(--XL);
@@ -359,7 +343,6 @@ label {
   font-weight: var(--extra-bold);
   color:var(--text-light)
 }
-
 #username {
     height: 5vh;
     width: 100%;
@@ -369,8 +352,6 @@ label {
     font-size:var(--L);
     font-weight: var(--extra-bold);
 }
-
-
 .quizzTheme {
   width: 80%;
   text-align: center;
@@ -385,9 +366,6 @@ label {
 .selected {
   border: rgb(0, 247, 255) 10px solid;  /*REMPLACER PAR VAR*/
 }
-
-
-
 #nameButton {
   width: 70%;
   height: 6vh; 
@@ -526,12 +504,9 @@ button.cardButton {
          inset 0 0 .75em .25em var(--cardglow-color);
  }
 
-
-
 /*///////////////////////
 //SECTION 4 : RESULTS //
 //////////////////////*/
-
 .resultsPage{
   min-height:100vh;
 }
@@ -564,20 +539,17 @@ button.cardButton {
   font-weight: 800;
   font-size: 2vh;
 }
-
 #congrats{
   color: rgba(166,142,235,1);
   padding-top: 1.5rem;
   font-weight: 600;
   font-size: 1.5rem;
 }
-
 #rank{
   color: rgba(166,142,235,1);
   font-weight: 800;
   font-size: 1.5rem;
 }
-
 .resultsFlexContainer article{
   background: rgb(255,39,115);
   background: linear-gradient(90deg, rgba(255,39,115,1) 24%, rgba(166,142,235,1) 73%);
@@ -598,12 +570,10 @@ button.cardButton {
   font-size: 3vh;
   margin: 1vh;
 }
-
 .avatar {
   width: 10%;
   padding-top: 0;
 }
-
 footer {
   background-color: var(--secondary-background);
 }
@@ -690,7 +660,6 @@ footer {
     width: 35%;
     margin-top: 2.5vh;
   }
-
   .selectQuizz {
     display: flex;
     flex-direction: row;
