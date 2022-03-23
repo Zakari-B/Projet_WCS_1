@@ -44,7 +44,7 @@
       <div class="namePage hid-box" id="namePage">
 
           <div class="nameFlexContainer">
-            <form name="myForm" action="/script.js" method="post">
+            <form name="myForm" id="testABC" action="/script.js" method="post">
                 <label for="username" >Enter your name </label> <br>
                 <input name="name" id="username" placeholder="Username"> <br>
             </form>
@@ -87,26 +87,16 @@
       <p id = "rank">You ranked userRank.</p>
       <div class="resultsFlexContainer">
         
-        
         <article class="firstUser">
-          <img
-            class="avatar"
-            src="./assets/goldenMedal.png"
-            alt="Golden Medal"
-          />
+          <img class="avatar" src="./assets/goldenMedal.png" alt="Golden Medal">
         <div>
-          
           <p id="firstUserName"></p>
           <p id="firstUserScore"></p>
         </div>
         </article>
 
         <article class="secondUser">
-          <img
-            class="avatar"
-            src="./assets/silverMedal.png"
-            alt="Silver Medal"
-          />
+          <img class="avatar" src="./assets/silverMedal.png" alt="Silver Medal">
           <div>
           <p id="secondUserName"></p>
           <p id="secondUserScore"></p>
@@ -114,11 +104,7 @@
         </article>
 
         <article class="thirdUser">
-          <img
-            class="avatar"
-            src="./assets/bronzeMedal.png"
-            alt="Bronze Medal"
-          />
+          <img class="avatar" src="./assets/bronzeMedal.png" alt="Bronze Medal">
         <div>
           <p id="thirdUserName"></p>
           <p id="thirdUserScore"></p>
@@ -126,10 +112,7 @@
         </article>
       </div>
       <button class="neonButton" id="quizzReturn" type="submit" onClick="window.location.reload()">Try another quiz !</button>
-      <!-- <a href="#namePage" 
-      type="button"
-      class="neonButton">
-      "Try another quiz !"</a> -->
+      <!-- <a href="#namePage" type="button" class="neonButton"> "Try another quiz !"</a> -->
       <footer id="footer">
         <p>© 2022 Team Triangle</p>
       </footer> 
