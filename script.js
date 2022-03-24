@@ -427,7 +427,7 @@ const createQuestion = (currentQuestion,questionNumber) => {
     const card=document.querySelector(".card")
     const questionTitle = document.createElement("h1");
     questionTitle.classList.add("questionTitle");
-    questionTitle.innerHTML=`Question #${questionNumber+1} - ${currentQuestion.question}`;
+    questionTitle.textContent=`Question #${questionNumber+1} - ${currentQuestion.question}`;
     questionCard.appendChild(questionTitle);
 
   //create the div that will hold the answers
@@ -442,7 +442,7 @@ const createQuestion = (currentQuestion,questionNumber) => {
         oneAnswer.classList.add("cardButton");
         oneAnswer.setAttribute('id',"answer-"+letter);
         //oneAnswer.classList.add("color-2");
-        oneAnswer.innerHTML=`${letter}: ${currentQuestion.answers[letter]}`;
+        oneAnswer.textContent=`${letter}: ${currentQuestion.answers[letter]}`;
         answerContainer.appendChild(oneAnswer);
     }
 
@@ -450,13 +450,13 @@ const createQuestion = (currentQuestion,questionNumber) => {
     const buttonNext = document.createElement("button");
     buttonNext.classList.add("neonButton");
     if (questionNumber == 9){
-        buttonNext.innerHTML="See Results";
+        buttonNext.textContent="See Results";
         buttonNext.setAttribute('id',"displayResults");
         buttonNext.onclick=() => {slideUp('.resultsPage');scoreCalculator()}; //rajouter ici la fonction pour les résultats de paul
         listenToAnswer()
     } else {
         buttonNext.setAttribute('id',"nextQuestion");
-        buttonNext.innerHTML="Next Question";
+        buttonNext.textContent="Next Question";
         buttonNext.onclick=() => generateQuizzAndSlide(questionNumber+1);
         buttonNext.disabled = true;
         listenToAnswer()
