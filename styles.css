@@ -28,21 +28,20 @@
   /* Background Colors*/
   --primary-background:#15002c;
   --secondary-background: #490097;
-  /* --dark-background:#2B1E70; */
   /* --light-primary-background:;
-  --light-secondary-background:;*/
-  --dark-primary-background:rgb(48, 54, 61);
-  --dark-secondary-background: rgb(13, 17, 23);
+  --light-secondary-background:;
+  --dark-primary-background: #15002c;
+  --dark-secondary-background: #490097;   -- Placeholder for future themes */
 
   /* Font Family */
   --font-family: 'Poppins', sans-serif;
 
   /* Font-Size */
-  --XL : 2rem;
-  --L: 1.5rem;
-  --M: 1.25;
-  --S: 1rem;
-  --XS: 0.75rem;
+  --XL : 2vh;
+  --L: 1.5vh;
+  --M: 1.25vh;
+  --S: 1vh;
+  --XS: 0.75vh;
 
   /* Font-Weight */
   --black : 900;
@@ -52,18 +51,17 @@
   --regular:400;
 
   /* border-radius */
-  --radius-L: 2rem;
-  --radius-M:1.5rem;
-  --radius-S:1rem;
+  --radius-L: 2em;
+  --radius-M:1.5em;
+  --radius-S:1em;
 
   /* Shadows */
   --level-1 : 0px 2px 10px 0px #1901341F;
   --level-2 : 0px 4px 10px 0px #19013429;
 }
-
 body {
   font-family: var(--font-family);
-  /* overflow:hidden; */
+  overflow:hidden;
 }
 h1 {
   font-size: var(--XL);
@@ -106,14 +104,12 @@ a {
   text-decoration: initial;
   color:var(--text-link)
 }
-
 .mainPage {
   background-color: #5600b5;
   background-image: linear-gradient(180deg, #490097 18%, #15002c 50%);
   /* background-image: linear-gradient(180deg, #5600b5 18%, #15002c 50%); */
   width: auto;
 }
-
 button, .primary-button{
   border-radius: var(--radius-L);
   background-color: var(--primary-color);
@@ -127,9 +123,7 @@ button, .primary-button{
   text-align: center;
 }
 /* PARTIE MARIE BUTTON START */
-
 /* From cssbuttons.io by @adamgiebl */
-/* From cssbuttons.io */
  .neonButton {
   --glow-color: rgb(217, 176, 255);
   --glow-spread-color: rgba(191, 123, 255, 0.781);
@@ -150,7 +144,6 @@ button, .primary-button{
   position: relative;
   transition: all 0.3s;
  }
-
  .neonButton:disabled {
   --glow-color: rgba(217, 176, 255, 0.26);
   --glow-spread-color: rgba(191, 123, 255, 0.226);
@@ -171,7 +164,6 @@ button, .primary-button{
   position: relative;
   transition: all 0.3s;
  }
- 
 #btnGlow::after {
   pointer-events: none;
   content: "";
@@ -185,7 +177,6 @@ button, .primary-button{
   opacity: .7;
   transform: perspective(1.5em) rotateX(35deg) scale(1, .6);
  }
- 
  .neonButton:hover {
   color: var(--btn-color);
   background-color: var(--glow-color);
@@ -193,14 +184,11 @@ button, .primary-button{
          0 0 4em 2em var(--glow-spread-color),
          inset 0 0 .75em .25em var(--glow-color);
  }
- 
  #btnTest:active {
   box-shadow: 0 0 0.6em .25em var(--glow-color),
          0 0 2.5em 2em var(--glow-spread-color),
          inset 0 0 .5em .25em var(--glow-color);
  }
-
-
 .secondary-button{
   border-radius: var(--radius-L);
   background-color: var(--secondary-color);
@@ -210,7 +198,6 @@ button, .primary-button{
   color:var(--text-light);
   border:none;
 }
-
 .secondary-button:hover {
   border-radius: var(--radius-L);
   background-color: var(--secondary-light);
@@ -220,7 +207,6 @@ button, .primary-button{
   color:var(--text-light);
   border:none;
 }
-
 .cards{
   box-shadow:var(--level-2)
 }
@@ -343,10 +329,9 @@ label {
   color:var(--text-light)
 }
 #username {
-    height: 5vh;
+    height: 6vh;
     width: 100%;
     border-radius: var(--radius-S);
-    height: 4rem;
     padding: 20px;
     font-size:var(--L);
     font-weight: var(--extra-bold);
@@ -540,14 +525,14 @@ button.cardButton {
 }
 #congrats{
   color: rgba(166,142,235,1);
-  padding-top: 1.5rem;
+  padding-top: 1.5vh;
   font-weight: 600;
-  font-size: 1.5rem;
+  font-size: 1.5vh;
 }
 #rank{
   color: rgba(166,142,235,1);
   font-weight: 800;
-  font-size: 1.5rem;
+  font-size: 1.5vh;
 }
 .resultsFlexContainer article{
   background: rgb(255,39,115);
@@ -577,6 +562,7 @@ footer {
   background-color: var(--secondary-background);
 }
 #footer p {
+  font-size:medium;
   text-align:left;
   margin: auto auto auto 2%;
   color: beige;
@@ -590,10 +576,10 @@ footer {
     padding: 1em 3em;
   }
   #welcome h1 {
-    font-size: 4rem;
+    font-size: 3vh;
   }
   #welcome p {
-    font-size: 1.5rem;
+    font-size: 1.5vh;
     font-weight: var(--bold);
   }
   .questionTokens {
@@ -621,9 +607,6 @@ footer {
     width: 100%;
     height: 75vh;
   }
-  /* button.button-card {
-    height: 25vh;
-  } */
   button.cardButton {
     height: 25vh;
   }
@@ -636,7 +619,7 @@ footer {
   }
   .resultsFlexContainer article {
     background-color: #a68eeb;
-    margin: 1rem 1rem 1rem 1rem;
+    margin: 1vh;
     display: flex;
     flex-direction: column;
     align-content: flex-start;
