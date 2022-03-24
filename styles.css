@@ -63,7 +63,7 @@
 
 body {
   font-family: var(--font-family);
-  /* overflow:hidden; */
+  overflow:hidden;
 }
 h1 {
   font-size: var(--XL);
