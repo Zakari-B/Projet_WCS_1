@@ -61,7 +61,7 @@
 }
 body {
   font-family: var(--font-family);
-  overflow:hidden;
+  /* overflow:hidden; */
 }
 h1 {
   font-size: var(--XL);
@@ -235,12 +235,6 @@ button, .primary-button{
   height: 100vh;
   width:100%
 }
-.lightMode {
-  background-image: linear-gradient(180deg, #967ab3 18%, #720edd 50%);
-}
-.textLightMode {
-  color: var(--text-primary);
-}
 
 /*//////////////////
 //SECTION 1 : HOME//
@@ -284,25 +278,28 @@ nav>.neonButton {
 }
 #welcome h1 {
   padding-bottom: 2%;
+  font-size: 5vh;
 }
 #welcome p {
   margin: 3% 0 10% 0;
+  font-size: 2vh;
 }
 
 /*////////////////////////////
 //SECTION 2 : QUIZ SELECTOR //
 ////////////////////////////*/
+.namePage {
+  background-color:var(--primary-background);
+}
 .nameFlexContainer {
   display: flex;
   flex-direction: column;
-  /* background-color: var(--primary-background); */
   justify-content: center;
   text-align: center;
   font: var(--extra-bold);
   color: var(--info);
   line-height: 10vh;
   font-family: var(--font-family);
-  background-color:var(--primary-background);
 }
 .themeFlexContainer {
   display: flex;
@@ -314,7 +311,7 @@ nav>.neonButton {
   color: var(--info);
   line-height: 10vh;
   font-family: var(--font-family);
-  background-color:var(--primary-background);
+  /* background-color:var(--primary-background); */
 }
 form {
   width : 80%;
@@ -369,7 +366,7 @@ label {
 /*///////////////////
 //SECTION 3 : QUIZ //
 ///////////////////*/
-.quizFlexContainer {
+.quizPage {
   background-color: var(--primary-background);
 }
 .quizFlexContainer h1 {
@@ -493,8 +490,6 @@ button.cardButton {
 //////////////////////*/
 .resultsPage{
   min-height:100vh;
-}
-.resultsPage{
   display: flex;
   flex-direction: column;
   background-color: var(--primary-background);
@@ -567,6 +562,26 @@ footer {
   margin: auto auto auto 2%;
   color: beige;
 }
+.cardButtonLight {
+  background-color: #5CC689;
+}
+
+/*/////////////////////////////
+//VERSION : LIGHT MODE //
+/////////////////////////////*/
+.lightMode {
+  background-image: linear-gradient(180deg, #967ab3 18%, #720edd 50%);
+}
+.textLightMode {
+  color: #ffffff;
+}
+.lightPage {
+  background-color: #720edd;
+}
+.cardButtonLight {
+  background-color: #720edd;
+}
+
 
 /*/////////////////////////////
 //SECTION  : DESKTOP VERSION //
@@ -576,10 +591,10 @@ footer {
     padding: 1em 3em;
   }
   #welcome h1 {
-    font-size: 3vh;
+    font-size: 8vh;
   }
   #welcome p {
-    font-size: 1.5vh;
+    font-size: 2vh;
     font-weight: var(--bold);
   }
   .questionTokens {

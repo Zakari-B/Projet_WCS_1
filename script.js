@@ -10,6 +10,10 @@ function themeSwitch() {
         document.querySelector(".switch").textContent = "☼ Light Mode";
     }
     document.querySelector(".mainPage").classList.toggle("lightMode");
+    document.querySelector(".namePage").classList.toggle("lightPage");
+    document.querySelector(".quizPage").classList.toggle("lightPage");
+    // document.querySelector(".cardButtton").classList.toggle("cardButtonLight");
+    document.querySelector(".resultsPage").classList.toggle("lightPage");
     document.querySelectorAll(".text").forEach(el=>el.classList.toggle('textLightMode')); 
 }
 
