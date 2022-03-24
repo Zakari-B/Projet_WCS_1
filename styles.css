@@ -360,7 +360,7 @@ label {
   background-size: cover;
   background-position: center;
   font-size: var(--L);
-  color: var(--text-primary);
+  color: var(--secondary-light);
 }
 .selected {
   border: rgb(0, 247, 255) 10px solid;  /*REMPLACER PAR VAR*/
@@ -590,10 +590,10 @@ footer {
     padding: 1em 3em;
   }
   #welcome h1 {
-    font-size: 4rem;
+    font-size: 3rem;
   }
   #welcome p {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     font-weight: var(--bold);
   }
   .questionTokens {
