@@ -37,11 +37,11 @@
   --font-family: 'Poppins', sans-serif;
 
   /* Font-Size */
-  --XL : 2vh;
-  --L: 1.5vh;
-  --M: 1.25vh;
-  --S: 1vh;
-  --XS: 0.75vh;
+  --XL : clamp(2rem, 3.5vw, 4rem);;
+  --L: clamp(1.25rem, 3vw, 2.25rem);
+  --M: clamp(1.25rem, 2vw, 2.25rem);
+  --S: clamp(1rem, 1.5vw, 2rem);
+  --XS: 0.75em;
 
   /* Font-Weight */
   --black : 900;
@@ -330,7 +330,7 @@ label {
     width: 100%;
     border-radius: var(--radius-S);
     padding: 20px;
-    font-size:var(--L);
+    /* font-size:var(--L); */
     font-weight: var(--extra-bold);
 }
 .quizzTheme {
@@ -354,13 +354,13 @@ label {
   margin: 4vh auto;
 }
 .quizzTheme:nth-child(1) {
-  background-image: url("/assets/logoquizz1.png");
+  background-image: url("./assets/logoquizz1.png");
 }
 .quizzTheme:nth-child(2) {
-  background-image: url("/assets/logoquizz2.png");
+  background-image: url("./assets/logoquizz2.png");
 }
 .quizzTheme:nth-child(3) {
-  background-image: url("/assets/logoquizz3.png");
+  background-image: url("./assets/logoquizz3.png");
 }
 
 /*///////////////////
@@ -370,12 +370,12 @@ label {
   background-color: var(--primary-background);
 }
 .quizFlexContainer h1 {
-  font-size: clamp(1.25rem, 3vw, 2rem);
+  font-size: var(--L);
   color: var(--text-light);
   text-align: center;
 }
 .questionTitle {
-  height:10vh;
+  /* height:10vh; */
   margin:auto 2vh;
 }
 .questionTokens {
@@ -411,10 +411,11 @@ li.wrongToken {
 }
 .testContainer {
   /* height: 75vh; */
-  display:flex;
+  display: flex;
   flex-direction: column;
   width: -webkit-fill-available;
-  margin:5%;
+  justify-content: space-around;
+  margin: 5%;
 }
 .quizFlexContainer .neonButton {
   height:10vh;
@@ -428,8 +429,9 @@ li.wrongToken {
   justify-content: center;
   margin: 30px auto;
 }
+
 .card {
-  height: 88vh;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -438,6 +440,7 @@ li.wrongToken {
 }
 .answer-container {
   width: 100%;
+  /* padding:2%; */
   display: flex;
   flex-direction: column;
   margin:auto;
@@ -445,10 +448,10 @@ li.wrongToken {
   align-items: center;
 }
 button.cardButton {
-  height: 10vh;
+  height: auto;
   /* background-color: var(--primary-background); */
   box-shadow: var(--level-2);
-  color:var(--cardglow-color);
+  color: var(--cardglow-color);
   border-radius: var(--radius-M);
   width: 80%;
   margin: 1vh auto;
@@ -590,13 +593,13 @@ footer {
   nav>.neonButton {
     padding: 1em 3em;
   }
-  #welcome h1 {
+  /* #welcome h1 {
     font-size: 8vh;
-  }
-  #welcome p {
+  } */
+  /* #welcome p {
     font-size: 2vh;
     font-weight: var(--bold);
-  }
+  } */
   .questionTokens {
     display:flex;
     flex-direction:row;
@@ -608,8 +611,8 @@ footer {
     flex-direction: column;
   }
   .answer-container {
-    width: 90%;
-    height:80%;
+    /* width: 90%;
+    height:80%; */
     margin: auto;
     display: grid;
     grid-template-columns: repeat(2,1fr);
