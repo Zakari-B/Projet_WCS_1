@@ -327,14 +327,14 @@ const thirdQuizz = [
         question : "What was Paul's former Job ?", 
         answers : {
             a : "Mechanical Engineer",
-            b : "Rubber Splecialist",
+            b : "Rubber Specialist",
             c : "Logistician",
             d : "CEO of Amazon"
         },
         correctAnswer : "answer-b"
     },
     {
-        question : "What is Lou's cat's name?",
+        question : "What is Lou's cat name?",
         answers : {
             a : "Malfoy",
             b : "Ron",
