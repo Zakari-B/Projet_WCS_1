@@ -41,7 +41,7 @@
   --L: clamp(1.25rem, 3vw, 2.25rem);
   --M: clamp(1.25rem, 2vw, 2.25rem);
   --S: clamp(1rem, 1.5vw, 2rem);
-  --XS: 0.75em;
+  --XS: clamp(0.75rem, 1vw, 1rem);
 
   /* Font-Weight */
   --black : 900;

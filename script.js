@@ -331,7 +331,7 @@ const thirdQuizz = [
         question : "What was Paul's former Job ?", 
         answers : {
             a : "Mechanical Engineer",
-            b : "Rubber Splecialist",
+            b : "Rubber Specialist",
             c : "Logistician",
             d : "CEO of Amazon"
         },
