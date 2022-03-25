@@ -114,7 +114,7 @@ a {
 }
 .mainPage {
   background-color: #5600b5;
-  background-image: linear-gradient(180deg, #490097 18%, #15002c 50%);
+  background: radial-gradient(circle at top, rgba(73,0,151,1) 12%, rgba(21,0,44,1) 60%);;
   width: auto;
 }
 button, .primary-button{
@@ -542,7 +542,9 @@ footer {
 //VERSION : LIGHT MODE //
 /////////////////////////////*/
 .lightMode {
-  background-image: linear-gradient(180deg, #967ab3 18%, #720edd 50%);
+  /* background-image: linear-gradient(180deg, #967ab3 18%, #720edd 50%); */
+  background: radial-gradient(circle at top, #967ab3 12%, #720edd 60%);;
+
 }
 .textLightMode {
   color: #ffffff;
