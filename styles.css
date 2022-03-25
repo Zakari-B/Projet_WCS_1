@@ -1,3 +1,18 @@
+/* SECTIONS :
+*
+* 0 : GLOBAL
+* 1 : HOME
+* 2 : QUIZ SELECTOR
+* 3 : QUIZ
+* 4 : RESULTS
+* 5 : DESKTOP VERSION
+*
+*/
+
+/*/////////////////////
+//SECTION 0 : GLOBAL //
+/////////////////////*/
+
 /* Mini CSS Reset */
 * {
     margin: 0;
@@ -7,31 +22,24 @@
 
 :root {
   /* Brand Colors */
-  --primary-color:#FF2773;
-  --primary-light: #FF4D95;
-  --secondary-color: #2B1E70;
-  --secondary-light: #252D9B;
+  /* --primary-color:#490097; */
+  --primary-light: rgb(100, 61, 136);
+  --secondary-color: rgba(86, 11, 156, 0.781);;
+  --secondary-light: rgb(72, 10, 129);
 
   /* Text Colors */
   --text-primary: #e5ddee;
   --text-secondary: #fff5ee;
-  --text-tertiary: #B3ABBC;
   --text-light: #b28fc9;
   --text-link: #252D9B;
 
-  /* UI Colors */
-  --info: #2B1E70;
+  /* Score Colors */
   --success: #5CC689;
-  --warning: #EE7D52;
   --error: #FF2773;
 
   /* Background Colors*/
   --primary-background:#15002c;
   --secondary-background: #490097;
-  /* --light-primary-background:;
-  --light-secondary-background:;
-  --dark-primary-background: #15002c;
-  --dark-secondary-background: #490097;   -- Placeholder for future themes */
 
   /* Font Family */
   --font-family: 'Poppins', sans-serif;
@@ -61,7 +69,7 @@
 }
 body {
   font-family: var(--font-family);
-  /* overflow:hidden; */
+  overflow:hidden;
 }
 h1 {
   font-size: var(--XL);
@@ -107,7 +115,6 @@ a {
 .mainPage {
   background-color: #5600b5;
   background-image: linear-gradient(180deg, #490097 18%, #15002c 50%);
-  /* background-image: linear-gradient(180deg, #5600b5 18%, #15002c 50%); */
   width: auto;
 }
 button, .primary-button{
@@ -122,9 +129,7 @@ button, .primary-button{
   margin: auto;
   text-align: center;
 }
-/* PARTIE MARIE BUTTON START */
-/* From cssbuttons.io by @adamgiebl */
- .neonButton {
+.neonButton {
   --glow-color: rgb(217, 176, 255);
   --glow-spread-color: rgba(191, 123, 255, 0.781);
   --enhanced-glow-color: rgb(231, 206, 255);
@@ -132,10 +137,10 @@ button, .primary-button{
   border: .25em solid var(--glow-color);
   padding: 1em 3em;
   color: var(--glow-color);
-  font-size: 15px;
+  font-size: var(--S);
   font-weight: bold;
   background-color: var(--btn-color);
-  border-radius: 1em;
+  border-radius: var(--radius-S);
   outline: none;
   box-shadow: 0 0 1em .25em var(--glow-color),
          0 0 4em 1em var(--glow-spread-color),
@@ -149,13 +154,11 @@ button, .primary-button{
   --glow-spread-color: rgba(191, 123, 255, 0.226);
   --enhanced-glow-color: rgba(231, 206, 255, 0.082);
   --btn-color: rgba(100, 61, 136, 0.253);
-  /* border: .25em solid var(--glow-color); */
   padding: 1em 3em;
   color: var(--glow-color);
-  font-size: 15px;
+  font-size: var(--S);
   font-weight: bold;
-  /* background-color: var(--btn-color); */
-  border-radius: 1em;
+  border-radius: var(--radius-S);
   outline: none;
   box-shadow: 0 0 1em .25em var(--glow-color),
          0 0 4em 1em var(--glow-spread-color),
@@ -207,13 +210,6 @@ button, .primary-button{
   color:var(--text-light);
   border:none;
 }
-.cards{
-  box-shadow:var(--level-2)
-}
-
-/*/////////////////////
-//SECTION 0 : GLOBAL //
-/////////////////////*/
 .homeFlexContainer,
 .nameFlexContainer,
 .themeFlexContainer,
@@ -263,7 +259,6 @@ nav {
   justify-content: space-between;
   align-items: center;
   height: 15vh;
-  /* overflow:hidden; */
 }
 nav>.neonButton {
   margin-right: 3% ;
@@ -278,11 +273,9 @@ nav>.neonButton {
 }
 #welcome h1 {
   padding-bottom: 2%;
-  font-size: 5vh;
 }
 #welcome p {
   margin: 3% 0 10% 0;
-  font-size: 2vh;
 }
 
 /*////////////////////////////
@@ -304,14 +297,12 @@ nav>.neonButton {
 .themeFlexContainer {
   display: flex;
   flex-direction: column;
-  /* background-color: var(--primary-background); */
   justify-content: center;
   text-align: center;
   font: var(--extra-bold);
   color: var(--info);
   line-height: 10vh;
   font-family: var(--font-family);
-  /* background-color:var(--primary-background); */
 }
 form {
   width : 80%;
@@ -330,7 +321,6 @@ label {
     width: 100%;
     border-radius: var(--radius-S);
     padding: 20px;
-    /* font-size:var(--L); */
     font-weight: var(--extra-bold);
 }
 .quizzTheme {
@@ -342,11 +332,12 @@ label {
   background-size: cover;
   background-position: center;
   font-size: var(--L);
-  color: var(--secondary-light);
+  color: black;
 }
 .selected {
-  border: rgb(0, 247, 255) 10px solid;  /*REMPLACER PAR VAR*/
+  border: rgb(0, 247, 255) 10px solid; 
 }
+  
 #nameButton {
   width: 70%;
   height: 6vh; 
@@ -375,7 +366,6 @@ label {
   text-align: center;
 }
 .questionTitle {
-  /* height:10vh; */
   margin:auto 2vh;
 }
 .questionTokens {
@@ -384,6 +374,7 @@ label {
   justify-content: space-around;
   list-style:none;
   width:10vw;
+  height:100vh;
   border: 1px solid black;
   background-color: var(--secondary-light);
 }
@@ -410,7 +401,6 @@ li.wrongToken {
   color: var(--text-primary);
 }
 .testContainer {
-  /* height: 75vh; */
   display: flex;
   flex-direction: column;
   width: -webkit-fill-available;
@@ -425,22 +415,18 @@ li.wrongToken {
   display: flex;
   width: 100%;
   flex-direction: column; 
-  /* align-items: center; */
   justify-content: center;
   margin: 30px auto;
 }
-
 .card {
   height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* margin-top:10%; */
 }
 .answer-container {
   width: 100%;
-  /* padding:2%; */
   display: flex;
   flex-direction: column;
   margin:auto;
@@ -449,13 +435,11 @@ li.wrongToken {
 }
 button.cardButton {
   height: auto;
-  /* background-color: var(--primary-background); */
   box-shadow: var(--level-2);
   color: var(--cardglow-color);
   border-radius: var(--radius-M);
   width: 80%;
   margin: 1vh auto;
-  /* background-color: var(--text-light); */
 }
 .cardButton {
   height: 20vh;
@@ -468,15 +452,11 @@ button.cardButton {
   border: .25em solid var(--cardglow-color);
   padding: 1em 3em;
   color: var(--cardglow-color);
-  font-size: 15px;
+  font-size: var(--XS);
   font-weight: bold;
   background-color: var(--cardbtn-color);
-  border-radius: 1em;
+  border-radius: var(--radius-S);
   outline: none;
-  /* box-shadow: 0 0 1em .25em var(--cardglow-color),
-         0 0 4em 1em var(--cardglow-spread-color), 
-         inset 0 0 .75em .25em var(--cardglow-color); */
-  /* text-shadow: 0 0 .5em var(--cardglow-color); */
   position: relative;
   transition: all 0.3s;
  }
@@ -508,31 +488,20 @@ button.cardButton {
 .resultsFlexContainer{
   display: flex;
   flex-direction: column;
-  margin-top: 6vh;
+  margin-top: 4vh;
 }
 #congrats{
   color: rgba(166,142,235,1);
   padding-top: 2vh;
-  font-weight: 600;
-  font-size: 2vh;
+  font-weight: var(--semi-bold);
+  font-size: var(--L);
 }
 #rank{
   color: rgba(166,142,235,1);
-  font-weight: 800;
-  font-size: 2vh;
+  font-weight: var(--extra-bold);
+  font-size: var(--M);
 }
-#congrats{
-  color: rgba(166,142,235,1);
-  padding-top: 1.5vh;
-  font-weight: 600;
-  font-size: 1.5vh;
-}
-#rank{
-  color: rgba(166,142,235,1);
-  font-weight: 800;
-  font-size: 1.5vh;
-}
-.resultsFlexContainer article{
+.resultsFlexContainer .podium{
   background: rgb(255,39,115);
   background: linear-gradient(90deg, rgba(255,39,115,1) 24%, rgba(166,142,235,1) 73%);
   display: flex;
@@ -540,16 +509,16 @@ button.cardButton {
   justify-content: space-evenly;
   align-items: center;
   margin: 1vw 10vw;
-  border-radius: 15px;
+  border-radius: var(--radius-S);
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
-.resultsFlexContainer article div {
+.resultsFlexContainer .podium div {
   margin: 1vh;
 }
-.resultsFlexContainer article p {
+.resultsFlexContainer .podium p {
   color: var(--text-primary);
   font-weight: 900;
-  font-size: 3vh;
+  font-size: var(--M);
   margin: 1vh;
 }
 .avatar {
@@ -560,7 +529,7 @@ footer {
   background-color: var(--secondary-background);
 }
 #footer p {
-  font-size:medium;
+  font-size:var(--XS);
   text-align:left;
   margin: auto auto auto 2%;
   color: beige;
@@ -585,21 +554,16 @@ footer {
   background-color: #720edd;
 }
 
-
 /*/////////////////////////////
-//SECTION  : DESKTOP VERSION //
+//SECTION 5 : DESKTOP VERSION //
 /////////////////////////////*/
 @media screen and (min-width:769px) {
   nav>.neonButton {
     padding: 1em 3em;
   }
-  /* #welcome h1 {
-    font-size: 8vh;
-  } */
-  /* #welcome p {
-    font-size: 2vh;
+  #welcome p {
     font-weight: var(--bold);
-  } */
+  }
   .questionTokens {
     display:flex;
     flex-direction:row;
@@ -611,8 +575,6 @@ footer {
     flex-direction: column;
   }
   .answer-container {
-    /* width: 90%;
-    height:80%; */
     margin: auto;
     display: grid;
     grid-template-columns: repeat(2,1fr);
@@ -627,6 +589,7 @@ footer {
   }
   button.cardButton {
     height: 25vh;
+    font-size: var(--S);
   }
   .resultsFlexContainer {
     flex-direction: row;
@@ -635,7 +598,7 @@ footer {
     margin-left: 15vw;
     margin-right: 15vw;
   }
-  .resultsFlexContainer article {
+  .resultsFlexContainer .podium {
     background-color: #a68eeb;
     margin: 1vh;
     display: flex;
@@ -643,15 +606,15 @@ footer {
     align-content: flex-start;
     width: 20%;
   }
-  article.firstUser{
+  .podium.firstUser{
     order: 2 ;
     padding-bottom: 11vh;
   }
-  article.secondUser{
+  .podium.secondUser{
     order: 1 ;
     padding-bottom: 7.5vh;
   }
-  article.thirdUser{
+  .podium.thirdUser{
     order: 3 ;
     padding-bottom: 5vh ;
   }

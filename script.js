@@ -464,7 +464,6 @@ const createQuestion = (currentQuestion,questionNumber) => {
         buttonNext.onclick=() => generateQuizzAndSlide(questionNumber+1);
         buttonNext.disabled = true;
         listenToAnswer()
-
     }
         questionCard.appendChild(buttonNext);
 }
