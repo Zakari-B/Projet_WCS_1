@@ -334,7 +334,7 @@ const thirdQuizz = [
         correctAnswer : "answer-b"
     },
     {
-        question : "What is Lou's cat name?",
+        question : "What is Lou's cat's name?",
         answers : {
             a : "Malfoy",
             b : "Ron",
